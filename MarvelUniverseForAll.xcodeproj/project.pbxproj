@@ -17,6 +17,7 @@
 		A4DD8BF92637E8A500FFC669 /* MarvelUniverseForAllUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BF82637E8A500FFC669 /* MarvelUniverseForAllUITests.swift */; };
 		A4DD8C0A2637E90600FFC669 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C092637E90600FFC669 /* SignInView.swift */; };
 		A4DD8C0F2637E91600FFC669 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C0E2637E91600FFC669 /* HomeView.swift */; };
+		A4DD8C142637EC6600FFC669 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		A4DD8BFA2637E8A500FFC669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4DD8C092637E90600FFC669 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		A4DD8C0E2637E91600FFC669 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				A4DD8BDE2637E8A500FFC669 /* Preview Content */,
 				A4DD8C092637E90600FFC669 /* SignInView.swift */,
 				A4DD8C0E2637E91600FFC669 /* HomeView.swift */,
+				A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */,
 			);
 			path = MarvelUniverseForAll;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4DD8C142637EC6600FFC669 /* AppCoordinator.swift in Sources */,
 				A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */,
 				A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */,
 				A4DD8C0A2637E90600FFC669 /* SignInView.swift in Sources */,
