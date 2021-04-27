@@ -18,6 +18,8 @@
 		A4DD8C0A2637E90600FFC669 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C092637E90600FFC669 /* SignInView.swift */; };
 		A4DD8C0F2637E91600FFC669 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C0E2637E91600FFC669 /* HomeView.swift */; };
 		A4DD8C142637EC6600FFC669 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */; };
+		A4DD8CC126388BE200FFC669 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8CC026388BE200FFC669 /* AuthService.swift */; };
+		A4DD8CC626388C0300FFC669 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8CC526388C0300FFC669 /* FirebaseAuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		A4DD8C092637E90600FFC669 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		A4DD8C0E2637E91600FFC669 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A4DD8CC026388BE200FFC669 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		A4DD8CC526388C0300FFC669 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		A4DD8BD52637E8A400FFC669 /* MarvelUniverseForAll */ = {
 			isa = PBXGroup;
 			children = (
+				A4DD8CBF26388BCA00FFC669 /* UserManagement */,
 				A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */,
 				A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */,
 				A4DD8BDA2637E8A400FFC669 /* ContentView.swift */,
@@ -143,6 +148,15 @@
 				A4DD8BFA2637E8A500FFC669 /* Info.plist */,
 			);
 			path = MarvelUniverseForAllUITests;
+			sourceTree = "<group>";
+		};
+		A4DD8CBF26388BCA00FFC669 /* UserManagement */ = {
+			isa = PBXGroup;
+			children = (
+				A4DD8CC026388BE200FFC669 /* AuthService.swift */,
+				A4DD8CC526388C0300FFC669 /* FirebaseAuthService.swift */,
+			);
+			path = UserManagement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,12 +289,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4DD8CC626388C0300FFC669 /* FirebaseAuthService.swift in Sources */,
 				A4DD8C142637EC6600FFC669 /* AppCoordinator.swift in Sources */,
 				A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */,
 				A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */,
 				A4DD8C0A2637E90600FFC669 /* SignInView.swift in Sources */,
 				A4DD8C0F2637E91600FFC669 /* HomeView.swift in Sources */,
 				A4DD8BDB2637E8A400FFC669 /* ContentView.swift in Sources */,
+				A4DD8CC126388BE200FFC669 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
