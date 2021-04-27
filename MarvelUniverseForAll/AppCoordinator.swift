@@ -6,12 +6,7 @@
 //
 
 import Combine
-import UIKit
-
-protocol AuthService {
-    
-    func signIn() -> AnyPublisher<Void, Never>
-}
+import SwiftUI
 
 class UserManagementCoordinator {
     
@@ -19,19 +14,35 @@ class UserManagementCoordinator {
     let finishedSubject = PassthroughSubject<Void, Never>()
     
     private let authService: AuthService
+    private var navController: UINavigationController?
     
     init(authService: AuthService) {
         self.authService = authService
     }
     
     func start(navController: UINavigationController) {
-        authService.signIn().sink { _ in
-            print("User logged In")
-        }.store(in: &cancellables)
+        self.navController = navController
+        
+        navController.viewControllers.insert(signInViewController(), at: 0)
+        navController.popToRootViewController(animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.authService.signIn().sink { [weak self] _ in
+                print("User logged In")
+                self?.finishedSubject.send(completion: .finished)
+            }.store(in: &self.cancellables)
+        }
     }
     
     func finished() -> AnyPublisher<Void, Never> {
         finishedSubject.eraseToAnyPublisher()
+    }
+    
+    func signInViewController() -> UIHostingController<SignInView> {
+        let viewModel = SignInViewModel()
+        let view = SignInView(viewModel: viewModel)
+        
+        return UIHostingController(rootView: view)
     }
 }
 
@@ -49,10 +60,18 @@ class AppCoordinator {
     }
     
     func onAppStart() {
-        userManagementCoordinator.start(navController: navController)
+        userManagementCoordinator.finished().sink(receiveCompletion: { receive in
+            print("Completion")
+            
+            self.navController.viewControllers.insert(self.homeViewController(), at: 0)
+            self.navController.popToRootViewController(animated: true)
+            
+        }, receiveValue: { _ in }).store(in: &cancellables)
         
-        userManagementCoordinator.finished().sink { _ in
-            print("User Management Finished")
-        }.store(in: &cancellables)
+        userManagementCoordinator.start(navController: navController)
+    }
+    
+    func homeViewController() -> UIHostingController<HomeView> {
+        UIHostingController(rootView: HomeView())
     }
 }
