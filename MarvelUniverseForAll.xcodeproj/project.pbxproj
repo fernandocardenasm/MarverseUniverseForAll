@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A4544427263B36B4009580E6 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4544426263B36B4009580E6 /* TabBarView.swift */; };
 		A454442F263B376E009580E6 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A454442E263B376E009580E6 /* AppCoordinatorTests.swift */; };
+		A4544434263B3840009580E6 /* UserManagementCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4544433263B3840009580E6 /* UserManagementCoordinator.swift */; };
 		A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */; };
 		A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */; };
 		A4DD8BDB2637E8A400FFC669 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BDA2637E8A400FFC669 /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		A4544426263B36B4009580E6 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		A454442E263B376E009580E6 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
+		A4544433263B3840009580E6 /* UserManagementCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinator.swift; sourceTree = "<group>"; };
 		A4DD8BD32637E8A400FFC669 /* MarvelUniverseForAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelUniverseForAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				A4DD8CC026388BE200FFC669 /* AuthService.swift */,
 				A4DD8CC526388C0300FFC669 /* FirebaseAuthService.swift */,
+				A4544433263B3840009580E6 /* UserManagementCoordinator.swift */,
 			);
 			path = UserManagement;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4544434263B3840009580E6 /* UserManagementCoordinator.swift in Sources */,
 				A4DD8CC626388C0300FFC669 /* FirebaseAuthService.swift in Sources */,
 				A4544427263B36B4009580E6 /* TabBarView.swift in Sources */,
 				A4DD8C142637EC6600FFC669 /* AppCoordinator.swift in Sources */,
