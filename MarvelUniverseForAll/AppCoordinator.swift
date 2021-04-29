@@ -60,10 +60,12 @@ class AppCoordinator {
     }
     
     func onAppStart() {
-        userManagementCoordinator.finished().sink(receiveCompletion: { receive in
+        userManagementCoordinator.finished().sink(receiveCompletion: { [weak self] receive in
             print("Completion")
             
-            self.navController.viewControllers.insert(self.homeViewController(), at: 0)
+            guard let self = self else { return }
+            
+            self.navController.viewControllers.insert(UIHostingController(rootView: TabBarView()), at: 0)
             self.navController.popToRootViewController(animated: true)
             
         }, receiveValue: { _ in }).store(in: &cancellables)
@@ -71,7 +73,7 @@ class AppCoordinator {
         userManagementCoordinator.start(navController: navController)
     }
     
-    func homeViewController() -> UIHostingController<HomeView> {
+    func tabBarViewController() -> UIHostingController<HomeView> {
         UIHostingController(rootView: HomeView())
     }
 }
