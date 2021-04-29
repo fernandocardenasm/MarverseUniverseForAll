@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A4544427263B36B4009580E6 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4544426263B36B4009580E6 /* TabBarView.swift */; };
+		A454442F263B376E009580E6 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A454442E263B376E009580E6 /* AppCoordinatorTests.swift */; };
 		A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */; };
 		A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */; };
 		A4DD8BDB2637E8A400FFC669 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BDA2637E8A400FFC669 /* ContentView.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		A4544426263B36B4009580E6 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		A454442E263B376E009580E6 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		A4DD8BD32637E8A400FFC669 /* MarvelUniverseForAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelUniverseForAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				A4DD8BED2637E8A500FFC669 /* MarvelUniverseForAllTests.swift */,
 				A4DD8BEF2637E8A500FFC669 /* Info.plist */,
+				A454442E263B376E009580E6 /* AppCoordinatorTests.swift */,
 			);
 			path = MarvelUniverseForAllTests;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A454442F263B376E009580E6 /* AppCoordinatorTests.swift in Sources */,
 				A4DD8BEE2637E8A500FFC669 /* MarvelUniverseForAllTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
