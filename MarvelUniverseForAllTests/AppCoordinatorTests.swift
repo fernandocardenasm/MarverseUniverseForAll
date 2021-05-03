@@ -17,11 +17,23 @@ class AppCoordinatorTests: XCTestCase {
         
         XCTAssertEqual(sut.navController, sut.rootViewController)
     }
+    
+    func test_onAppStart_starts_userManagementCoordinator() {
+        let userManagementCoordinator = UserManagementCoordinatorSpy()
+        let sut = AppCoordinator(userManagementCoordinator: userManagementCoordinator)
+        
+        sut.onAppStart()
+        
+        XCTAssertEqual(userManagementCoordinator.startedNavController, sut.navController)
+    }
 }
 
 class UserManagementCoordinatorSpy: UserManagementCoordinator {
     
+    var startedNavController: UINavigationController?
+    
     func start(navController: UINavigationController) {
+        startedNavController = navController
     }
     
     func finished() -> AnyPublisher<Void, Never> {

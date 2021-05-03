@@ -21,7 +21,7 @@ public class AppCoordinator {
         self.userManagementCoordinator = userManagementCoordinator
     }
     
-    func onAppStart() {
+    public func onAppStart() {
         userManagementCoordinator.finished().sink(receiveCompletion: { [weak self] receive in
             print("Completion")
             
