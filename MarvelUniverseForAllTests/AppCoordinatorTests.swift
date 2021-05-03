@@ -12,19 +12,29 @@ import XCTest
 class AppCoordinatorTests: XCTestCase {
     
     func test_init_doesNotPushViews() {
-        let userManagementCoordinator = UserManagementCoordinatorSpy()
-        let sut = AppCoordinator(userManagementCoordinator: userManagementCoordinator)
+        let (sut, _) = makeSut()
         
         XCTAssertEqual(sut.navController, sut.rootViewController)
     }
     
     func test_onAppStart_starts_userManagementCoordinator() {
-        let userManagementCoordinator = UserManagementCoordinatorSpy()
-        let sut = AppCoordinator(userManagementCoordinator: userManagementCoordinator)
+        let (sut, userMgtCoord) = makeSut()
         
         sut.onAppStart()
         
-        XCTAssertEqual(userManagementCoordinator.startedNavController, sut.navController)
+        XCTAssertEqual(userMgtCoord.startedNavController, sut.navController)
+    }
+    
+}
+
+// MARK: - Helpers
+
+extension AppCoordinatorTests {
+    
+    func makeSut(file: StaticString = #file, line: UInt = #line) -> (AppCoordinator, UserManagementCoordinatorSpy) {
+        let userManagementCoordinator = UserManagementCoordinatorSpy()
+        let sut = AppCoordinator(userManagementCoordinator: userManagementCoordinator)
+        return (sut, userManagementCoordinator)
     }
 }
 
