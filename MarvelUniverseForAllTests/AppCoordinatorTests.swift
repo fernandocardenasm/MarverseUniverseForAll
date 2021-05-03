@@ -15,6 +15,12 @@ class AppCoordinatorTests: XCTestCase {
     func test_init_doesNotPushViews() {
         let (sut, _) = makeSut()
         
+        XCTAssertEqual(sut.navController.viewControllers.count, 0)
+    }
+    
+    func test_init_rootViewControllerIsNavController() {
+        let (sut, _) = makeSut()
+        
         XCTAssertEqual(sut.navController, sut.rootViewController)
     }
     
@@ -26,14 +32,12 @@ class AppCoordinatorTests: XCTestCase {
         XCTAssertEqual(userMgtCoord.startedNavController, sut.navController)
     }
     
-    func test_onAppStart_showsTabBar_afterUserManagementCoordinatorCompletesSuccess() {
+    func test_onAppStart_showsTabBar_afterUserManagementCoordinatorCompletes() {
         let (sut, userMgtCoord) = makeSut()
         
         sut.onAppStart()
         
         userMgtCoord.finishedSubject.send(completion: .finished)
-        
-        // finish comparing inserted view controllers
         
         XCTAssertEqual(sut.navController.viewControllers.count, 1)
         XCTAssertTrue(sut.navController.viewControllers.first is UIHostingController<TabBarView>)
