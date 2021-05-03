@@ -7,6 +7,7 @@
 
 import Combine
 import MarvelUniverseForAll
+import SwiftUI
 import XCTest
 
 class AppCoordinatorTests: XCTestCase {
@@ -25,6 +26,18 @@ class AppCoordinatorTests: XCTestCase {
         XCTAssertEqual(userMgtCoord.startedNavController, sut.navController)
     }
     
+    func test_onAppStart_showsTabBar_afterUserManagementCoordinatorCompletesSuccess() {
+        let (sut, userMgtCoord) = makeSut()
+        
+        sut.onAppStart()
+        
+        userMgtCoord.finishedSubject.send(completion: .finished)
+        
+        // finish comparing inserted view controllers
+        
+        XCTAssertEqual(sut.navController.viewControllers.count, 1)
+        XCTAssertTrue(sut.navController.viewControllers.first is UIHostingController<TabBarView>)
+    }
 }
 
 // MARK: - Helpers
@@ -46,7 +59,9 @@ class UserManagementCoordinatorSpy: UserManagementCoordinator {
         startedNavController = navController
     }
     
+    var finishedSubject = PassthroughSubject<Void, Never>()
+    
     func finished() -> AnyPublisher<Void, Never> {
-        Just(()).eraseToAnyPublisher()
+        finishedSubject.eraseToAnyPublisher()
     }
 }

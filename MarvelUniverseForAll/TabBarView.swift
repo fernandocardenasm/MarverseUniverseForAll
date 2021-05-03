@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct TabBarView: View {
+public struct TabBarView: View {
     
-    var body: some View {
+    public init() {}
+    
+    public var body: some View {
         TabView {
             HomeView().tabItem {
                 Label("Menu", systemImage: "house")
