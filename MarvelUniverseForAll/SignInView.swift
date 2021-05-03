@@ -8,11 +8,11 @@
 import Combine
 import SwiftUI
 
-struct SignInView: View {
+public struct SignInView: View {
     
     @ObservedObject var viewModel: SignInViewModel
     
-    var body: some View {
+    public var body: some View {
         Button("Sign In") {
             viewModel.signIn.send()
         }
