@@ -7,6 +7,6 @@
 
 import Combine
 
-protocol AuthService {
+public protocol AuthService {
     func signIn() -> AnyPublisher<Void, Never>
 }

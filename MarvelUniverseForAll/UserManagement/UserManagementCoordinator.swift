@@ -14,19 +14,19 @@ public protocol UserManagementCoordinator {
     func finished() -> AnyPublisher<Void, Never>
 }
 
-class UserManagementCoordinatorImpl: UserManagementCoordinator {
+public class UserManagementCoordinatorImpl: UserManagementCoordinator {
     
-    var cancellables = Set<AnyCancellable>()
-    let finishedSubject = PassthroughSubject<Void, Never>()
+    private var cancellables = Set<AnyCancellable>()
+    private let finishedSubject = PassthroughSubject<Void, Never>()
     
     private let authService: AuthService
     private var navController: UINavigationController?
     
-    init(authService: AuthService) {
+    public init(authService: AuthService) {
         self.authService = authService
     }
     
-    func start(navController: UINavigationController) {
+    public func start(navController: UINavigationController) {
         self.navController = navController
         
         navController.viewControllers.insert(signInViewController(), at: 0)
@@ -40,7 +40,7 @@ class UserManagementCoordinatorImpl: UserManagementCoordinator {
         }
     }
     
-    func finished() -> AnyPublisher<Void, Never> {
+    public func finished() -> AnyPublisher<Void, Never> {
         finishedSubject.eraseToAnyPublisher()
     }
     
