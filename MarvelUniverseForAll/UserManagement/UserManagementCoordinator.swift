@@ -32,12 +32,11 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
         navController.viewControllers.insert(signInViewController(), at: 0)
         navController.popToRootViewController(animated: true)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.authService.signIn().sink { [weak self] _ in
-                print("User logged In")
-                self?.finishedSubject.send(completion: .finished)
-            }.store(in: &self.cancellables)
-        }
+        authService.signIn().sink { [weak self] _ in
+            print("User logged In")
+            self?.finishedSubject.send(completion: .finished)
+        } receiveValue: { _ in }
+        .store(in: &cancellables)
     }
     
     public func finished() -> AnyPublisher<Void, Never> {
