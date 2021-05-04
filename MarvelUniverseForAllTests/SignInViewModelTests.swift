@@ -14,6 +14,7 @@ class SignInViewModel: ObservableObject {
     @Published var isSigningIn: Bool = false
     
     private let authService: AuthService
+    private var cancellables = Set<AnyCancellable>()
     
     init(authService: AuthService) {
         self.authService = authService
@@ -21,6 +22,11 @@ class SignInViewModel: ObservableObject {
     
     func signIn() {
         isSigningIn = true
+        
+        authService.signIn().sink { [weak self] _ in
+            self?.isSigningIn = false
+        } receiveValue: { _ in }
+        .store(in: &cancellables)
     }
 }
 
@@ -43,7 +49,16 @@ class SignInViewModelTests: XCTestCase {
         XCTAssertTrue(sut.isSigningIn)
     }
     
-    func makeSut() -> (SignInViewModel, AuthService) {
+    func test_signIn_onSignInFinished() {
+        let (sut, authService) = makeSut()
+        
+        sut.signIn()
+        authService.signInSubject.send(completion: .finished)
+        
+        XCTAssertFalse(sut.isSigningIn)
+    }
+    
+    func makeSut() -> (SignInViewModel, AuthServiceSpy) {
         let authService = AuthServiceSpy()
         let sut = SignInViewModel(authService: authService)
         
