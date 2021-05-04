@@ -30,4 +30,12 @@ class SignInViewModelTests: XCTestCase {
         let sut = SignInViewModel()
         XCTAssertFalse(sut.isSigningIn)
     }
+    
+    func test_signIn_startsSigningIn() {
+        let sut = SignInViewModel()
+        
+        sut.signIn()
+        
+        XCTAssertTrue(sut.isSigningIn)
+    }
 }
