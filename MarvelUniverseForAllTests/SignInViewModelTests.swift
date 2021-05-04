@@ -12,6 +12,7 @@ import XCTest
 class SignInViewModel: ObservableObject {
     
     @Published var isSigningIn: Bool = false
+    var skipSignInSubject = PassthroughSubject<Void, Never>()
     
     private let authService: AuthService
     private var cancellables = Set<AnyCancellable>()
