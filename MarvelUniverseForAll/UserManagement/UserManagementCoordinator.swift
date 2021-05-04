@@ -22,6 +22,10 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
     private var navController: UINavigationController?
     private let signInViewController: UIHostingController<SignInView>
     
+    private lazy var signInViewModel: SignInViewModel = {
+        signInViewController.rootView.viewModel
+    }()
+    
     public init(signInViewController: UIHostingController<SignInView>) {
         self.signInViewController = signInViewController
     }
@@ -32,11 +36,11 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
         navController.viewControllers.insert(signInViewController, at: 0)
         navController.popToRootViewController(animated: true)
         
-        signInViewController.rootView.viewModel.signInFinishedSubject.sink { [weak self] _ in
+        signInViewModel.signInFinishedSubject.sink { [weak self] _ in
             self?.finishedSubject.send(completion: .finished)
         }.store(in: &cancellables)
         
-        signInViewController.rootView.viewModel.skipSignInSubject.sink { [weak self] _ in
+        signInViewModel.skipSignInSubject.sink { [weak self] _ in
             self?.finishedSubject.send(completion: .finished)
         }.store(in: &cancellables)
     }
