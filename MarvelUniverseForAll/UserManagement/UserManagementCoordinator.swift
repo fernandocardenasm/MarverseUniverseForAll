@@ -19,12 +19,10 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
     private var cancellables = Set<AnyCancellable>()
     private let finishedSubject = PassthroughSubject<Void, Never>()
     
-    private let authService: AuthService
     private var navController: UINavigationController?
     private let signInViewController: UIHostingController<SignInView>
     
-    public init(authService: AuthService, signInViewController: UIHostingController<SignInView>) {
-        self.authService = authService
+    public init(signInViewController: UIHostingController<SignInView>) {
         self.signInViewController = signInViewController
     }
     
@@ -34,11 +32,9 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
         navController.viewControllers.insert(signInViewController, at: 0)
         navController.popToRootViewController(animated: true)
         
-        authService.signIn().sink { [weak self] _ in
-            print("User logged In")
+        signInViewController.rootView.viewModel.skipSignInSubject.sink { [weak self] _ in
             self?.finishedSubject.send(completion: .finished)
-        } receiveValue: { _ in }
-        .store(in: &cancellables)
+        }.store(in: &cancellables)
     }
     
     public func finished() -> AnyPublisher<Void, Never> {

@@ -25,8 +25,8 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         XCTAssertEqual(navController.viewControllers.first, signInViewController)
     }
     
-    func test_start_completesCoordinatorAfterAuthServiceCompletes() {
-        let (sut, authService, _) = makeSut()
+    func test_start_completesCoordinatorAfterSkippingSignIn() {
+        let (sut, _, signInViewController) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -37,7 +37,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         } receiveValue: { _ in }
         .store(in: &cancellables)
         
-        authService.signInSubject.send(completion: .finished)
+        signInViewController.rootView.viewModel.skipSignInSubject.send(())
         
         wait(for: [exp], timeout: 0.1)
     }
@@ -45,7 +45,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
     func makeSut() -> (UserManagementCoordinator, AuthServiceSpy, UIHostingController<SignInView>) {
         let authService = AuthServiceSpy()
         let signInViewController = makeSignInViewController(authService: authService)
-        let sut = UserManagementCoordinatorImpl(authService: authService, signInViewController: signInViewController)
+        let sut = UserManagementCoordinatorImpl(signInViewController: signInViewController)
         
         return (sut, authService, signInViewController)
     }

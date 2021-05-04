@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct SignInView: View {
     
-    @ObservedObject private var viewModel: SignInViewModel
+    @ObservedObject public var viewModel: SignInViewModel
     
     public init(viewModel: SignInViewModel) {
         self.viewModel = viewModel

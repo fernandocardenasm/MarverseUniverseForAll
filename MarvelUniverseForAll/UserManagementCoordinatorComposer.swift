@@ -13,8 +13,7 @@ public final class UserManagementCoordinatorComposer {
     
     public static func composedWith(authService: AuthService) -> UserManagementCoordinator {
         
-        let userManagementCoordinator = UserManagementCoordinatorImpl(authService: authService,
-                                                                      signInViewController: makeSignInViewController(authService: authService))
+        let userManagementCoordinator = UserManagementCoordinatorImpl(signInViewController: makeSignInViewController(authService: authService))
         return userManagementCoordinator
     }
     
