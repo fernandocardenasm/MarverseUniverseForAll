@@ -16,7 +16,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
     var cancellables = Set<AnyCancellable>()
     
     func test_start_showsSignInView() {
-        let (sut, _, signInViewController) = makeSut()
+        let (sut, signInViewController) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -26,7 +26,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
     }
     
     func test_start_completesCoordinatorAfterSignInFinished() {
-        let (sut, _, signInViewController) = makeSut()
+        let (sut, signInViewController) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -43,7 +43,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
     }
     
     func test_start_completesCoordinatorAfterSkippingSignIn() {
-        let (sut, _, signInViewController) = makeSut()
+        let (sut, signInViewController) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -59,12 +59,12 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         wait(for: [exp], timeout: 0.1)
     }
     
-    func makeSut() -> (UserManagementCoordinator, AuthServiceSpy, UIHostingController<SignInView>) {
+    func makeSut() -> (UserManagementCoordinator, UIHostingController<SignInView>) {
         let authService = AuthServiceSpy()
         let signInViewController = makeSignInViewController(authService: authService)
         let sut = UserManagementCoordinatorImpl(signInViewController: signInViewController)
         
-        return (sut, authService, signInViewController)
+        return (sut, signInViewController)
     }
     
     func makeSignInViewController(authService: AuthService) -> UIHostingController<SignInView> {
