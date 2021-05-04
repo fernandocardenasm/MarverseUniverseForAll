@@ -9,29 +9,6 @@ import Combine
 import MarvelUniverseForAll
 import XCTest
 
-class SignInViewModel: ObservableObject {
-    
-    @Published var isSigningIn: Bool = false
-    var skipSignInSubject = PassthroughSubject<Void, Never>()
-    
-    private let authService: AuthService
-    private var cancellables = Set<AnyCancellable>()
-    
-    init(authService: AuthService) {
-        self.authService = authService
-    }
-    
-    func signIn() {
-        isSigningIn = true
-        
-        authService.signIn().sink { [weak self] _ in
-            self?.isSigningIn = false
-        } receiveValue: { _ in }
-        .store(in: &cancellables)
-    }
-}
-
-
 class SignInViewModelTests: XCTestCase {
     
     var cancellables = Set<AnyCancellable>()

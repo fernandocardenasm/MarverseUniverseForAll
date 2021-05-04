@@ -13,6 +13,7 @@
 		A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */; };
 		A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970426411758009F0FD8 /* SignInViewModelTests.swift */; };
 		A4729707264122E1009F0FD8 /* AuthServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* AuthServiceSpy.swift */; };
+		A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970826412859009F0FD8 /* SignInViewModel.swift */; };
 		A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */; };
 		A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */; };
 		A4DD8BDB2637E8A400FFC669 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BDA2637E8A400FFC669 /* ContentView.swift */; };
@@ -43,6 +44,7 @@
 		A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		A472970426411758009F0FD8 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		A4729706264122E1009F0FD8 /* AuthServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceSpy.swift; sourceTree = "<group>"; };
+		A472970826412859009F0FD8 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		A4DD8BD32637E8A400FFC669 /* MarvelUniverseForAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelUniverseForAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				A4DD8BE42637E8A500FFC669 /* Info.plist */,
 				A4DD8BDE2637E8A500FFC669 /* Preview Content */,
 				A4DD8C092637E90600FFC669 /* SignInView.swift */,
+				A472970826412859009F0FD8 /* SignInViewModel.swift */,
 				A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */,
 				A4544426263B36B4009580E6 /* TabBarView.swift */,
 				A4DD8C0E2637E91600FFC669 /* HomeView.swift */,
@@ -261,6 +264,7 @@
 				A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */,
 				A4DD8C0A2637E90600FFC669 /* SignInView.swift in Sources */,
 				A4DD8C0F2637E91600FFC669 /* HomeView.swift in Sources */,
+				A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */,
 				A4DD8BDB2637E8A400FFC669 /* ContentView.swift in Sources */,
 				A4DD8CC126388BE200FFC669 /* AuthService.swift in Sources */,
 			);
