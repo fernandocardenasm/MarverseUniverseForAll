@@ -31,8 +31,16 @@ class SignInViewModelTests: XCTestCase {
         let (sut, authService) = makeSut()
         
         sut.signIn()
+        
+        let exp = expectation(description: "waiting to finish")
+        
+        sut.signInFinishedSubject.sink { _ in
+            exp.fulfill()
+        }.store(in: &cancellables)
+        
         authService.signInSubject.send(completion: .finished)
         
+        wait(for: [exp], timeout: 0.1)
         XCTAssertFalse(sut.isSigningIn)
     }
     

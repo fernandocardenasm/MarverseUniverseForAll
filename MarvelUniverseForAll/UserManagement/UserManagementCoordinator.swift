@@ -32,6 +32,10 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
         navController.viewControllers.insert(signInViewController, at: 0)
         navController.popToRootViewController(animated: true)
         
+        signInViewController.rootView.viewModel.signInFinishedSubject.sink { [weak self] _ in
+            self?.finishedSubject.send(completion: .finished)
+        }.store(in: &cancellables)
+        
         signInViewController.rootView.viewModel.skipSignInSubject.sink { [weak self] _ in
             self?.finishedSubject.send(completion: .finished)
         }.store(in: &cancellables)

@@ -25,6 +25,23 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         XCTAssertEqual(navController.viewControllers.first, signInViewController)
     }
     
+    func test_start_completesCoordinatorAfterSignInFinished() {
+        let (sut, _, signInViewController) = makeSut()
+        
+        let navController = UINavigationController()
+        sut.start(navController: navController)
+
+        let exp = expectation(description: "waiting to finish")
+        sut.finished().sink { _ in
+            exp.fulfill()
+        } receiveValue: { _ in }
+        .store(in: &cancellables)
+        
+        signInViewController.rootView.viewModel.signInFinishedSubject.send(())
+        
+        wait(for: [exp], timeout: 0.1)
+    }
+    
     func test_start_completesCoordinatorAfterSkippingSignIn() {
         let (sut, _, signInViewController) = makeSut()
         
