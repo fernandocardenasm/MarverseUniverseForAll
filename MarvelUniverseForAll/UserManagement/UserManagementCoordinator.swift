@@ -44,7 +44,7 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
     }
     
     func signInViewController() -> UIHostingController<SignInView> {
-        let viewModel = SignInViewModel()
+        let viewModel = SignInViewModel(authService: FirebaseAuthService())
         let view = SignInView(viewModel: viewModel)
         
         return UIHostingController(rootView: view)

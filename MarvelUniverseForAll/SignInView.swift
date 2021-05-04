@@ -14,16 +14,10 @@ public struct SignInView: View {
     
     public var body: some View {
         Button("Sign In") {
-            viewModel.signIn.send()
+            viewModel.signIn()
         }
         Button("Skip SignIn") {
-            viewModel.skipSignIn.send()
+            viewModel.skipSignInSubject.send(())
         }
     }
-}
-
-class SignInViewModel: ObservableObject {
-    
-    var signIn = PassthroughSubject<Void, Never>()
-    var skipSignIn = PassthroughSubject<Void, Never>()
 }
