@@ -49,12 +49,3 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         return (sut, authService)
     }
 }
-
-class AuthServiceSpy: AuthService {
-    
-    let signInSubject = PassthroughSubject<Void, Never>()
-    
-    func signIn() -> AnyPublisher<Void, Never> {
-        signInSubject.eraseToAnyPublisher()
-    }
-}
