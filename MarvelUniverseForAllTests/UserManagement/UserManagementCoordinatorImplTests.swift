@@ -58,7 +58,11 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         
         wait(for: [exp], timeout: 0.1)
     }
-    
+}
+
+// MARK: - Helpers
+
+private extension UserManagementCoordinatorImplTests {
     func makeSut() -> (UserManagementCoordinator, UIHostingController<SignInView>) {
         let authService = AuthServiceSpy()
         let signInViewController = makeSignInViewController(authService: authService)
