@@ -16,17 +16,17 @@ class UserManagementCoordinatorImplTests: XCTestCase {
     var cancellables = Set<AnyCancellable>()
     
     func test_start_showsSignInView() {
-        let (sut, _) = makeSut()
+        let (sut, _, signInViewController) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
                 
         XCTAssertEqual(navController.viewControllers.count, 1)
-        XCTAssertTrue(navController.viewControllers.first is UIHostingController<SignInView>)
+        XCTAssertEqual(navController.viewControllers.first, signInViewController)
     }
     
     func test_start_completesCoordinatorAfterAuthServiceCompletes() {
-        let (sut, authService) = makeSut()
+        let (sut, authService, _) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -42,10 +42,18 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         wait(for: [exp], timeout: 0.1)
     }
     
-    func makeSut() -> (UserManagementCoordinator, AuthServiceSpy) {
+    func makeSut() -> (UserManagementCoordinator, AuthServiceSpy, UIHostingController<SignInView>) {
         let authService = AuthServiceSpy()
-        let sut = UserManagementCoordinatorImpl(authService: authService)
+        let signInViewController = makeSignInViewController(authService: authService)
+        let sut = UserManagementCoordinatorImpl(authService: authService, signInViewController: signInViewController)
         
-        return (sut, authService)
+        return (sut, authService, signInViewController)
+    }
+    
+    func makeSignInViewController(authService: AuthService) -> UIHostingController<SignInView> {
+        let viewModel = SignInViewModel(authService: authService)
+        let signInView = SignInView(viewModel: viewModel)
+        
+        return UIHostingController(rootView: signInView)
     }
 }

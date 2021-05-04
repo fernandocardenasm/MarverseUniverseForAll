@@ -21,15 +21,17 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
     
     private let authService: AuthService
     private var navController: UINavigationController?
+    private let signInViewController: UIHostingController<SignInView>
     
-    public init(authService: AuthService) {
+    public init(authService: AuthService, signInViewController: UIHostingController<SignInView>) {
         self.authService = authService
+        self.signInViewController = signInViewController
     }
     
     public func start(navController: UINavigationController) {
         self.navController = navController
         
-        navController.viewControllers.insert(signInViewController(), at: 0)
+        navController.viewControllers.insert(signInViewController, at: 0)
         navController.popToRootViewController(animated: true)
         
         authService.signIn().sink { [weak self] _ in
@@ -41,12 +43,5 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
     
     public func finished() -> AnyPublisher<Void, Never> {
         finishedSubject.eraseToAnyPublisher()
-    }
-    
-    func signInViewController() -> UIHostingController<SignInView> {
-        let viewModel = SignInViewModel(authService: FirebaseAuthService())
-        let view = SignInView(viewModel: viewModel)
-        
-        return UIHostingController(rootView: view)
     }
 }

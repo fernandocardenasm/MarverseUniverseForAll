@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         let window = UIWindow(windowScene: windowScene)
         
-        appCoordinator = AppCoordinator(userManagementCoordinator: UserManagementCoordinatorImpl(authService: FirebaseAuthService()))
+        appCoordinator = AppCoordinator(userManagementCoordinator: UserManagementCoordinatorComposer.composedWith(authService: FirebaseAuthService()))
         
         window.rootViewController = appCoordinator.rootViewController
         

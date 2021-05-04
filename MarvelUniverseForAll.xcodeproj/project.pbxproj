@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40FA5A926413488000BE218 /* UserManagementCoordinatorComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40FA5A826413488000BE218 /* UserManagementCoordinatorComposer.swift */; };
 		A4544427263B36B4009580E6 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4544426263B36B4009580E6 /* TabBarView.swift */; };
 		A454442F263B376E009580E6 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A454442E263B376E009580E6 /* AppCoordinatorTests.swift */; };
 		A4544434263B3840009580E6 /* UserManagementCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4544433263B3840009580E6 /* UserManagementCoordinator.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A40FA5A826413488000BE218 /* UserManagementCoordinatorComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorComposer.swift; sourceTree = "<group>"; };
 		A4544426263B36B4009580E6 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		A454442E263B376E009580E6 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		A4544433263B3840009580E6 /* UserManagementCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinator.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */,
 				A4544426263B36B4009580E6 /* TabBarView.swift */,
 				A4DD8C0E2637E91600FFC669 /* HomeView.swift */,
+				A40FA5A826413488000BE218 /* UserManagementCoordinatorComposer.swift */,
 			);
 			path = MarvelUniverseForAll;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */,
 				A4DD8BDB2637E8A400FFC669 /* ContentView.swift in Sources */,
 				A4DD8CC126388BE200FFC669 /* AuthService.swift in Sources */,
+				A40FA5A926413488000BE218 /* UserManagementCoordinatorComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

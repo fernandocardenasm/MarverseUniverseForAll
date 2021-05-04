@@ -10,7 +10,11 @@ import SwiftUI
 
 public struct SignInView: View {
     
-    @ObservedObject var viewModel: SignInViewModel
+    @ObservedObject private var viewModel: SignInViewModel
+    
+    public init(viewModel: SignInViewModel) {
+        self.viewModel = viewModel
+    }
     
     public var body: some View {
         Button("Sign In") {
