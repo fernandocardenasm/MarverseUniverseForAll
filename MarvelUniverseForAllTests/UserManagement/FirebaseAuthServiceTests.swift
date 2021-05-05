@@ -40,13 +40,13 @@ class FirebaseAuthServiceTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        clearAccounts()
+        setupEmptyAccountsStoreState()
     }
     
     override func tearDown() {
         super.tearDown()
         
-        clearAccounts()
+        undoAccountsStoreSideEffects()
     }
     
     func test_createUser_onSuccess() {
@@ -69,7 +69,15 @@ class FirebaseAuthServiceTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func clearAccounts() {
+    private func setupEmptyAccountsStoreState() {
+        deleteAccountsArtifacts()
+    }
+    
+    private func undoAccountsStoreSideEffects() {
+        deleteAccountsArtifacts()
+    }
+    
+    private func deleteAccountsArtifacts() {
         let semaphore = DispatchSemaphore(value: 0)
         let projectId = FirebaseApp.app()!.options.projectID!
         let url = URL(string: "http://localhost:9099/emulator/v1/projects/\(projectId)/accounts")!
