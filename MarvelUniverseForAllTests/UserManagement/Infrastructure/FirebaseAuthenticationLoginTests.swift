@@ -9,25 +9,6 @@ import Firebase
 import MarvelUniverseForAll
 import XCTest
 
-class FirebaseAuthenticationLogin {
-    
-    private let authenticator: Auth
-    
-    init(authenticator: Auth) {
-        self.authenticator = authenticator
-    }
-    
-    func signIn(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        authenticator.signIn(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                completion(.failure(error))
-            } else if let _ = authResult {
-                completion(.success(()))
-            }
-        }
-    }
-}
-
 class FirebaseAuthenticationLoginTests: XCTestCase {
     
     override func setUp() {
