@@ -1,35 +1,35 @@
 //
-//  FirebaseAuthServiceTests.swift
+//  FirebaseUserCreatorTests.swift
 //  MarvelUniverseForAllTests
 //
-//  Created by Fernando Cardenas on 04.05.21.
+//  Created by Fernando Cardenas on 06.05.21.
 //
 
 import Firebase
 import MarvelUniverseForAll
 import XCTest
 
-class FirebaseAuthService {
-    
+class FirebaseUserCreator {
     private let authenticator: Auth
     
     init(authenticator: Auth) {
         self.authenticator = authenticator
     }
     
-    func signIn(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        authenticator.signIn(withEmail: email, password: password) { authResult, error in
+    func createUser(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
+        authenticator.createUser(withEmail: email, password: password) { dataResult, error in
             if let error = error {
                 completion(.failure(error))
-            } else if let _ = authResult {
-                completion(.success(()))
+                print("Error: \(error)")
+            } else if let dataResult = dataResult {
+                completion(.success(dataResult.user.uid))
+                print("DataResult: \(dataResult.user.uid)")
             }
         }
     }
 }
 
-class FirebaseAuthServiceTests: XCTestCase {
-    
+class FirebaseUserCreatorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
@@ -42,25 +42,23 @@ class FirebaseAuthServiceTests: XCTestCase {
         undoAccountsStoreSideEffects()
     }
     
-    func test_signIn_onSuccess() {
+    func test_createUser_onSuccess() {
         Auth.auth().useEmulator(withHost: "localhost", port: 9099)
         
-        let sut = FirebaseAuthService(authenticator: Auth.auth())
-        
-        let email = "signInvalidEmail2@email.com"
-        let password = "StrongPassword123"
-        addAccountInStore(email: email, password: password)
+        let sut = FirebaseUserCreator(authenticator: Auth.auth())
         
         let exp = expectation(description: "waiting for creating user")
-        
-        sut.signIn(email: email, password: password) { _ in
-            exp.fulfill()
+        sut.createUser(email: "validEmail2@email.com", password: "StrongPassword123") { result in
+            switch result {
+            case .success:
+                exp.fulfill()
+            case .failure:
+                XCTFail("create user should not fail")
+            }
         }
         
         wait(for: [exp], timeout: 1.0)
     }
-    
-    // MARK: - Helpers
     
     private func setupEmptyAccountsStoreState() {
         deleteAccountsArtifacts()
@@ -68,14 +66,6 @@ class FirebaseAuthServiceTests: XCTestCase {
     
     private func undoAccountsStoreSideEffects() {
         deleteAccountsArtifacts()
-    }
-    
-    private func addAccountInStore(email: String, password: String) {
-        let exp = expectation(description: "waiting for adding account")
-        Auth.auth().createUser(withEmail: email, password: password) { dataResult, error in
-            exp.fulfill()
-        }
-        wait(for: [exp], timeout: 1.0)
     }
     
     private func deleteAccountsArtifacts() {
