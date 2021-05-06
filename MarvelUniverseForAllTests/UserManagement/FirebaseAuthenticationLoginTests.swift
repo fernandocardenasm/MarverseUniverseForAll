@@ -43,17 +43,22 @@ class FirebaseAuthenticationLoginTests: XCTestCase {
         undoAccountsStoreSideEffects()
     }
     
-    func test_signIn_onSuccess() {
+    func test_signIn_succeedsOnValidEmailAndPassword() {
         let sut = FirebaseAuthenticationLogin(authenticator: Auth.auth())
         
         let email = "signInvalidEmail2@email.com"
         let password = "StrongPassword123"
         addAccountInStore(email: email, password: password)
         
-        let exp = expectation(description: "waiting for creating user")
+        let exp = expectation(description: "waiting for signing in user")
         
-        sut.signIn(email: email, password: password) { _ in
-            exp.fulfill()
+        sut.signIn(email: email, password: password) { result in
+            switch result {
+            case .success:
+                exp.fulfill()
+            case .failure:
+                XCTFail("the sign in method should have succeeded")
+            }
         }
         
         wait(for: [exp], timeout: 1.0)
