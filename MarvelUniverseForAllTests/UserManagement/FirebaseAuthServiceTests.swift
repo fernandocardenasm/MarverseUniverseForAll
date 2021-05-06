@@ -97,17 +97,26 @@ class FirebaseAuthServiceTests: XCTestCase {
         deleteAccountsArtifacts()
     }
     
+    private func addAccountInStore(email: String, password: String) {
+        let exp = expectation(description: "waiting for adding account")
+        Auth.auth().createUser(withEmail: email, password: password) { dataResult, error in
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1.0)
+    }
+    
     private func deleteAccountsArtifacts() {
-        let semaphore = DispatchSemaphore(value: 0)
+        let exp = expectation(description: "waiting to delete all accounts artifacts")
         let projectId = FirebaseApp.app()!.options.projectID!
         let url = URL(string: "http://localhost:9099/emulator/v1/projects/\(projectId)/accounts")!
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
         let task = URLSession.shared.dataTask(with: request) { _,_,_ in
             print("Firestore cleared")
-            semaphore.signal()
+            exp.fulfill()
         }
         task.resume()
-        semaphore.wait()
+        
+        wait(for: [exp], timeout: 1.0)
     }
 }
