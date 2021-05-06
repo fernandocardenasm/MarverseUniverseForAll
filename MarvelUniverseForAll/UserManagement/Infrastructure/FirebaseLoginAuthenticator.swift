@@ -9,7 +9,7 @@ import Combine
 import FirebaseAuth
 import Foundation
 
-public class FirebaseAuthenticationLogin: LoginAuthenticator {
+public class FirebaseLoginAuthenticator: LoginAuthenticator {
     
     private let authenticator: Auth
     

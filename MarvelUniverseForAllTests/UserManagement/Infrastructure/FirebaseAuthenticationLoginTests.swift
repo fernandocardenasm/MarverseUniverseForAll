@@ -28,7 +28,7 @@ class FirebaseAuthenticationLoginTests: XCTestCase {
     }
     
     func test_signIn_succeedsOnValidEmailAndPassword() {
-        let sut = FirebaseAuthenticationLogin(authenticator: Auth.auth())
+        let sut = FirebaseLoginAuthenticator(authenticator: Auth.auth())
         
         let email = "signInvalidEmail2@email.com"
         let password = "StrongPassword123"
@@ -49,7 +49,7 @@ class FirebaseAuthenticationLoginTests: XCTestCase {
     }
     
     func test_signIn_failsOnInvalidEmail() {
-        let sut = FirebaseAuthenticationLogin(authenticator: Auth.auth())
+        let sut = FirebaseLoginAuthenticator(authenticator: Auth.auth())
         
         let invalidEmail = "afb.invalid"
         let password = "StrongPassword123"

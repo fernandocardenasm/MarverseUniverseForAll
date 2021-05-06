@@ -44,10 +44,10 @@ class SignInViewModelTests: XCTestCase {
         XCTAssertFalse(sut.isSigningIn)
     }
     
-    func makeSut() -> (SignInViewModel, AuthServiceSpy) {
-        let authService = AuthServiceSpy()
-        let sut = SignInViewModel(authService: authService)
+    func makeSut() -> (SignInViewModel, LoginAuthenticatorSpy) {
+        let loginAuth = LoginAuthenticatorSpy()
+        let sut = SignInViewModel(loginAuthenticator: loginAuth)
         
-        return (sut, authService)
+        return (sut, loginAuth)
     }
 }

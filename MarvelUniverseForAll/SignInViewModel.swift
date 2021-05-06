@@ -14,17 +14,17 @@ public class SignInViewModel: ObservableObject {
     public var signInFinishedSubject = PassthroughSubject<Void, Never>()
     public var skipSignInSubject = PassthroughSubject<Void, Never>()
     
-    private let authService: AuthService
+    private let loginAuthenticator: LoginAuthenticator
     private var cancellables = Set<AnyCancellable>()
     
-    public init(authService: AuthService) {
-        self.authService = authService
+    public init(loginAuthenticator: LoginAuthenticator) {
+        self.loginAuthenticator = loginAuthenticator
     }
     
     public func signIn() {
         isSigningIn = true
         
-        authService.signIn().sink { [weak self] _ in
+        loginAuthenticator.signIn(email: "", password: "").sink { [weak self] _ in
             self?.isSigningIn = false
             self?.signInFinishedSubject.send(())
         } receiveValue: { _ in }

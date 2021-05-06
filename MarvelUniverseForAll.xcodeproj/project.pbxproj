@@ -13,11 +13,11 @@
 		A4544434263B3840009580E6 /* UserManagementCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4544433263B3840009580E6 /* UserManagementCoordinator.swift */; };
 		A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */; };
 		A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970426411758009F0FD8 /* SignInViewModelTests.swift */; };
-		A4729707264122E1009F0FD8 /* AuthServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* AuthServiceSpy.swift */; };
+		A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */; };
 		A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970826412859009F0FD8 /* SignInViewModel.swift */; };
 		A4C61BEB2643F9B4009FF463 /* FirebaseUserCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */; };
 		A4C61BEE2643FC7D009FF463 /* FirebaseAuth+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */; };
-		A4C61BF226440F12009FF463 /* FirebaseAuthenticationLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF126440F12009FF463 /* FirebaseAuthenticationLogin.swift */; };
+		A4C61BF226440F12009FF463 /* FirebaseLoginAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF126440F12009FF463 /* FirebaseLoginAuthenticator.swift */; };
 		A4C61BF426440F6A009FF463 /* FirebaseUserCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF326440F6A009FF463 /* FirebaseUserCreator.swift */; };
 		A4C61BF826443391009FF463 /* LoginAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF726443391009FF463 /* LoginAuthenticator.swift */; };
 		A4C61BFA264433AF009FF463 /* UserCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF9264433AF009FF463 /* UserCreator.swift */; };
@@ -30,8 +30,6 @@
 		A4DD8C0A2637E90600FFC669 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C092637E90600FFC669 /* SignInView.swift */; };
 		A4DD8C0F2637E91600FFC669 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C0E2637E91600FFC669 /* HomeView.swift */; };
 		A4DD8C142637EC6600FFC669 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */; };
-		A4DD8CC126388BE200FFC669 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8CC026388BE200FFC669 /* AuthService.swift */; };
-		A4DD8CC626388C0300FFC669 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8CC526388C0300FFC669 /* FirebaseAuthService.swift */; };
 		A4EB787226417EBC005199BF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A4EB787126417EBC005199BF /* FirebaseAuth */; };
 		A4EB7874264181DB005199BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4EB7873264181DB005199BF /* GoogleService-Info.plist */; };
 		A4EB787626419E2E005199BF /* FirebaseAuthenticationLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */; };
@@ -54,11 +52,11 @@
 		A4544433263B3840009580E6 /* UserManagementCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinator.swift; sourceTree = "<group>"; };
 		A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		A472970426411758009F0FD8 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
-		A4729706264122E1009F0FD8 /* AuthServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceSpy.swift; sourceTree = "<group>"; };
+		A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticatorSpy.swift; sourceTree = "<group>"; };
 		A472970826412859009F0FD8 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserCreatorTests.swift; sourceTree = "<group>"; };
 		A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAuth+Extensions.swift"; sourceTree = "<group>"; };
-		A4C61BF126440F12009FF463 /* FirebaseAuthenticationLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationLogin.swift; sourceTree = "<group>"; };
+		A4C61BF126440F12009FF463 /* FirebaseLoginAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginAuthenticator.swift; sourceTree = "<group>"; };
 		A4C61BF326440F6A009FF463 /* FirebaseUserCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserCreator.swift; sourceTree = "<group>"; };
 		A4C61BF726443391009FF463 /* LoginAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticator.swift; sourceTree = "<group>"; };
 		A4C61BF9264433AF009FF463 /* UserCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreator.swift; sourceTree = "<group>"; };
@@ -75,8 +73,6 @@
 		A4DD8C092637E90600FFC669 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		A4DD8C0E2637E91600FFC669 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		A4DD8CC026388BE200FFC669 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		A4DD8CC526388C0300FFC669 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		A4EB7873264181DB005199BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationLoginTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				A4C61BF326440F6A009FF463 /* FirebaseUserCreator.swift */,
-				A4C61BF126440F12009FF463 /* FirebaseAuthenticationLogin.swift */,
+				A4C61BF126440F12009FF463 /* FirebaseLoginAuthenticator.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -191,7 +187,7 @@
 				A4DD8BEF2637E8A500FFC669 /* Info.plist */,
 				A454442E263B376E009580E6 /* AppCoordinatorTests.swift */,
 				A472970426411758009F0FD8 /* SignInViewModelTests.swift */,
-				A4729706264122E1009F0FD8 /* AuthServiceSpy.swift */,
+				A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */,
 			);
 			path = MarvelUniverseForAllTests;
 			sourceTree = "<group>";
@@ -200,8 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				A4C61BF026440EFA009FF463 /* Infrastructure */,
-				A4DD8CC026388BE200FFC669 /* AuthService.swift */,
-				A4DD8CC526388C0300FFC669 /* FirebaseAuthService.swift */,
 				A4544433263B3840009580E6 /* UserManagementCoordinator.swift */,
 				A4C61BF726443391009FF463 /* LoginAuthenticator.swift */,
 				A4C61BF9264433AF009FF463 /* UserCreator.swift */,
@@ -317,7 +311,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4544434263B3840009580E6 /* UserManagementCoordinator.swift in Sources */,
-				A4DD8CC626388C0300FFC669 /* FirebaseAuthService.swift in Sources */,
 				A4C61BF426440F6A009FF463 /* FirebaseUserCreator.swift in Sources */,
 				A4C61BF826443391009FF463 /* LoginAuthenticator.swift in Sources */,
 				A4544427263B36B4009580E6 /* TabBarView.swift in Sources */,
@@ -326,11 +319,10 @@
 				A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */,
 				A4DD8C0A2637E90600FFC669 /* SignInView.swift in Sources */,
 				A4DD8C0F2637E91600FFC669 /* HomeView.swift in Sources */,
-				A4C61BF226440F12009FF463 /* FirebaseAuthenticationLogin.swift in Sources */,
+				A4C61BF226440F12009FF463 /* FirebaseLoginAuthenticator.swift in Sources */,
 				A4C61BFA264433AF009FF463 /* UserCreator.swift in Sources */,
 				A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */,
 				A4DD8BDB2637E8A400FFC669 /* ContentView.swift in Sources */,
-				A4DD8CC126388BE200FFC669 /* AuthService.swift in Sources */,
 				A40FA5A926413488000BE218 /* UserManagementCoordinatorComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,7 +334,7 @@
 				A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */,
 				A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */,
 				A4EB787626419E2E005199BF /* FirebaseAuthenticationLoginTests.swift in Sources */,
-				A4729707264122E1009F0FD8 /* AuthServiceSpy.swift in Sources */,
+				A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */,
 				A4C61BEB2643F9B4009FF463 /* FirebaseUserCreatorTests.swift in Sources */,
 				A4C61BEE2643FC7D009FF463 /* FirebaseAuth+Extensions.swift in Sources */,
 				A454442F263B376E009580E6 /* AppCoordinatorTests.swift in Sources */,
