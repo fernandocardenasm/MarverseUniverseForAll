@@ -59,6 +59,26 @@ class FirebaseAuthenticationLoginTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
+    func test_signIn_failsOnInvalidEmail() {
+        let sut = FirebaseAuthenticationLogin(authenticator: Auth.auth())
+        
+        let invalidEmail = "afb.invalid"
+        let password = "StrongPassword123"
+        
+        let exp = expectation(description: "waiting for signing in user")
+        
+        sut.signIn(email: invalidEmail, password: password) { result in
+            switch result {
+            case .success:
+                XCTFail("the sign in method should have failed with the invalid email :\(invalidEmail)")
+            case .failure:
+                exp.fulfill()
+            }
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
     // MARK: - Helpers
     
     private func setupLocalEmulator() {
