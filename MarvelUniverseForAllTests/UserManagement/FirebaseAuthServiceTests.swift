@@ -33,6 +33,7 @@ class FirebaseAuthServiceTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
+        setupLocalEmulator()
         setupEmptyAccountsStoreState()
     }
     
@@ -43,8 +44,6 @@ class FirebaseAuthServiceTests: XCTestCase {
     }
     
     func test_signIn_onSuccess() {
-        Auth.auth().useEmulator(withHost: "localhost", port: 9099)
-        
         let sut = FirebaseAuthService(authenticator: Auth.auth())
         
         let email = "signInvalidEmail2@email.com"
@@ -62,12 +61,16 @@ class FirebaseAuthServiceTests: XCTestCase {
     
     // MARK: - Helpers
     
+    private func setupLocalEmulator() {
+        Auth.auth().useEmulator(withHost: "localhost", port: 9099)
+    }
+    
     private func setupEmptyAccountsStoreState() {
-        deleteAccountsArtifacts()
+        Auth.deleteAccountsArtifacts()
     }
     
     private func undoAccountsStoreSideEffects() {
-        deleteAccountsArtifacts()
+        Auth.deleteAccountsArtifacts()
     }
     
     private func addAccountInStore(email: String, password: String) {
@@ -75,21 +78,6 @@ class FirebaseAuthServiceTests: XCTestCase {
         Auth.auth().createUser(withEmail: email, password: password) { dataResult, error in
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 1.0)
-    }
-    
-    private func deleteAccountsArtifacts() {
-        let exp = expectation(description: "waiting to delete all accounts artifacts")
-        let projectId = FirebaseApp.app()!.options.projectID!
-        let url = URL(string: "http://localhost:9099/emulator/v1/projects/\(projectId)/accounts")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "DELETE"
-        let task = URLSession.shared.dataTask(with: request) { _,_,_ in
-            print("Firestore cleared")
-            exp.fulfill()
-        }
-        task.resume()
-        
         wait(for: [exp], timeout: 1.0)
     }
 }
