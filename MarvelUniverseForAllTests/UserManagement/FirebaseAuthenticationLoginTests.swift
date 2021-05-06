@@ -9,7 +9,7 @@ import Firebase
 import MarvelUniverseForAll
 import XCTest
 
-class FirebaseAuthService {
+class FirebaseAuthenticationLogin {
     
     private let authenticator: Auth
     
@@ -28,7 +28,7 @@ class FirebaseAuthService {
     }
 }
 
-class FirebaseAuthServiceTests: XCTestCase {
+class FirebaseAuthenticationLoginTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -44,7 +44,7 @@ class FirebaseAuthServiceTests: XCTestCase {
     }
     
     func test_signIn_onSuccess() {
-        let sut = FirebaseAuthService(authenticator: Auth.auth())
+        let sut = FirebaseAuthenticationLogin(authenticator: Auth.auth())
         
         let email = "signInvalidEmail2@email.com"
         let password = "StrongPassword123"

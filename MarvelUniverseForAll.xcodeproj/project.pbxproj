@@ -30,7 +30,7 @@
 		A4DD8CC626388C0300FFC669 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8CC526388C0300FFC669 /* FirebaseAuthService.swift */; };
 		A4EB787226417EBC005199BF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A4EB787126417EBC005199BF /* FirebaseAuth */; };
 		A4EB7874264181DB005199BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4EB7873264181DB005199BF /* GoogleService-Info.plist */; };
-		A4EB787626419E2E005199BF /* FirebaseAuthServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB787526419E2E005199BF /* FirebaseAuthServiceTests.swift */; };
+		A4EB787626419E2E005199BF /* FirebaseAuthenticationLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,7 @@
 		A4DD8CC026388BE200FFC669 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A4DD8CC526388C0300FFC669 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		A4EB7873264181DB005199BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A4EB787526419E2E005199BF /* FirebaseAuthServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthServiceTests.swift; sourceTree = "<group>"; };
+		A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationLoginTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 			children = (
 				A4C61BEC2643FAD1009FF463 /* Helpers */,
 				A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */,
-				A4EB787526419E2E005199BF /* FirebaseAuthServiceTests.swift */,
+				A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */,
 				A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */,
 			);
 			path = UserManagement;
@@ -309,7 +309,7 @@
 			files = (
 				A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */,
 				A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */,
-				A4EB787626419E2E005199BF /* FirebaseAuthServiceTests.swift in Sources */,
+				A4EB787626419E2E005199BF /* FirebaseAuthenticationLoginTests.swift in Sources */,
 				A4729707264122E1009F0FD8 /* AuthServiceSpy.swift in Sources */,
 				A4C61BEB2643F9B4009FF463 /* FirebaseUserCreatorTests.swift in Sources */,
 				A4C61BEE2643FC7D009FF463 /* FirebaseAuth+Extensions.swift in Sources */,
