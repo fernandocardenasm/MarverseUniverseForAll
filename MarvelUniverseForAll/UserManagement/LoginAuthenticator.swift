@@ -8,6 +8,6 @@
 import Combine
 import Foundation
 
-public protocol AuthenticationLogin {
+public protocol LoginAuthenticator {
     func signIn(email: String, password: String) -> AnyPublisher<Void, Error>
 }

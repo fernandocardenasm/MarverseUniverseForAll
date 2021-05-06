@@ -19,7 +19,7 @@
 		A4C61BEE2643FC7D009FF463 /* FirebaseAuth+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */; };
 		A4C61BF226440F12009FF463 /* FirebaseAuthenticationLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF126440F12009FF463 /* FirebaseAuthenticationLogin.swift */; };
 		A4C61BF426440F6A009FF463 /* FirebaseUserCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF326440F6A009FF463 /* FirebaseUserCreator.swift */; };
-		A4C61BF826443391009FF463 /* AuthenticationLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF726443391009FF463 /* AuthenticationLogin.swift */; };
+		A4C61BF826443391009FF463 /* LoginAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF726443391009FF463 /* LoginAuthenticator.swift */; };
 		A4C61BFA264433AF009FF463 /* UserCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF9264433AF009FF463 /* UserCreator.swift */; };
 		A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */; };
 		A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */; };
@@ -60,7 +60,7 @@
 		A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAuth+Extensions.swift"; sourceTree = "<group>"; };
 		A4C61BF126440F12009FF463 /* FirebaseAuthenticationLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationLogin.swift; sourceTree = "<group>"; };
 		A4C61BF326440F6A009FF463 /* FirebaseUserCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserCreator.swift; sourceTree = "<group>"; };
-		A4C61BF726443391009FF463 /* AuthenticationLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationLogin.swift; sourceTree = "<group>"; };
+		A4C61BF726443391009FF463 /* LoginAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticator.swift; sourceTree = "<group>"; };
 		A4C61BF9264433AF009FF463 /* UserCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreator.swift; sourceTree = "<group>"; };
 		A4DD8BD32637E8A400FFC669 /* MarvelUniverseForAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelUniverseForAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 				A4DD8CC026388BE200FFC669 /* AuthService.swift */,
 				A4DD8CC526388C0300FFC669 /* FirebaseAuthService.swift */,
 				A4544433263B3840009580E6 /* UserManagementCoordinator.swift */,
-				A4C61BF726443391009FF463 /* AuthenticationLogin.swift */,
+				A4C61BF726443391009FF463 /* LoginAuthenticator.swift */,
 				A4C61BF9264433AF009FF463 /* UserCreator.swift */,
 			);
 			path = UserManagement;
@@ -319,7 +319,7 @@
 				A4544434263B3840009580E6 /* UserManagementCoordinator.swift in Sources */,
 				A4DD8CC626388C0300FFC669 /* FirebaseAuthService.swift in Sources */,
 				A4C61BF426440F6A009FF463 /* FirebaseUserCreator.swift in Sources */,
-				A4C61BF826443391009FF463 /* AuthenticationLogin.swift in Sources */,
+				A4C61BF826443391009FF463 /* LoginAuthenticator.swift in Sources */,
 				A4544427263B36B4009580E6 /* TabBarView.swift in Sources */,
 				A4DD8C142637EC6600FFC669 /* AppCoordinator.swift in Sources */,
 				A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */,
