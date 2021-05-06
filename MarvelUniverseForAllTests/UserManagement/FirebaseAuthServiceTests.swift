@@ -10,7 +10,7 @@ import Firebase
 import MarvelUniverseForAll
 import XCTest
 
-class FirebaseAuthService: AuthService {
+class FirebaseAuthService {
     
     private let authenticator: Auth
     
@@ -18,8 +18,10 @@ class FirebaseAuthService: AuthService {
         self.authenticator = authenticator
     }
     
-    func signIn() -> AnyPublisher<Void, Never> {
-        Just(()).eraseToAnyPublisher()
+    func signIn(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        authenticator.signIn(withEmail: email, password: password) { authResult, error in
+            completion(.success(()))
+        }
     }
     
     func createUser(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
@@ -47,6 +49,24 @@ class FirebaseAuthServiceTests: XCTestCase {
         super.tearDown()
         
         undoAccountsStoreSideEffects()
+    }
+    
+    func test_signIn_onSuccess() {
+        Auth.auth().useEmulator(withHost: "localhost", port: 9099)
+        
+        let sut = FirebaseAuthService(authenticator: Auth.auth())
+        
+        let email = "signInvalidEmail2@email.com"
+        let password = "StrongPassword123"
+        addAccountInStore(email: email, password: password)
+        
+        let exp = expectation(description: "waiting for creating user")
+        
+        sut.signIn(email: email, password: password) { _ in
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
     }
     
     func test_createUser_onSuccess() {
