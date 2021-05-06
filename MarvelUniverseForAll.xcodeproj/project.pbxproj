@@ -95,10 +95,8 @@
 		A4729701264018F1009F0FD8 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
-				A4C61BEC2643FAD1009FF463 /* Helpers */,
+				A4C61BEF26440DCB009FF463 /* Infrastructure */,
 				A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */,
-				A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */,
-				A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */,
 			);
 			path = UserManagement;
 			sourceTree = "<group>";
@@ -109,6 +107,16 @@
 				A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A4C61BEF26440DCB009FF463 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				A4C61BEC2643FAD1009FF463 /* Helpers */,
+				A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */,
+				A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		A4DD8BCA2637E8A400FFC669 = {
