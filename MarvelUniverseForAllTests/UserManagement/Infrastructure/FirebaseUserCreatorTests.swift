@@ -9,27 +9,10 @@ import Firebase
 import MarvelUniverseForAll
 import XCTest
 
-class FirebaseUserCreator {
-    private let authenticator: Auth
-    
-    init(authenticator: Auth) {
-        self.authenticator = authenticator
-    }
-    
-    func createUser(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
-        authenticator.createUser(withEmail: email, password: password) { dataResult, error in
-            if let error = error {
-                completion(.failure(error))
-                print("Error: \(error)")
-            } else if let dataResult = dataResult {
-                completion(.success(dataResult.user.uid))
-                print("DataResult: \(dataResult.user.uid)")
-            }
-        }
-    }
-}
+
 
 class FirebaseUserCreatorTests: XCTestCase {
+    
     override func setUp() {
         super.setUp()
         
