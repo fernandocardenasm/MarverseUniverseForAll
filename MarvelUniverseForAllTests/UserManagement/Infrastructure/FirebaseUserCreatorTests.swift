@@ -5,13 +5,14 @@
 //  Created by Fernando Cardenas on 06.05.21.
 //
 
+import Combine
 import Firebase
 import MarvelUniverseForAll
 import XCTest
 
-
-
 class FirebaseUserCreatorTests: XCTestCase {
+    
+    private var cancellables = Set<AnyCancellable>()
     
     override func setUp() {
         super.setUp()
@@ -30,14 +31,10 @@ class FirebaseUserCreatorTests: XCTestCase {
         let sut = FirebaseUserCreator(authenticator: Auth.auth())
         
         let exp = expectation(description: "waiting for creating user")
-        sut.createUser(email: "validEmail2@email.com", password: "StrongPassword123") { result in
-            switch result {
-            case .success:
-                exp.fulfill()
-            case .failure:
-                XCTFail("create user should not fail")
-            }
-        }
+        sut.createUser(email: "validEmail2@email.com", password: "StrongPassword123").sink { _ in
+            exp.fulfill()
+        } receiveValue: { _ in }
+        .store(in: &cancellables)
         
         wait(for: [exp], timeout: 1.0)
     }
