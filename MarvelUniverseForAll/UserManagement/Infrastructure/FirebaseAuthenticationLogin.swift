@@ -5,10 +5,11 @@
 //  Created by Fernando Cardenas on 06.05.21.
 //
 
+import Combine
 import FirebaseAuth
 import Foundation
 
-public class FirebaseAuthenticationLogin {
+public class FirebaseAuthenticationLogin: AuthenticationLogin {
     
     private let authenticator: Auth
     
@@ -16,13 +17,17 @@ public class FirebaseAuthenticationLogin {
         self.authenticator = authenticator
     }
     
-    public func signIn(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        authenticator.signIn(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                completion(.failure(error))
-            } else if let _ = authResult {
-                completion(.success(()))
+    public func signIn(email: String, password: String) -> AnyPublisher<Void, Error> {
+        Deferred {
+            Future { [weak self] promise in
+                self?.authenticator.signIn(withEmail: email, password: password) { authResult, error in
+                    if let error = error {
+                        promise(.failure(error))
+                    } else if let _ = authResult {
+                        promise(.success(()))
+                    }
+                }
             }
-        }
+        }.eraseToAnyPublisher()
     }
 }

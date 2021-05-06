@@ -27,12 +27,16 @@ class FirebaseUserCreatorTests: XCTestCase {
         undoAccountsStoreSideEffects()
     }
     
-    func test_createUser_onSuccess() {
+    func test_createUser_succeedsOnValidEmailAndPassword() {
         let sut = FirebaseUserCreator(authenticator: Auth.auth())
         
         let exp = expectation(description: "waiting for creating user")
-        sut.createUser(email: "validEmail2@email.com", password: "StrongPassword123").sink { _ in
-            exp.fulfill()
+        sut.createUser(email: "validEmail2@email.com", password: "StrongPassword123").sink { result in
+            if case .finished = result {
+                exp.fulfill()
+            } else {
+                XCTFail("the creation of a user should have succeeded")
+            }
         } receiveValue: { _ in }
         .store(in: &cancellables)
         

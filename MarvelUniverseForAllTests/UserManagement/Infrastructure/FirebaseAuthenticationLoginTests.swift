@@ -5,11 +5,14 @@
 //  Created by Fernando Cardenas on 04.05.21.
 //
 
+import Combine
 import Firebase
 import MarvelUniverseForAll
 import XCTest
 
 class FirebaseAuthenticationLoginTests: XCTestCase {
+    
+    private var cancellables = Set<AnyCancellable>()
     
     override func setUp() {
         super.setUp()
@@ -33,14 +36,14 @@ class FirebaseAuthenticationLoginTests: XCTestCase {
         
         let exp = expectation(description: "waiting for signing in user")
         
-        sut.signIn(email: email, password: password) { result in
-            switch result {
-            case .success:
+        sut.signIn(email: email, password: password).sink { result in
+            if case .finished = result {
                 exp.fulfill()
-            case .failure:
+            } else {
                 XCTFail("the sign in method should have succeeded")
             }
-        }
+        } receiveValue: { _ in }
+        .store(in: &cancellables)
         
         wait(for: [exp], timeout: 1.0)
     }
@@ -53,14 +56,14 @@ class FirebaseAuthenticationLoginTests: XCTestCase {
         
         let exp = expectation(description: "waiting for signing in user")
         
-        sut.signIn(email: invalidEmail, password: password) { result in
-            switch result {
-            case .success:
-                XCTFail("the sign in method should have failed with the invalid email :\(invalidEmail)")
-            case .failure:
+        sut.signIn(email: invalidEmail, password: password).sink { result in
+            if case .failure = result {
                 exp.fulfill()
+            } else {
+                XCTFail("the sign in method should have failed with the invalid email :\(invalidEmail)")
             }
-        }
+        } receiveValue: { _ in }
+        .store(in: &cancellables)
         
         wait(for: [exp], timeout: 1.0)
     }
