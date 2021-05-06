@@ -18,9 +18,9 @@ extension Auth {
         request.httpMethod = "DELETE"
         let task = URLSession.shared.dataTask(with: request) { _, _, error in
             if let error = error {
-                fatalError("\(#function) 🕒 completed with Error: \(error). Make sure the emulator is running")
+                fatalError("❌ \(#function) completed with Error: \(error). Make sure the emulator is running")
             }
-            print("Accounts were deleted successfully")
+            print("✅ Accounts were deleted successfully")
             semaphore.signal()
         }
         task.resume()
@@ -30,7 +30,7 @@ extension Auth {
         case .success:
             break
         case .timedOut:
-            fatalError("\(#function) 🕒 Timedout. Make sure the emulator is running")
+            fatalError("❌ \(#function) 🕒 Timedout. Make sure the emulator is running")
         }
     }
 }
