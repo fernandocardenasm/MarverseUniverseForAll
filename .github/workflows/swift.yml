@@ -29,6 +29,9 @@ jobs:
     
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
+
+    - name: Install dependencies
+      run: bundle install
       
-    - name: Build and Test Fastlane
+    - name: Build and Test
       run: bundle exec faslane tests
