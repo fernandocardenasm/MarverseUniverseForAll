@@ -33,12 +33,10 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6
+        ruby-version: 2.7.2
 
     - name: Install dependencies
-      run: |
-        bundle config path vendor/bundle
-        bundle install
-
+      run: bundle install
+      
     - name: Build and Test
       run: bundle exec faslane tests
