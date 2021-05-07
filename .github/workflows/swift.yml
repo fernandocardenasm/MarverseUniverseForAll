@@ -39,3 +39,5 @@ jobs:
       uses: maierj/fastlane-action@v2.0.1
       with:
         lane: 'tests'
+        bundle-install-path: 'vendor/bundle'
+      timeout-minutes: 10
