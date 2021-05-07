@@ -35,8 +35,7 @@ jobs:
       with:
         ruby-version: 2.7.2
 
-    - name: Install dependencies
-      run: bundle install
-      
-    - name: Build and Test
-      run: bundle exec faslane tests
+    - name: Fastlane Tests
+    - uses: maierj/fastlane-action@v2.0.1
+      with:
+        lane: 'tests'
