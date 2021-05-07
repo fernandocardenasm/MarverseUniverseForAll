@@ -24,16 +24,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+    
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app
     
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
-
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.6
 
     - name: Install dependencies
       run: bundle install
