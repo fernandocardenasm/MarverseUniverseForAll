@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A401CC6326498A350070118A /* UserManagementEndtoEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401CC6226498A350070118A /* UserManagementEndtoEndTests.swift */; };
 		A401CC6B26498A7B0070118A /* FirebaseUserCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */; };
 		A401CC6C26498A810070118A /* FirebaseAuthenticationLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */; };
 		A401CC6D26498A860070118A /* FirebaseAuth+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */; };
@@ -55,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		A401CC6026498A350070118A /* UserManagementEndtoEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserManagementEndtoEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A401CC6226498A350070118A /* UserManagementEndtoEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementEndtoEndTests.swift; sourceTree = "<group>"; };
 		A401CC6426498A350070118A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A40FA5A826413488000BE218 /* UserManagementCoordinatorComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorComposer.swift; sourceTree = "<group>"; };
 		A4544426263B36B4009580E6 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				A4C61BEF26440DCB009FF463 /* Infrastructure */,
-				A401CC6226498A350070118A /* UserManagementEndtoEndTests.swift */,
 				A401CC6426498A350070118A /* Info.plist */,
 			);
 			path = UserManagementEndtoEndTests;
@@ -394,7 +391,6 @@
 				A401CC6C26498A810070118A /* FirebaseAuthenticationLoginTests.swift in Sources */,
 				A401CC6B26498A7B0070118A /* FirebaseUserCreatorTests.swift in Sources */,
 				A401CC6D26498A860070118A /* FirebaseAuth+Extensions.swift in Sources */,
-				A401CC6326498A350070118A /* UserManagementEndtoEndTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
