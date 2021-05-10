@@ -21,13 +21,16 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
     
     private var navController: UINavigationController?
     private let signInViewController: UIHostingController<SignInView>
+    private let signUpViewController: UIHostingController<SignUpView>
     
     private lazy var signInViewModel: SignInViewModel = {
         signInViewController.rootView.viewModel
     }()
     
-    public init(signInViewController: UIHostingController<SignInView>) {
+    public init(signInViewController: UIHostingController<SignInView>,
+                signUpViewController: UIHostingController<SignUpView>) {
         self.signInViewController = signInViewController
+        self.signUpViewController = signUpViewController
     }
     
     public func start(navController: UINavigationController) {
@@ -40,12 +43,24 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
             self?.finishedSubject.send(completion: .finished)
         }.store(in: &cancellables)
         
+        signInViewModel.startSignUpSubject.sink { [weak self] in
+            self?.showSignUpView()
+        }.store(in: &cancellables)
+        
         signInViewModel.skipSignInSubject.sink { [weak self] _ in
+            self?.finishedSubject.send(completion: .finished)
+        }.store(in: &cancellables)
+        
+        signUpViewController.rootView.viewModel.signUpFinishedSubject.sink { [weak self] in
             self?.finishedSubject.send(completion: .finished)
         }.store(in: &cancellables)
     }
     
     public func finished() -> AnyPublisher<Void, Never> {
         finishedSubject.eraseToAnyPublisher()
+    }
+    
+    private func showSignUpView() {
+        navController?.pushViewController(signUpViewController, animated: true)
     }
 }

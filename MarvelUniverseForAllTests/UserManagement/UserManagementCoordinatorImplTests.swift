@@ -7,9 +7,9 @@
 
 import Combine
 import Foundation
-import MarvelUniverseForAll
 import SwiftUI
 import XCTest
+@testable import MarvelUniverseForAll
 
 class UserManagementCoordinatorImplTests: XCTestCase {
     
@@ -66,7 +66,11 @@ private extension UserManagementCoordinatorImplTests {
     func makeSut() -> (UserManagementCoordinator, UIHostingController<SignInView>) {
         let loginAuthenticator = LoginAuthenticatorSpy()
         let signInViewController = makeSignInViewController(loginAuthenticator: loginAuthenticator)
-        let sut = UserManagementCoordinatorImpl(signInViewController: signInViewController)
+        
+        let userCreator = UserCreatorSpy()
+        let signUpViewController = makeSignUpViewController(userCreator: userCreator)
+        let sut = UserManagementCoordinatorImpl(signInViewController: signInViewController,
+                                                signUpViewController: signUpViewController)
         
         return (sut, signInViewController)
     }
@@ -74,6 +78,13 @@ private extension UserManagementCoordinatorImplTests {
     func makeSignInViewController(loginAuthenticator: LoginAuthenticator) -> UIHostingController<SignInView> {
         let viewModel = SignInViewModel(loginAuthenticator: loginAuthenticator)
         let signInView = SignInView(viewModel: viewModel)
+        
+        return UIHostingController(rootView: signInView)
+    }
+    
+    func makeSignUpViewController(userCreator: UserCreator) -> UIHostingController<SignUpView> {
+        let viewModel = SignUpViewModel(userCreator: userCreator)
+        let signInView = SignUpView(viewModel: viewModel)
         
         return UIHostingController(rootView: signInView)
     }
