@@ -22,7 +22,8 @@ platform :ios do
       scheme: "MarvelUniverseForAll",
       configuration: "Debug",
       clean: true,
-      device: "iPhone 12 (14.4)"
+      device: "iPhone 12 (14.4)",
+      cloned_source_packages_path: ".build"
     )
   end
 end
