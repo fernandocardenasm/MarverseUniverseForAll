@@ -32,7 +32,7 @@ jobs:
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
 
-    - name: Set up Ruby
+    - name: Set up Ruby, Install and cache Dependencies
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7.2
