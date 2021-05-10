@@ -64,15 +64,15 @@ class UserManagementCoordinatorImplTests: XCTestCase {
 
 private extension UserManagementCoordinatorImplTests {
     func makeSut() -> (UserManagementCoordinator, UIHostingController<SignInView>) {
-        let authService = AuthServiceSpy()
-        let signInViewController = makeSignInViewController(authService: authService)
+        let loginAuthenticator = LoginAuthenticatorSpy()
+        let signInViewController = makeSignInViewController(loginAuthenticator: loginAuthenticator)
         let sut = UserManagementCoordinatorImpl(signInViewController: signInViewController)
         
         return (sut, signInViewController)
     }
     
-    func makeSignInViewController(authService: AuthService) -> UIHostingController<SignInView> {
-        let viewModel = SignInViewModel(authService: authService)
+    func makeSignInViewController(loginAuthenticator: LoginAuthenticator) -> UIHostingController<SignInView> {
+        let viewModel = SignInViewModel(loginAuthenticator: loginAuthenticator)
         let signInView = SignInView(viewModel: viewModel)
         
         return UIHostingController(rootView: signInView)
