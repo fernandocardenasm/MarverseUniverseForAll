@@ -10,6 +10,7 @@ import FirebaseAuth
 
 public class FirebaseUserCreator: UserCreator {
     
+    
     private let authenticator: Auth
     
     public init(authenticator: Auth) {
