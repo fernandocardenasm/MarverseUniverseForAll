@@ -13,49 +13,43 @@ public class SignUpViewModel: ObservableObject {
     // Input
     @Published var email = ""
     @Published var password = ""
-    @Published var buttonPressed = false
 
-    // Oupt
-    @Published var buttonEnabled = false
-    @Published var signUpSuccess = false
-    
+    // Output
+    @Published var signingUpButtonEnabled = false
+    @Published var isSigningUp = false
+
     public var signUpFinishedSubject = PassthroughSubject<Void, Never>()
 
+    // Private
     private let userCreator: UserCreator
     private var cancellableSet: Set<AnyCancellable> = []
     
     public init(userCreator: UserCreator) {
         self.userCreator = userCreator
         // Setup isValid
-        Publishers.CombineLatest(areFieldsValidPublisher(), $buttonPressed).receive(on: RunLoop.main)
+        Publishers.CombineLatest(areFieldsValidPublisher(), $isSigningUp).receive(on: RunLoop.main)
             .map { fieldsValid, pressed in
                 fieldsValid && !pressed
             }
-            .assign(to: \.buttonEnabled, on: self)
+            .assign(to: \.signingUpButtonEnabled, on: self)
             .store(in: &cancellableSet)
-        
-        $buttonPressed.sink { [weak self] pressed in
-            guard pressed else { return }
-            
-            self?.signup()
-        }
-        .store(in: &cancellableSet)
     }
 
     func signup() {
+        isSigningUp = true
+        
         userCreator.createUser(email: email.lowercased(), password: password)
             .subscribe(on: DispatchQueue.global())
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [weak self] result in
                 switch result {
                 case .finished:
-                    self?.signUpSuccess = true
+                    self?.isSigningUp = false
                     self?.signUpFinishedSubject.send(())
                 case .failure(let error):
-                    self?.signUpSuccess = false
+                    self?.isSigningUp = false
                     print("SignUp - Error: \(error)")
                 }
-                self?.buttonPressed = false
             },
             receiveValue: { _ in })
             .store(in: &cancellableSet)

@@ -29,14 +29,14 @@ public struct SignUpView: View {
             Button("Sign Up") {
                 viewModel.signup()
             }.frame(minWidth: 0, maxWidth: .infinity, maxHeight: 40).background(Color.marvelBlue)
-                .opacity(viewModel.buttonEnabled ? 1 : 0.3)
+                .opacity(viewModel.signingUpButtonEnabled ? 1 : 0.3)
             .foregroundColor(.white)
             .cornerRadius(40)
             .padding(.vertical, 10)
             .padding(.horizontal, 60)
-            .disabled(!viewModel.buttonEnabled)
+            .disabled(!viewModel.signingUpButtonEnabled)
 
-            ActivityIndicator(shouldAnimate: $viewModel.buttonPressed)
+            ActivityIndicator(shouldAnimate: $viewModel.isSigningUp)
 
             Button("Dismiss") {
                 viewModel.signUpFinishedSubject.send(())
@@ -45,8 +45,5 @@ public struct SignUpView: View {
             Spacer()
         }
         .background(Color.red)
-        .onReceive(viewModel.$signUpSuccess) { success in
-            guard success else { return }
-        }
     }
 }
