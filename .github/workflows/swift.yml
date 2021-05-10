@@ -38,5 +38,13 @@ jobs:
         ruby-version: 2.7.2
         bundler-cache: true
 
+    - name: Cache SPM
+    - uses: actions/cache@v2
+      with:
+        path: .build
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-spm-
+
     - name: Build and Test
       run: bundle exec fastlane tests
