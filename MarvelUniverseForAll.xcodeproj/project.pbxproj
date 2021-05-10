@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A401CC6B26498A7B0070118A /* FirebaseUserCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */; };
+		A401CC6C26498A810070118A /* FirebaseAuthenticationLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */; };
+		A401CC6D26498A860070118A /* FirebaseAuth+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */; };
 		A40FA5A926413488000BE218 /* UserManagementCoordinatorComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40FA5A826413488000BE218 /* UserManagementCoordinatorComposer.swift */; };
 		A4544427263B36B4009580E6 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4544426263B36B4009580E6 /* TabBarView.swift */; };
 		A454442F263B376E009580E6 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A454442E263B376E009580E6 /* AppCoordinatorTests.swift */; };
@@ -15,8 +18,6 @@
 		A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970426411758009F0FD8 /* SignInViewModelTests.swift */; };
 		A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */; };
 		A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970826412859009F0FD8 /* SignInViewModel.swift */; };
-		A4C61BEB2643F9B4009FF463 /* FirebaseUserCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */; };
-		A4C61BEE2643FC7D009FF463 /* FirebaseAuth+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */; };
 		A4C61BF226440F12009FF463 /* FirebaseLoginAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF126440F12009FF463 /* FirebaseLoginAuthenticator.swift */; };
 		A4C61BF426440F6A009FF463 /* FirebaseUserCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF326440F6A009FF463 /* FirebaseUserCreator.swift */; };
 		A4C61BF826443391009FF463 /* LoginAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF726443391009FF463 /* LoginAuthenticator.swift */; };
@@ -33,10 +34,16 @@
 		A4DD8C142637EC6600FFC669 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */; };
 		A4EB787226417EBC005199BF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A4EB787126417EBC005199BF /* FirebaseAuth */; };
 		A4EB7874264181DB005199BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4EB7873264181DB005199BF /* GoogleService-Info.plist */; };
-		A4EB787626419E2E005199BF /* FirebaseAuthenticationLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A401CC6526498A350070118A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4DD8BCB2637E8A400FFC669 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4DD8BD22637E8A400FFC669;
+			remoteInfo = MarvelUniverseForAll;
+		};
 		A4DD8BEA2637E8A500FFC669 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A4DD8BCB2637E8A400FFC669 /* Project object */;
@@ -47,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A401CC6026498A350070118A /* UserManagementEndtoEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserManagementEndtoEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A401CC6426498A350070118A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A40FA5A826413488000BE218 /* UserManagementCoordinatorComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorComposer.swift; sourceTree = "<group>"; };
 		A4544426263B36B4009580E6 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		A454442E263B376E009580E6 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
@@ -80,6 +89,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A401CC5D26498A350070118A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4DD8BD02637E8A400FFC669 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,10 +114,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A4729701264018F1009F0FD8 /* UserManagement */ = {
+		A401CC6126498A350070118A /* UserManagementEndtoEndTests */ = {
 			isa = PBXGroup;
 			children = (
 				A4C61BEF26440DCB009FF463 /* Infrastructure */,
+				A401CC6426498A350070118A /* Info.plist */,
+			);
+			path = UserManagementEndtoEndTests;
+			sourceTree = "<group>";
+		};
+		A4729701264018F1009F0FD8 /* UserManagement */ = {
+			isa = PBXGroup;
+			children = (
 				A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */,
 			);
 			path = UserManagement;
@@ -147,6 +171,7 @@
 			children = (
 				A4DD8BD52637E8A400FFC669 /* MarvelUniverseForAll */,
 				A4DD8BEC2637E8A500FFC669 /* MarvelUniverseForAllTests */,
+				A401CC6126498A350070118A /* UserManagementEndtoEndTests */,
 				A4DD8BD42637E8A400FFC669 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -156,6 +181,7 @@
 			children = (
 				A4DD8BD32637E8A400FFC669 /* MarvelUniverseForAll.app */,
 				A4DD8BE92637E8A500FFC669 /* MarvelUniverseForAllTests.xctest */,
+				A401CC6026498A350070118A /* UserManagementEndtoEndTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,6 +243,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A401CC5F26498A350070118A /* UserManagementEndtoEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A401CC6926498A350070118A /* Build configuration list for PBXNativeTarget "UserManagementEndtoEndTests" */;
+			buildPhases = (
+				A401CC5C26498A350070118A /* Sources */,
+				A401CC5D26498A350070118A /* Frameworks */,
+				A401CC5E26498A350070118A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A401CC6626498A350070118A /* PBXTargetDependency */,
+			);
+			name = UserManagementEndtoEndTests;
+			productName = UserManagementEndtoEndTests;
+			productReference = A401CC6026498A350070118A /* UserManagementEndtoEndTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A4DD8BD22637E8A400FFC669 /* MarvelUniverseForAll */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4DD8BFD2637E8A500FFC669 /* Build configuration list for PBXNativeTarget "MarvelUniverseForAll" */;
@@ -224,6 +268,7 @@
 				A4DD8BCF2637E8A400FFC669 /* Sources */,
 				A4DD8BD02637E8A400FFC669 /* Frameworks */,
 				A4DD8BD12637E8A400FFC669 /* Resources */,
+				A401CC73264994570070118A /* Disable ATS for LocalHost Tests */,
 			);
 			buildRules = (
 			);
@@ -261,9 +306,13 @@
 		A4DD8BCB2637E8A400FFC669 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					A401CC5F26498A350070118A = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = A4DD8BD22637E8A400FFC669;
+					};
 					A4DD8BD22637E8A400FFC669 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -291,11 +340,19 @@
 			targets = (
 				A4DD8BD22637E8A400FFC669 /* MarvelUniverseForAll */,
 				A4DD8BE82637E8A500FFC669 /* MarvelUniverseForAllTests */,
+				A401CC5F26498A350070118A /* UserManagementEndtoEndTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A401CC5E26498A350070118A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4DD8BD12637E8A400FFC669 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -317,7 +374,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A401CC73264994570070118A /* Disable ATS for LocalHost Tests */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Disable ATS for LocalHost Tests";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nINFO_PLIST=\"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\nPLISTBUDDY=\"/usr/libexec/PlistBuddy\"\n\nif [ \"${CONFIGURATION}\" == \"LocalhostTests\" ]; then\n    $PLISTBUDDY -c \"Add :NSAppTransportSecurity dict\" \"${INFO_PLIST}\" || true\n    $PLISTBUDDY -c \"Add :NSAppTransportSecurity:NSAllowsArbitraryLoads bool true\" \"${INFO_PLIST}\" || true\n    $PLISTBUDDY -c \"Set :NSAppTransportSecurity:NSAllowsArbitraryLoads true\" \"${INFO_PLIST}\"\nelse\n    $PLISTBUDDY -c \"Delete :NSAppTransportSecurity:NSAllowsArbitraryLoads\" \"${INFO_PLIST}\" || true\nfi\n\nALLOWS_ARBITRARY_LOADS_ENABLED=$($PLISTBUDDY -c \"Print :NSAppTransportSecurity:NSAllowsArbitraryLoads\" \"${INFO_PLIST}\")\nif [ \"${ALLOWS_ARBITRARY_LOADS_ENABLED}\" == \"true\" ]; then\n  echo \"warning: ATS is disbaled. :NSAppTransportSecurity:NSAllowsArbitraryLoads set to true. This is insecure and should not be used in release builds.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		A401CC5C26498A350070118A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A401CC6C26498A810070118A /* FirebaseAuthenticationLoginTests.swift in Sources */,
+				A401CC6B26498A7B0070118A /* FirebaseUserCreatorTests.swift in Sources */,
+				A401CC6D26498A860070118A /* FirebaseAuth+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4DD8BCF2637E8A400FFC669 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,10 +433,7 @@
 			files = (
 				A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */,
 				A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */,
-				A4EB787626419E2E005199BF /* FirebaseAuthenticationLoginTests.swift in Sources */,
 				A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */,
-				A4C61BEB2643F9B4009FF463 /* FirebaseUserCreatorTests.swift in Sources */,
-				A4C61BEE2643FC7D009FF463 /* FirebaseAuth+Extensions.swift in Sources */,
 				A454442F263B376E009580E6 /* AppCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +441,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A401CC6626498A350070118A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4DD8BD22637E8A400FFC669 /* MarvelUniverseForAll */;
+			targetProxy = A401CC6526498A350070118A /* PBXContainerItemProxy */;
+		};
 		A4DD8BEB2637E8A500FFC669 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A4DD8BD22637E8A400FFC669 /* MarvelUniverseForAll */;
@@ -375,6 +465,173 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A401CC6726498A350070118A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SAR2G9PZXH;
+				INFOPLIST_FILE = UserManagementEndtoEndTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cardenas.fernando.UserManagementEndtoEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelUniverseForAll.app/MarvelUniverseForAll";
+			};
+			name = Debug;
+		};
+		A401CC6826498A350070118A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SAR2G9PZXH;
+				INFOPLIST_FILE = UserManagementEndtoEndTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cardenas.fernando.UserManagementEndtoEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelUniverseForAll.app/MarvelUniverseForAll";
+			};
+			name = Release;
+		};
+		A401CC6F2649925C0070118A /* LocalhostTests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = LocalhostTests;
+		};
+		A401CC702649925C0070118A /* LocalhostTests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MarvelUniverseForAll/Preview Content\"";
+				DEVELOPMENT_TEAM = SAR2G9PZXH;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MarvelUniverseForAll/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cardenas.fernando.MarvelUniverseForAll;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = LocalhostTests;
+		};
+		A401CC712649925C0070118A /* LocalhostTests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SAR2G9PZXH;
+				INFOPLIST_FILE = MarvelUniverseForAllTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cardenas.fernando.MarvelUniverseForAllTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelUniverseForAll.app/MarvelUniverseForAll";
+			};
+			name = LocalhostTests;
+		};
+		A401CC722649925C0070118A /* LocalhostTests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SAR2G9PZXH;
+				INFOPLIST_FILE = UserManagementEndtoEndTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cardenas.fernando.UserManagementEndtoEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelUniverseForAll.app/MarvelUniverseForAll";
+			};
+			name = LocalhostTests;
+		};
 		A4DD8BFB2637E8A500FFC669 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -580,10 +837,21 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A401CC6926498A350070118A /* Build configuration list for PBXNativeTarget "UserManagementEndtoEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A401CC6726498A350070118A /* Debug */,
+				A401CC722649925C0070118A /* LocalhostTests */,
+				A401CC6826498A350070118A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A4DD8BCE2637E8A400FFC669 /* Build configuration list for PBXProject "MarvelUniverseForAll" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4DD8BFB2637E8A500FFC669 /* Debug */,
+				A401CC6F2649925C0070118A /* LocalhostTests */,
 				A4DD8BFC2637E8A500FFC669 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -593,6 +861,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4DD8BFE2637E8A500FFC669 /* Debug */,
+				A401CC702649925C0070118A /* LocalhostTests */,
 				A4DD8BFF2637E8A500FFC669 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -602,6 +871,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4DD8C012637E8A500FFC669 /* Debug */,
+				A401CC712649925C0070118A /* LocalhostTests */,
 				A4DD8C022637E8A500FFC669 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

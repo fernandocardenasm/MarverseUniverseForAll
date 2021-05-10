@@ -1,0 +1,50 @@
+name: Pull Request
+
+on:
+  push:
+    branches: [ develop, $default-branch ]
+  pull_request:
+    types: [opened, reopened, ready_for_review, synchronize]
+
+jobs:
+  cancelPreviousRuns:
+    name: Cancel previous runs
+    if: github.event_name == 'push' || !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel previous runs
+        uses: styfle/cancel-workflow-action@0.9.0
+        with:
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+
+  build-and-test:
+    name: Build and Run tests
+    if: github.event_name == 'push' || !github.event.pull_request.draft
+    runs-on: macos-latest
+    timeout-minutes: 10
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+    
+    - name: Xcode version
+      run: /usr/bin/xcodebuild -version
+
+    - name: Set up Ruby, Install and cache Dependencies
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7.2
+        bundler-cache: true
+
+    - name: Cache SPM
+      uses: actions/cache@v2
+      with:
+        path: .build
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-spm-
+
+    - name: Build and Test
+      run: bundle exec fastlane tests
