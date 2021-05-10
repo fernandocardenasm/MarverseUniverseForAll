@@ -8,7 +8,12 @@
 import SwiftUI
 
 public struct SignUpView: View {
+    
     @ObservedObject public var viewModel: SignUpViewModel
+    
+    public init(viewModel: SignUpViewModel) {
+        self.viewModel = viewModel
+    }
 
     public var body: some View {
         VStack {

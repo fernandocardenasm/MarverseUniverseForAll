@@ -12,6 +12,10 @@ public struct SignInView: View {
     
     @ObservedObject public var viewModel: SignInViewModel
     
+    public init(viewModel: SignInViewModel) {
+        self.viewModel = viewModel
+    }
+    
     public var body: some View {
         VStack {
             Text("Welcome to the Marvel World")

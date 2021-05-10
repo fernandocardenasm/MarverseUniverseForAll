@@ -6,10 +6,9 @@
 //
 
 import Combine
-import Foundation
+import MarvelUniverseForAll
 import SwiftUI
 import XCTest
-@testable import MarvelUniverseForAll
 
 class UserManagementCoordinatorImplTests: XCTestCase {
     
