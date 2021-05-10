@@ -19,6 +19,7 @@ public class SignInViewModel: ObservableObject {
     @Published public var isSigningIn: Bool = false
     
     public var signInFinishedSubject = PassthroughSubject<Void, Never>()
+    public var startSignUpSubject = PassthroughSubject<Void, Never>()
     public var skipSignInSubject = PassthroughSubject<Void, Never>()
     
     // Private
