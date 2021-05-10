@@ -43,13 +43,14 @@ public class SignUpViewModel: ObservableObject {
     }
 
     func signup() {
-        userCreator.createUser(email: email, password: password)
+        userCreator.createUser(email: email.lowercased(), password: password)
             .subscribe(on: DispatchQueue.global())
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [weak self] result in
                 switch result {
                 case .finished:
                     self?.signUpSuccess = true
+                    self?.signUpFinishedSubject.send(())
                 case .failure(let error):
                     self?.signUpSuccess = false
                     print("SignUp - Error: \(error)")

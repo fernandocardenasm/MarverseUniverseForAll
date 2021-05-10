@@ -27,6 +27,7 @@ public struct SignUpView: View {
             .padding(.horizontal, 60)
             
             Button("Sign Up") {
+                viewModel.signup()
             }.frame(minWidth: 0, maxWidth: .infinity, maxHeight: 40).background(Color.marvelBlue)
                 .opacity(viewModel.buttonEnabled ? 1 : 0.3)
             .foregroundColor(.white)
