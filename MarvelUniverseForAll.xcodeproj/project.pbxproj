@@ -147,9 +147,18 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		A401CC7C264AFED60070118A /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				A472970426411758009F0FD8 /* SignInViewModelTests.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		A4729701264018F1009F0FD8 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
+				A401CC7C264AFED60070118A /* SignIn */,
 				A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */,
 			);
 			path = UserManagement;
@@ -245,7 +254,6 @@
 				A4729701264018F1009F0FD8 /* UserManagement */,
 				A4DD8BEF2637E8A500FFC669 /* Info.plist */,
 				A454442E263B376E009580E6 /* AppCoordinatorTests.swift */,
-				A472970426411758009F0FD8 /* SignInViewModelTests.swift */,
 				A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */,
 				A401CC782649C5800070118A /* UserCreatorSpy.swift */,
 			);
