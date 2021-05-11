@@ -71,10 +71,6 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         XCTAssertEqual(navController.viewControllers[0], signInViewController)
         XCTAssertEqual(navController.viewControllers[1], signUpViewController)
     }
-    
-    private func enforceLayoutCycle() {
-        RunLoop.current.run(until: Date())
-    }
 }
 
 // MARK: - Helpers
@@ -106,6 +102,10 @@ private extension UserManagementCoordinatorImplTests {
         let signInView = SignUpView(viewModel: viewModel)
         
         return UIHostingController(rootView: signInView)
+    }
+    
+    private func enforceLayoutCycle() {
+        RunLoop.current.run(until: Date())
     }
 }
 
