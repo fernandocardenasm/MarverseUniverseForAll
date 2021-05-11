@@ -35,7 +35,7 @@ public class SignUpViewModel: ObservableObject {
             .store(in: &cancellableSet)
     }
 
-    func signup() {
+    public func signup() {
         isSigningUp = true
         
         userCreator.createUser(email: email.lowercased(), password: password)
@@ -53,6 +53,10 @@ public class SignUpViewModel: ObservableObject {
             },
             receiveValue: { _ in })
             .store(in: &cancellableSet)
+    }
+    
+    public func skipSignUp() {
+        signUpFinishedSubject.send(())
     }
     
     private func isEmailValidPublisher() -> AnyPublisher<Bool, Never> {

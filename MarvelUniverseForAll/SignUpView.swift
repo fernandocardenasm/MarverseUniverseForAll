@@ -39,7 +39,7 @@ public struct SignUpView: View {
             ActivityIndicator(shouldAnimate: $viewModel.isSigningUp)
 
             Button("Dismiss") {
-                viewModel.signUpFinishedSubject.send(())
+                viewModel.skipSignUp()
             }
 
             Spacer()

@@ -36,7 +36,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         } receiveValue: { _ in }
         .store(in: &cancellables)
         
-        signInViewController.skipSignIn()
+        signInViewController.finishSignIn()
         
         wait(for: [exp], timeout: 0.1)
     }
@@ -53,7 +53,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         } receiveValue: { _ in }
         .store(in: &cancellables)
         
-        signInViewController.skipSignIn()
+        signInViewController.finishSignIn()
         
         wait(for: [exp], timeout: 0.1)
     }
@@ -90,7 +90,7 @@ private extension UserManagementCoordinatorImplTests {
 }
 
 private extension UIHostingController where Content == SignInView {
-    func skipSignIn() {
-        rootView.viewModel.skipSignInSubject.send(())
+    func finishSignIn() {
+        rootView.viewModel.signInFinishedSubject.send(())
     }
 }
