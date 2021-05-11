@@ -15,7 +15,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
     var cancellables = Set<AnyCancellable>()
     
     func test_start_showsSignInView() {
-        let (sut, signInViewController) = makeSut()
+        let (sut, signInViewController, _) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -25,7 +25,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
     }
     
     func test_start_completesCoordinatorAfterSignInFinished() {
-        let (sut, signInViewController) = makeSut()
+        let (sut, signInViewController, _) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -41,8 +41,8 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         wait(for: [exp], timeout: 0.1)
     }
     
-    func test_start_completesCoordinatorAfterSkippingSignIn() {
-        let (sut, signInViewController) = makeSut()
+    func test_start_completesCoordinatorAfterSignUpFinished() {
+        let (sut, _, signUpViewController) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -53,7 +53,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         } receiveValue: { _ in }
         .store(in: &cancellables)
         
-        signInViewController.finishSignIn()
+        signUpViewController.finishSignUp()
         
         wait(for: [exp], timeout: 0.1)
     }
@@ -62,7 +62,9 @@ class UserManagementCoordinatorImplTests: XCTestCase {
 // MARK: - Helpers
 
 private extension UserManagementCoordinatorImplTests {
-    func makeSut() -> (UserManagementCoordinator, UIHostingController<SignInView>) {
+    func makeSut() -> (UserManagementCoordinator,
+                       UIHostingController<SignInView>,
+                       UIHostingController<SignUpView>) {
         let loginAuthenticator = LoginAuthenticatorSpy()
         let signInViewController = makeSignInViewController(loginAuthenticator: loginAuthenticator)
         
@@ -71,7 +73,7 @@ private extension UserManagementCoordinatorImplTests {
         let sut = UserManagementCoordinatorImpl(signInViewController: signInViewController,
                                                 signUpViewController: signUpViewController)
         
-        return (sut, signInViewController)
+        return (sut, signInViewController, signUpViewController)
     }
     
     func makeSignInViewController(loginAuthenticator: LoginAuthenticator) -> UIHostingController<SignInView> {
@@ -92,5 +94,11 @@ private extension UserManagementCoordinatorImplTests {
 private extension UIHostingController where Content == SignInView {
     func finishSignIn() {
         rootView.viewModel.signInFinishedSubject.send(())
+    }
+}
+
+private extension UIHostingController where Content == SignUpView {
+    func finishSignUp() {
+        rootView.viewModel.signUpFinishedSubject.send(())
     }
 }
