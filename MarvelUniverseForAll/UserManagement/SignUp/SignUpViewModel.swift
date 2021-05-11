@@ -26,13 +26,8 @@ public class SignUpViewModel: ObservableObject {
     
     public init(userCreator: UserCreator) {
         self.userCreator = userCreator
-        // Setup isValid
-        Publishers.CombineLatest(areFieldsValidPublisher(), $isSigningUp).receive(on: RunLoop.main)
-            .map { fieldsValid, pressed in
-                fieldsValid && !pressed
-            }
-            .assign(to: \.signingUpButtonEnabled, on: self)
-            .store(in: &cancellableSet)
+        
+        observeChanges()
     }
 
     public func signup() {
@@ -57,6 +52,15 @@ public class SignUpViewModel: ObservableObject {
     
     public func skipSignUp() {
         signUpFinishedSubject.send(())
+    }
+    
+    private func observeChanges() {
+        Publishers.CombineLatest(areFieldsValidPublisher(), $isSigningUp).receive(on: RunLoop.main)
+            .map { fieldsValid, pressed in
+                fieldsValid && !pressed
+            }
+            .assign(to: \.signingUpButtonEnabled, on: self)
+            .store(in: &cancellableSet)
     }
     
     private func isEmailValidPublisher() -> AnyPublisher<Bool, Never> {
