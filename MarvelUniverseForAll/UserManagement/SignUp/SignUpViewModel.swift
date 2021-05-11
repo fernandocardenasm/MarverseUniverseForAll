@@ -11,12 +11,12 @@ import Foundation
 public class SignUpViewModel: ObservableObject {
 
     // Input
-    @Published var email = ""
-    @Published var password = ""
+    @Published public var email = ""
+    @Published public var password = ""
 
     // Output
-    @Published var signingUpButtonEnabled = false
-    @Published var isSigningUp = false
+    @Published public var signingUpButtonEnabled = false
+    @Published public var isSigningUp = false
 
     public var signUpFinishedSubject = PassthroughSubject<Void, Never>()
 
