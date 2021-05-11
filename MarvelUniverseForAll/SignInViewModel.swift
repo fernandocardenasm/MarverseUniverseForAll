@@ -20,7 +20,6 @@ public class SignInViewModel: ObservableObject {
     
     public var signInFinishedSubject = PassthroughSubject<Void, Never>()
     public var startSignUpSubject = PassthroughSubject<Void, Never>()
-    public var skipSignInSubject = PassthroughSubject<Void, Never>()
     
     // Private
     private let loginAuthenticator: LoginAuthenticator
@@ -43,7 +42,7 @@ public class SignInViewModel: ObservableObject {
     }
     
     public func skipSignIn() {
-        skipSignInSubject.send(())
+        signInFinishedSubject.send(())
     }
     
     public func startSignUp() {

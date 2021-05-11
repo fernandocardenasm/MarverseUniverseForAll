@@ -47,10 +47,6 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
             self?.showSignUpView()
         }.store(in: &cancellables)
         
-        signInViewModel.skipSignInSubject.sink { [weak self] _ in
-            self?.finishedSubject.send(completion: .finished)
-        }.store(in: &cancellables)
-        
         signUpViewController.rootView.viewModel.signUpFinishedSubject.sink { [weak self] in
             self?.finishedSubject.send(completion: .finished)
         }.store(in: &cancellables)
