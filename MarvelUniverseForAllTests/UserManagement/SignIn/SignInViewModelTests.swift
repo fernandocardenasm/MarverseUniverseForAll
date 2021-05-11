@@ -58,6 +58,20 @@ class SignInViewModelTests: XCTestCase {
         wait(for: [exp], timeout: 0.1)
     }
     
+    func test_startSignUp_sendsOnStartSignUp() {
+        let (sut, _) = makeSut()
+        
+        let exp = expectation(description: "waiting to finish")
+        
+        sut.startSignUpSubject.sink { _ in
+            exp.fulfill()
+        }.store(in: &cancellables)
+        
+        sut.startSignUp()
+        
+        wait(for: [exp], timeout: 0.1)
+    }
+    
     func makeSut() -> (SignInViewModel, LoginAuthenticatorSpy) {
         let loginAuth = LoginAuthenticatorSpy()
         let sut = SignInViewModel(loginAuthenticator: loginAuth)
