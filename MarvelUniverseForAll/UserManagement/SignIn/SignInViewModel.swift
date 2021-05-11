@@ -11,11 +11,11 @@ import Foundation
 public class SignInViewModel: ObservableObject {
         
     // Input
-    @Published var email = ""
-    @Published var password = ""
+    @Published public var email = ""
+    @Published public var password = ""
     
     // Output
-    @Published var singinButtonEnabled = false
+    @Published public var signInButtonEnabled = false
     @Published public var isSigningIn: Bool = false
     
     public var signInFinishedSubject = PassthroughSubject<Void, Never>()
@@ -54,7 +54,7 @@ public class SignInViewModel: ObservableObject {
             .map { fieldsValid, signingIn in
                 fieldsValid && !signingIn
             }
-            .assign(to: \.singinButtonEnabled, on: self)
+            .assign(to: \.signInButtonEnabled, on: self)
             .store(in: &cancellables)
     }
     

@@ -33,12 +33,12 @@ public struct SignInView: View {
             }
             .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 40)
             .background(Color.marvelBlue)
-            .opacity(viewModel.singinButtonEnabled ? 1 : 0.3)
+            .opacity(viewModel.signInButtonEnabled ? 1 : 0.3)
             .foregroundColor(.white)
             .cornerRadius(40)
             .padding(.vertical, 10)
             .padding(.horizontal, 60)
-            .disabled(!viewModel.singinButtonEnabled)
+            .disabled(!viewModel.signInButtonEnabled)
 
             ActivityIndicator(shouldAnimate: $viewModel.isSigningIn)
 
