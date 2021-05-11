@@ -42,6 +42,14 @@ public class SignInViewModel: ObservableObject {
         .store(in: &cancellables)
     }
     
+    public func skipSignIn() {
+        skipSignInSubject.send(())
+    }
+    
+    public func startSignUp() {
+        startSignUpSubject.send(())
+    }
+    
     private func observeChanges() {
         Publishers.CombineLatest(areFieldsValidPublisher(), $isSigningIn).receive(on: RunLoop.main)
             .map { fieldsValid, signingIn in

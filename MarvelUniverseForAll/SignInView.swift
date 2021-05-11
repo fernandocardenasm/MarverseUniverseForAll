@@ -46,11 +46,11 @@ public struct SignInView: View {
                 .foregroundColor(.white)
                 .padding()
             Button("Sign up here") {
-                viewModel.startSignUpSubject.send(())
+                viewModel.startSignUp()
             }
             .padding(.vertical, 30)
             Button("Skip Sign In") {
-                viewModel.skipSignInSubject.send(())
+                viewModel.skipSignIn()
             }
             Spacer()
         }
