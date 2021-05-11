@@ -6,7 +6,6 @@
 //
 
 import Combine
-import Foundation
 import MarvelUniverseForAll
 import SwiftUI
 import XCTest
@@ -16,7 +15,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
     var cancellables = Set<AnyCancellable>()
     
     func test_start_showsSignInView() {
-        let (sut, signInViewController) = makeSut()
+        let (sut, signInViewController, _) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -26,7 +25,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
     }
     
     func test_start_completesCoordinatorAfterSignInFinished() {
-        let (sut, signInViewController) = makeSut()
+        let (sut, signInViewController, _) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -37,13 +36,13 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         } receiveValue: { _ in }
         .store(in: &cancellables)
         
-        signInViewController.skipSignIn()
+        signInViewController.finishSignIn()
         
         wait(for: [exp], timeout: 0.1)
     }
     
-    func test_start_completesCoordinatorAfterSkippingSignIn() {
-        let (sut, signInViewController) = makeSut()
+    func test_start_completesCoordinatorAfterSignUpFinished() {
+        let (sut, _, signUpViewController) = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -54,21 +53,41 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         } receiveValue: { _ in }
         .store(in: &cancellables)
         
-        signInViewController.skipSignIn()
+        signUpViewController.finishSignUp()
         
         wait(for: [exp], timeout: 0.1)
+    }
+    
+    func test_start_showsSignUpViewAfterSignUpStarted() {
+        let (sut, signInViewController, signUpViewController) = makeSut()
+        
+        let navController = UINavigationController()
+        sut.start(navController: navController)
+        
+        signInViewController.startSignUp()
+        enforceLayoutCycle()
+        
+        XCTAssertEqual(navController.viewControllers.count, 2)
+        XCTAssertEqual(navController.viewControllers[0], signInViewController)
+        XCTAssertEqual(navController.viewControllers[1], signUpViewController)
     }
 }
 
 // MARK: - Helpers
 
 private extension UserManagementCoordinatorImplTests {
-    func makeSut() -> (UserManagementCoordinator, UIHostingController<SignInView>) {
+    func makeSut() -> (UserManagementCoordinator,
+                       UIHostingController<SignInView>,
+                       UIHostingController<SignUpView>) {
         let loginAuthenticator = LoginAuthenticatorSpy()
         let signInViewController = makeSignInViewController(loginAuthenticator: loginAuthenticator)
-        let sut = UserManagementCoordinatorImpl(signInViewController: signInViewController)
         
-        return (sut, signInViewController)
+        let userCreator = UserCreatorSpy()
+        let signUpViewController = makeSignUpViewController(userCreator: userCreator)
+        let sut = UserManagementCoordinatorImpl(signInViewController: signInViewController,
+                                                signUpViewController: signUpViewController)
+        
+        return (sut, signInViewController, signUpViewController)
     }
     
     func makeSignInViewController(loginAuthenticator: LoginAuthenticator) -> UIHostingController<SignInView> {
@@ -77,10 +96,31 @@ private extension UserManagementCoordinatorImplTests {
         
         return UIHostingController(rootView: signInView)
     }
+    
+    func makeSignUpViewController(userCreator: UserCreator) -> UIHostingController<SignUpView> {
+        let viewModel = SignUpViewModel(userCreator: userCreator)
+        let signInView = SignUpView(viewModel: viewModel)
+        
+        return UIHostingController(rootView: signInView)
+    }
+    
+    private func enforceLayoutCycle() {
+        RunLoop.current.run(until: Date())
+    }
 }
 
 private extension UIHostingController where Content == SignInView {
-    func skipSignIn() {
-        rootView.viewModel.skipSignInSubject.send(())
+    func finishSignIn() {
+        rootView.viewModel.signInFinishedSubject.send(())
+    }
+    
+    func startSignUp() {
+        rootView.viewModel.startSignUpSubject.send(())
+    }
+}
+
+private extension UIHostingController where Content == SignUpView {
+    func finishSignUp() {
+        rootView.viewModel.signUpFinishedSubject.send(())
     }
 }

@@ -10,6 +10,10 @@
 		A401CC6B26498A7B0070118A /* FirebaseUserCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */; };
 		A401CC6C26498A810070118A /* FirebaseAuthenticationLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */; };
 		A401CC6D26498A860070118A /* FirebaseAuth+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */; };
+		A401CC752649BC290070118A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401CC742649BC290070118A /* SignUpView.swift */; };
+		A401CC772649BCDF0070118A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401CC762649BCDF0070118A /* SignUpViewModel.swift */; };
+		A401CC792649C5800070118A /* UserCreatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401CC782649C5800070118A /* UserCreatorSpy.swift */; };
+		A401CC81264B0D7E0070118A /* SignUpViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401CC80264B0D7E0070118A /* SignUpViewModelTests.swift */; };
 		A40FA5A926413488000BE218 /* UserManagementCoordinatorComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40FA5A826413488000BE218 /* UserManagementCoordinatorComposer.swift */; };
 		A4544427263B36B4009580E6 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4544426263B36B4009580E6 /* TabBarView.swift */; };
 		A454442F263B376E009580E6 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A454442E263B376E009580E6 /* AppCoordinatorTests.swift */; };
@@ -22,6 +26,7 @@
 		A4C61BF426440F6A009FF463 /* FirebaseUserCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF326440F6A009FF463 /* FirebaseUserCreator.swift */; };
 		A4C61BF826443391009FF463 /* LoginAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF726443391009FF463 /* LoginAuthenticator.swift */; };
 		A4C61BFA264433AF009FF463 /* UserCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF9264433AF009FF463 /* UserCreator.swift */; };
+		A4C61BFF26444AA6009FF463 /* Marvel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4C61BFE26444AA6009FF463 /* Marvel-Regular.ttf */; };
 		A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */; };
 		A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */; };
 		A4DD8BDB2637E8A400FFC669 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BDA2637E8A400FFC669 /* ContentView.swift */; };
@@ -55,6 +60,10 @@
 /* Begin PBXFileReference section */
 		A401CC6026498A350070118A /* UserManagementEndtoEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserManagementEndtoEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A401CC6426498A350070118A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A401CC742649BC290070118A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A401CC762649BCDF0070118A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		A401CC782649C5800070118A /* UserCreatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreatorSpy.swift; sourceTree = "<group>"; };
+		A401CC80264B0D7E0070118A /* SignUpViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelTests.swift; sourceTree = "<group>"; };
 		A40FA5A826413488000BE218 /* UserManagementCoordinatorComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorComposer.swift; sourceTree = "<group>"; };
 		A4544426263B36B4009580E6 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		A454442E263B376E009580E6 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
@@ -69,6 +78,7 @@
 		A4C61BF326440F6A009FF463 /* FirebaseUserCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserCreator.swift; sourceTree = "<group>"; };
 		A4C61BF726443391009FF463 /* LoginAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticator.swift; sourceTree = "<group>"; };
 		A4C61BF9264433AF009FF463 /* UserCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreator.swift; sourceTree = "<group>"; };
+		A4C61BFE26444AA6009FF463 /* Marvel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marvel-Regular.ttf"; sourceTree = "<group>"; };
 		A4DD8BD32637E8A400FFC669 /* MarvelUniverseForAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelUniverseForAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,9 +131,45 @@
 			path = UserManagementEndtoEndTests;
 			sourceTree = "<group>";
 		};
+		A401CC7A264AFE3A0070118A /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				A472970826412859009F0FD8 /* SignInViewModel.swift */,
+				A4DD8C092637E90600FFC669 /* SignInView.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		A401CC7B264AFE570070118A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A401CC762649BCDF0070118A /* SignUpViewModel.swift */,
+				A401CC742649BC290070118A /* SignUpView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		A401CC7C264AFED60070118A /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				A472970426411758009F0FD8 /* SignInViewModelTests.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		A401CC7F264B0D6F0070118A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A401CC80264B0D7E0070118A /* SignUpViewModelTests.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		A4729701264018F1009F0FD8 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
+				A401CC7F264B0D6F0070118A /* SignUp */,
+				A401CC7C264AFED60070118A /* SignIn */,
 				A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */,
 			);
 			path = UserManagement;
@@ -156,6 +202,14 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
+		A4C61BFB26444A61009FF463 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A4C61BFE26444AA6009FF463 /* Marvel-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		A4DD8BCA2637E8A400FFC669 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +233,7 @@
 		A4DD8BD52637E8A400FFC669 /* MarvelUniverseForAll */ = {
 			isa = PBXGroup;
 			children = (
+				A4C61BFB26444A61009FF463 /* fonts */,
 				A4DD8CBF26388BCA00FFC669 /* UserManagement */,
 				A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */,
 				A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */,
@@ -187,8 +242,6 @@
 				A4DD8BE12637E8A500FFC669 /* LaunchScreen.storyboard */,
 				A4DD8BE42637E8A500FFC669 /* Info.plist */,
 				A4DD8BDE2637E8A500FFC669 /* Preview Content */,
-				A4DD8C092637E90600FFC669 /* SignInView.swift */,
-				A472970826412859009F0FD8 /* SignInViewModel.swift */,
 				A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */,
 				A4544426263B36B4009580E6 /* TabBarView.swift */,
 				A4DD8C0E2637E91600FFC669 /* HomeView.swift */,
@@ -212,8 +265,8 @@
 				A4729701264018F1009F0FD8 /* UserManagement */,
 				A4DD8BEF2637E8A500FFC669 /* Info.plist */,
 				A454442E263B376E009580E6 /* AppCoordinatorTests.swift */,
-				A472970426411758009F0FD8 /* SignInViewModelTests.swift */,
 				A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */,
+				A401CC782649C5800070118A /* UserCreatorSpy.swift */,
 			);
 			path = MarvelUniverseForAllTests;
 			sourceTree = "<group>";
@@ -221,6 +274,8 @@
 		A4DD8CBF26388BCA00FFC669 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
+				A401CC7B264AFE570070118A /* SignUp */,
+				A401CC7A264AFE3A0070118A /* SignIn */,
 				A4C61BF026440EFA009FF463 /* Infrastructure */,
 				A4544433263B3840009580E6 /* UserManagementCoordinator.swift */,
 				A4C61BF726443391009FF463 /* LoginAuthenticator.swift */,
@@ -346,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C61BFF26444AA6009FF463 /* Marvel-Regular.ttf in Resources */,
 				A4DD8BE32637E8A500FFC669 /* LaunchScreen.storyboard in Resources */,
 				A4EB7874264181DB005199BF /* GoogleService-Info.plist in Resources */,
 				A4DD8BE02637E8A500FFC669 /* Preview Assets.xcassets in Resources */,
@@ -399,6 +455,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4544434263B3840009580E6 /* UserManagementCoordinator.swift in Sources */,
+				A401CC752649BC290070118A /* SignUpView.swift in Sources */,
+				A401CC772649BCDF0070118A /* SignUpViewModel.swift in Sources */,
 				A4C61BF426440F6A009FF463 /* FirebaseUserCreator.swift in Sources */,
 				A4C61BF826443391009FF463 /* LoginAuthenticator.swift in Sources */,
 				A4544427263B36B4009580E6 /* TabBarView.swift in Sources */,
@@ -421,8 +479,10 @@
 			files = (
 				A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */,
 				A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */,
+				A401CC81264B0D7E0070118A /* SignUpViewModelTests.swift in Sources */,
 				A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */,
 				A454442F263B376E009580E6 /* AppCoordinatorTests.swift in Sources */,
+				A401CC792649C5800070118A /* UserCreatorSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
