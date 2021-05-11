@@ -57,6 +57,24 @@ class UserManagementCoordinatorImplTests: XCTestCase {
         
         wait(for: [exp], timeout: 0.1)
     }
+    
+    func test_start_showsSignUpViewAfterSignUpStarted() {
+        let (sut, signInViewController, signUpViewController) = makeSut()
+        
+        let navController = UINavigationController()
+        sut.start(navController: navController)
+        
+        signInViewController.startSignUp()
+        enforceLayoutCycle()
+        
+        XCTAssertEqual(navController.viewControllers.count, 2)
+        XCTAssertEqual(navController.viewControllers[0], signInViewController)
+        XCTAssertEqual(navController.viewControllers[1], signUpViewController)
+    }
+    
+    private func enforceLayoutCycle() {
+        RunLoop.current.run(until: Date())
+    }
 }
 
 // MARK: - Helpers
@@ -94,6 +112,10 @@ private extension UserManagementCoordinatorImplTests {
 private extension UIHostingController where Content == SignInView {
     func finishSignIn() {
         rootView.viewModel.signInFinishedSubject.send(())
+    }
+    
+    func startSignUp() {
+        rootView.viewModel.startSignUpSubject.send(())
     }
 }
 
