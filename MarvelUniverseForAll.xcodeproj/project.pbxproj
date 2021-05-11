@@ -129,6 +129,24 @@
 			path = UserManagementEndtoEndTests;
 			sourceTree = "<group>";
 		};
+		A401CC7A264AFE3A0070118A /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				A472970826412859009F0FD8 /* SignInViewModel.swift */,
+				A4DD8C092637E90600FFC669 /* SignInView.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		A401CC7B264AFE570070118A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A401CC762649BCDF0070118A /* SignUpViewModel.swift */,
+				A401CC742649BC290070118A /* SignUpView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		A4729701264018F1009F0FD8 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,10 +222,6 @@
 				A4DD8BE12637E8A500FFC669 /* LaunchScreen.storyboard */,
 				A4DD8BE42637E8A500FFC669 /* Info.plist */,
 				A4DD8BDE2637E8A500FFC669 /* Preview Content */,
-				A4DD8C092637E90600FFC669 /* SignInView.swift */,
-				A472970826412859009F0FD8 /* SignInViewModel.swift */,
-				A401CC742649BC290070118A /* SignUpView.swift */,
-				A401CC762649BCDF0070118A /* SignUpViewModel.swift */,
 				A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */,
 				A4544426263B36B4009580E6 /* TabBarView.swift */,
 				A4DD8C0E2637E91600FFC669 /* HomeView.swift */,
@@ -241,6 +255,8 @@
 		A4DD8CBF26388BCA00FFC669 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
+				A401CC7B264AFE570070118A /* SignUp */,
+				A401CC7A264AFE3A0070118A /* SignIn */,
 				A4C61BF026440EFA009FF463 /* Infrastructure */,
 				A4544433263B3840009580E6 /* UserManagementCoordinator.swift */,
 				A4C61BF726443391009FF463 /* LoginAuthenticator.swift */,
