@@ -44,6 +44,20 @@ class SignInViewModelTests: XCTestCase {
         XCTAssertFalse(sut.isSigningIn)
     }
     
+    func test_skipSignIn_sendsOnSignInFinished() {
+        let (sut, _) = makeSut()
+        
+        let exp = expectation(description: "waiting to finish")
+        
+        sut.signInFinishedSubject.sink { _ in
+            exp.fulfill()
+        }.store(in: &cancellables)
+        
+        sut.skipSignIn()
+        
+        wait(for: [exp], timeout: 0.1)
+    }
+    
     func makeSut() -> (SignInViewModel, LoginAuthenticatorSpy) {
         let loginAuth = LoginAuthenticatorSpy()
         let sut = SignInViewModel(loginAuthenticator: loginAuth)
