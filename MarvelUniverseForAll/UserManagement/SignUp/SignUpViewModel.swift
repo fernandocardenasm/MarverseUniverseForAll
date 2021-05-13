@@ -64,7 +64,7 @@ public class SignUpViewModel: ObservableObject {
     }
     
     private func isEmailValidPublisher() -> AnyPublisher<Bool, Never> {
-        $email.receive(on: RunLoop.main)
+        $email.debounce(for: 0.2, scheduler: RunLoop.main)
             .removeDuplicates()
             .map { input in
                 UserEmailPolicy.evaluate(with: input)
@@ -73,7 +73,7 @@ public class SignUpViewModel: ObservableObject {
     }
     
     private func isPasswordValidPublisher() -> AnyPublisher<Bool, Never> {
-        $password.receive(on: RunLoop.main)
+        $password.debounce(for: 0.2, scheduler: RunLoop.main)
             .removeDuplicates()
             .map { input in
                 UserPasswordPolicy.evaluate(with: input)
@@ -83,7 +83,6 @@ public class SignUpViewModel: ObservableObject {
     private func areFieldsValidPublisher() -> AnyPublisher<Bool, Never> {
         Publishers.CombineLatest(isEmailValidPublisher(),
                                  isPasswordValidPublisher())
-            .debounce(for: 0.2, scheduler: RunLoop.main)
             .map { emailValid, passwordValid in
                 return emailValid && passwordValid
             }
