@@ -17,6 +17,7 @@ public class SignInViewModel: ObservableObject {
     // Output
     @Published public var signInButtonEnabled = false
     @Published public var isSigningIn: Bool = false
+    @Published public var errorMessage = ""
     
     public var signInFinishedSubject = PassthroughSubject<Void, Never>()
     public var startSignUpSubject = PassthroughSubject<Void, Never>()
@@ -34,9 +35,14 @@ public class SignInViewModel: ObservableObject {
     public func signIn() {
         isSigningIn = true
         
-        loginAuthenticator.signIn(email: email, password: password).sink { [weak self] _ in
+        loginAuthenticator.signIn(email: email, password: password).sink { [weak self] result in
+            switch result {
+            case .finished:
+                self?.signInFinishedSubject.send(())
+            case let .failure(error):
+                self?.errorMessage = "Sign In - Error: \(error)"
+            }
             self?.isSigningIn = false
-            self?.signInFinishedSubject.send(())
         } receiveValue: { _ in }
         .store(in: &cancellables)
     }

@@ -41,6 +41,8 @@ public struct SignInView: View {
             .disabled(!viewModel.signInButtonEnabled)
 
             ActivityIndicator(shouldAnimate: $viewModel.isSigningIn)
+            
+            Text(viewModel.errorMessage)
 
             Text("Do not have an account?")
                 .foregroundColor(.white)
