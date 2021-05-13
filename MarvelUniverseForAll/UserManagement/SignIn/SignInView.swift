@@ -90,7 +90,7 @@ struct LoginFieldsView: View {
 
             HStack {
                 Image(systemName: "lock.circle")
-                TextField("Enter your password...", text: $password)
+                SecureField("Enter your password...", text: $password)
                     .foregroundColor(.white)
             }
                 .padding(.vertical, 10)
