@@ -16,6 +16,37 @@ public struct TabBarView: View {
             HomeView().tabItem {
                 Label("Menu", systemImage: "house")
             }
+            
+            FavoritesView().tabItem {
+                Label("Favorites", systemImage: "heart")
+            }
+            
+            EventsView().tabItem {
+                Label("Events", systemImage: "book")
+            }
+            
+            SettingsView().tabItem {
+                Label("Settings", systemImage: "gearshape")
+            }
         }
+    }
+}
+
+struct SettingsView: View {
+    
+    var body: some View {
+        Text("Settings")
+    }
+}
+
+struct FavoritesView: View {
+    var body: some View {
+        Text("Favorites")
+    }
+}
+
+struct EventsView: View {
+    var body: some View {
+        Text("Events")
     }
 }

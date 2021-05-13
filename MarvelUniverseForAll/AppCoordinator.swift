@@ -27,7 +27,7 @@ public class AppCoordinator {
             
             guard let self = self else { return }
             
-            self.navController.viewControllers.insert(UIHostingController(rootView: TabBarView()), at: 0)
+            self.navController.viewControllers.insert(self.tabBarViewController(), at: 0)
             self.navController.popToRootViewController(animated: true)
             
         }, receiveValue: { _ in }).store(in: &cancellables)
@@ -35,7 +35,7 @@ public class AppCoordinator {
         userManagementCoordinator.start(navController: navController)
     }
     
-    func tabBarViewController() -> UIHostingController<HomeView> {
-        UIHostingController(rootView: HomeView())
+    func tabBarViewController() -> UIHostingController<TabBarView> {
+        UIHostingController(rootView: TabBarView())
     }
 }
