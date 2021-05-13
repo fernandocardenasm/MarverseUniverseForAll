@@ -40,12 +40,11 @@ public class SignUpViewModel: ObservableObject {
             .sink(receiveCompletion: { [weak self] result in
                 switch result {
                 case .finished:
-                    self?.isSigningUp = false
                     self?.signUpFinishedSubject.send(())
                 case .failure(let error):
-                    self?.isSigningUp = false
                     self?.errorMessage = "Sign up failed, Error: \(error)"
                 }
+                self?.isSigningUp = false
             },
             receiveValue: { _ in })
             .store(in: &cancellableSet)
