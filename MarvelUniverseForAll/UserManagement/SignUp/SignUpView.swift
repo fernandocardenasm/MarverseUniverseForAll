@@ -37,6 +37,8 @@ public struct SignUpView: View {
             .disabled(!viewModel.signingUpButtonEnabled)
 
             ActivityIndicator(shouldAnimate: $viewModel.isSigningUp)
+            
+            Text(viewModel.errorMessage)
 
             Button("Dismiss") {
                 viewModel.skipSignUp()

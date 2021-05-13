@@ -17,6 +17,7 @@ public class SignUpViewModel: ObservableObject {
     // Output
     @Published public var signingUpButtonEnabled = false
     @Published public var isSigningUp = false
+    @Published public var errorMessage = ""
 
     public var signUpFinishedSubject = PassthroughSubject<Void, Never>()
 
@@ -43,7 +44,7 @@ public class SignUpViewModel: ObservableObject {
                     self?.signUpFinishedSubject.send(())
                 case .failure(let error):
                     self?.isSigningUp = false
-                    print("SignUp - Error: \(error)")
+                    self?.errorMessage = "Sign up failed, Error: \(error)"
                 }
             },
             receiveValue: { _ in })
