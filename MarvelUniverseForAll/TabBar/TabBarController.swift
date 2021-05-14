@@ -9,8 +9,8 @@ import UIKit
 
 public class TabBarController: UITabBarController {
     
-    public let homeNavController: UINavigationController = UINavigationController()
-    public let settingsNavController: UINavigationController = UINavigationController()
+    public private(set) lazy var homeNavController: UINavigationController = UINavigationController()
+    public private(set) lazy var settingsNavController: UINavigationController = UINavigationController()
     
     public override func viewDidLoad() {
         super.viewDidLoad()
