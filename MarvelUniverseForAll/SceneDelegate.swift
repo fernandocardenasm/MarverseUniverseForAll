@@ -26,11 +26,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let loginAuthenticator = FirebaseLoginAuthenticator(authenticator: Auth.auth())
         let userCreator = FirebaseUserCreator(authenticator: Auth.auth())
+        
+        let tabBarCoordinator = TabBarCoordinator(tabBarController: TabBarController(),
+                                                  homeCoordinator: HomeCoordinator(),
+                                                  settingsCoordinator: SettingsCoordinator())
+        
         appCoordinator = AppCoordinator(
             userManagementCoordinator: UserManagementCoordinatorComposer.composedWith(
                 loginAuthenticator: loginAuthenticator,
                 userCreator: userCreator
-            )
+            ),
+            tabBarCoordinator: tabBarCoordinator
         )
         
         window.rootViewController = appCoordinator.rootViewController
