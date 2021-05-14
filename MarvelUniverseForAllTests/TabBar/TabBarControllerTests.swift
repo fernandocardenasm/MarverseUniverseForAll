@@ -10,14 +10,6 @@ import XCTest
 
 class TabBarControllerTests: XCTestCase {
     
-    func test_viewDidLoad_navControllersNotEqual() {
-        let sut = TabBarController()
-        
-        sut.loadViewIfNeeded()
-        
-        XCTAssertNotEqual(sut.homeNavController, sut.settingsNavController)
-    }
-    
     func test_viewDidLoad_setsHomeTabBarItem() {
         let sut = TabBarController()
         sut.loadViewIfNeeded()
@@ -26,6 +18,26 @@ class TabBarControllerTests: XCTestCase {
                                        image: UIImage(systemName: "house")!,
                                        selectedImage: nil)
         expect(barItem: sut.homeNavController.tabBarItem, toBeEqualTo: homeBarItem)
+    }
+    
+    func test_viewDidLoad_setsFavoritesTabBarItem() {
+        let sut = TabBarController()
+        sut.loadViewIfNeeded()
+        
+        let settingsBarItem = UITabBarItem(title: "Favorites",
+                                       image: UIImage(systemName: "heart")!,
+                                       selectedImage: nil)
+        expect(barItem: sut.favoritesNavController.tabBarItem, toBeEqualTo: settingsBarItem)
+    }
+    
+    func test_viewDidLoad_setsEventsTabBarItem() {
+        let sut = TabBarController()
+        sut.loadViewIfNeeded()
+        
+        let settingsBarItem = UITabBarItem(title: "Events",
+                                       image: UIImage(systemName: "book")!,
+                                       selectedImage: nil)
+        expect(barItem: sut.eventsNavController.tabBarItem, toBeEqualTo: settingsBarItem)
     }
     
     func test_viewDidLoad_setsSettingsTabBarItem() {
@@ -42,14 +54,16 @@ class TabBarControllerTests: XCTestCase {
         let sut = TabBarController()
         sut.loadViewIfNeeded()
         
-        XCTAssertEqual(sut.viewControllers?.count, 2)
+        XCTAssertEqual(sut.viewControllers?.count, 4)
         XCTAssertEqual(sut.viewControllers?[0], sut.homeNavController)
-        XCTAssertEqual(sut.viewControllers?[1], sut.settingsNavController)
+        XCTAssertEqual(sut.viewControllers?[1], sut.favoritesNavController)
+        XCTAssertEqual(sut.viewControllers?[2], sut.eventsNavController)
+        XCTAssertEqual(sut.viewControllers?[3], sut.settingsNavController)
     }
     
-    private func expect(barItem: UITabBarItem, toBeEqualTo comparedBarItem: UITabBarItem) {
-        XCTAssertEqual(barItem.title, comparedBarItem.title)
-        XCTAssertEqual(barItem.image, comparedBarItem.image)
-        XCTAssertEqual(barItem.selectedImage, comparedBarItem.selectedImage)
+    private func expect(barItem: UITabBarItem, toBeEqualTo comparedBarItem: UITabBarItem, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertEqual(barItem.title, comparedBarItem.title, file: file, line: line)
+        XCTAssertEqual(barItem.image, comparedBarItem.image, file: file, line: line)
+        XCTAssertEqual(barItem.selectedImage, comparedBarItem.selectedImage, file: file, line: line)
     }
 }

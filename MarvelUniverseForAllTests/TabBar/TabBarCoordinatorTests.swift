@@ -32,6 +32,22 @@ class TabBarCoordinatorTests: XCTestCase {
         XCTAssertEqual(sut.tabBarController.homeNavController, args.homeCoordinator.navController)
     }
     
+    func test_start_startsFavoritesCoordinator() {
+        let (sut, args) = makeSut()
+        
+        sut.start()
+        
+        XCTAssertEqual(sut.tabBarController.favoritesNavController, args.favoritesCoordinator.navController)
+    }
+    
+    func test_start_startsEventsCoordinator() {
+        let (sut, args) = makeSut()
+        
+        sut.start()
+        
+        XCTAssertEqual(sut.tabBarController.eventsNavController, args.eventsCoordinator.navController)
+    }
+    
     func test_start_startsSettingsCoordinator() {
         let (sut, args) = makeSut()
         
@@ -42,12 +58,22 @@ class TabBarCoordinatorTests: XCTestCase {
     
     private func makeSut() -> (sut: TabBarCoordinator,
                        (homeCoordinator: HomeCoordinator,
+                        favoritesCoordinator: FavoritesCoordinator,
+                        eventsCoordinator: EventsCoordinator,
                        settingsCoordinator: SettingsCoordinator)) {
         let tabBarController = TabBarController()
         let homeCoordinator = HomeCoordinator()
+        let favoritesCoordinator = FavoritesCoordinator()
+        let eventsCoordinator = EventsCoordinator()
         let settingsCoordinator = SettingsCoordinator()
         let sut = TabBarCoordinator(tabBarController: tabBarController,
-                                    homeCoordinator: homeCoordinator, settingsCoordinator: settingsCoordinator)
-        return (sut, (homeCoordinator, settingsCoordinator))
+                                    homeCoordinator: homeCoordinator,
+                                    favoritesCoordinator: favoritesCoordinator,
+                                    eventsCoordinator: eventsCoordinator,
+                                    settingsCoordinator: settingsCoordinator)
+        return (sut, (homeCoordinator,
+                      favoritesCoordinator,
+                      eventsCoordinator,
+                      settingsCoordinator))
     }
 }

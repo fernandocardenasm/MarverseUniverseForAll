@@ -28,6 +28,12 @@
 		A45D8154264EA6C400954F1D /* TabBarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8153264EA6C400954F1D /* TabBarControllerTests.swift */; };
 		A45D8157264EAFB800954F1D /* SettingsCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8156264EAFB800954F1D /* SettingsCoordinatorTests.swift */; };
 		A45D815A264EB5E600954F1D /* HomeCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8159264EB5E600954F1D /* HomeCoordinatorTests.swift */; };
+		A45D815D264EC1E000954F1D /* FavoritesCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D815C264EC1E000954F1D /* FavoritesCoordinatorTests.swift */; };
+		A45D8160264EC42D00954F1D /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D815F264EC42D00954F1D /* FavoritesCoordinator.swift */; };
+		A45D8162264EC45200954F1D /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8161264EC45200954F1D /* FavoritesView.swift */; };
+		A45D8166264EC4E500954F1D /* EventsCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8165264EC4E500954F1D /* EventsCoordinatorTests.swift */; };
+		A45D8169264EC65600954F1D /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8168264EC65600954F1D /* EventsCoordinator.swift */; };
+		A45D816B264EC66C00954F1D /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D816A264EC66C00954F1D /* EventsView.swift */; };
 		A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */; };
 		A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970426411758009F0FD8 /* SignInViewModelTests.swift */; };
 		A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */; };
@@ -87,6 +93,12 @@
 		A45D8153264EA6C400954F1D /* TabBarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerTests.swift; sourceTree = "<group>"; };
 		A45D8156264EAFB800954F1D /* SettingsCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinatorTests.swift; sourceTree = "<group>"; };
 		A45D8159264EB5E600954F1D /* HomeCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorTests.swift; sourceTree = "<group>"; };
+		A45D815C264EC1E000954F1D /* FavoritesCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinatorTests.swift; sourceTree = "<group>"; };
+		A45D815F264EC42D00954F1D /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
+		A45D8161264EC45200954F1D /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		A45D8165264EC4E500954F1D /* EventsCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinatorTests.swift; sourceTree = "<group>"; };
+		A45D8168264EC65600954F1D /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
+		A45D816A264EC66C00954F1D /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		A472970426411758009F0FD8 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticatorSpy.swift; sourceTree = "<group>"; };
@@ -236,6 +248,40 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		A45D815B264EC1C600954F1D /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				A45D815C264EC1E000954F1D /* FavoritesCoordinatorTests.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		A45D815E264EC41700954F1D /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				A45D8161264EC45200954F1D /* FavoritesView.swift */,
+				A45D815F264EC42D00954F1D /* FavoritesCoordinator.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		A45D8164264EC4D200954F1D /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				A45D8165264EC4E500954F1D /* EventsCoordinatorTests.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		A45D8167264EC63B00954F1D /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				A45D816A264EC66C00954F1D /* EventsView.swift */,
+				A45D8168264EC65600954F1D /* EventsCoordinator.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
 		A4729701264018F1009F0FD8 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +351,8 @@
 			isa = PBXGroup;
 			children = (
 				A45D8145264E846400954F1D /* Home */,
+				A45D815E264EC41700954F1D /* Favorites */,
+				A45D8167264EC63B00954F1D /* Events */,
 				A45D8148264E84F000954F1D /* Settings */,
 				A45D813D264E825600954F1D /* TabBar */,
 				A4DD8CBF26388BCA00FFC669 /* UserManagement */,
@@ -335,6 +383,8 @@
 			isa = PBXGroup;
 			children = (
 				A45D8158264EB5D900954F1D /* Home */,
+				A45D815B264EC1C600954F1D /* Favorites */,
+				A45D8164264EC4D200954F1D /* Events */,
 				A45D8155264EAFA800954F1D /* Settings */,
 				A45D8150264EA33100954F1D /* TabBar */,
 				A4729701264018F1009F0FD8 /* UserManagement */,
@@ -532,6 +582,7 @@
 				A45D814A264E850400954F1D /* SettingsView.swift in Sources */,
 				A4544434263B3840009580E6 /* UserManagementCoordinator.swift in Sources */,
 				A401CC752649BC290070118A /* SignUpView.swift in Sources */,
+				A45D8169264EC65600954F1D /* EventsCoordinator.swift in Sources */,
 				A401CC772649BCDF0070118A /* SignUpViewModel.swift in Sources */,
 				A45D8141264E828900954F1D /* TabBarController.swift in Sources */,
 				A4C61BF426440F6A009FF463 /* FirebaseUserCreator.swift in Sources */,
@@ -540,13 +591,16 @@
 				A4DD8C142637EC6600FFC669 /* AppCoordinator.swift in Sources */,
 				A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */,
 				A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */,
+				A45D8162264EC45200954F1D /* FavoritesView.swift in Sources */,
 				A4DD8C0A2637E90600FFC669 /* SignInView.swift in Sources */,
 				A45D814E264E86B700954F1D /* TabBarCoordinatorComposer.swift in Sources */,
 				A45D8143264E831F00954F1D /* TabBarItemFactory.swift in Sources */,
+				A45D816B264EC66C00954F1D /* EventsView.swift in Sources */,
 				A4DD8C0F2637E91600FFC669 /* HomeView.swift in Sources */,
 				A4C61BF226440F12009FF463 /* FirebaseLoginAuthenticator.swift in Sources */,
 				A4C61BFA264433AF009FF463 /* UserCreator.swift in Sources */,
 				A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */,
+				A45D8160264EC42D00954F1D /* FavoritesCoordinator.swift in Sources */,
 				A45D8147264E847900954F1D /* HomeCoordinator.swift in Sources */,
 				A45D814C264E852500954F1D /* SettingsCoordinator.swift in Sources */,
 				A40FA5A926413488000BE218 /* UserManagementCoordinatorComposer.swift in Sources */,
@@ -560,6 +614,7 @@
 				A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */,
 				A45D815A264EB5E600954F1D /* HomeCoordinatorTests.swift in Sources */,
 				A45D8154264EA6C400954F1D /* TabBarControllerTests.swift in Sources */,
+				A45D815D264EC1E000954F1D /* FavoritesCoordinatorTests.swift in Sources */,
 				A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */,
 				A401CC81264B0D7E0070118A /* SignUpViewModelTests.swift in Sources */,
 				A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */,
@@ -567,6 +622,7 @@
 				A45D8152264EA33F00954F1D /* TabBarCoordinatorTests.swift in Sources */,
 				A454442F263B376E009580E6 /* AppCoordinatorTests.swift in Sources */,
 				A401CC792649C5800070118A /* UserCreatorSpy.swift in Sources */,
+				A45D8166264EC4E500954F1D /* EventsCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
