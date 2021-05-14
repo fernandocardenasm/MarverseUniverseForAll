@@ -42,9 +42,3 @@ public class AppCoordinator {
         }
     }
 }
-
-public protocol StartableCoordinator {
-    var navController: UINavigationController? { get }
-    
-    func start(navController: UINavigationController)
-}

@@ -77,11 +77,3 @@ class TabBarCoordinatorTests: XCTestCase {
                       settingsCoordinator))
     }
 }
-
-class StartableCoordinatorSpy: StartableCoordinator {
-    var navController: UINavigationController?
-    
-    func start(navController: UINavigationController) {
-        self.navController = navController
-    }
-}

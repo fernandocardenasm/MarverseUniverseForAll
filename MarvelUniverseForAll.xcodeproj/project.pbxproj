@@ -34,6 +34,8 @@
 		A45D8166264EC4E500954F1D /* EventsCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8165264EC4E500954F1D /* EventsCoordinatorTests.swift */; };
 		A45D8169264EC65600954F1D /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8168264EC65600954F1D /* EventsCoordinator.swift */; };
 		A45D816B264EC66C00954F1D /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D816A264EC66C00954F1D /* EventsView.swift */; };
+		A45D816D264ED72B00954F1D /* StartableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D816C264ED72B00954F1D /* StartableCoordinator.swift */; };
+		A45D816F264ED75500954F1D /* StartableCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D816E264ED75500954F1D /* StartableCoordinatorSpy.swift */; };
 		A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */; };
 		A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970426411758009F0FD8 /* SignInViewModelTests.swift */; };
 		A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */; };
@@ -99,6 +101,8 @@
 		A45D8165264EC4E500954F1D /* EventsCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinatorTests.swift; sourceTree = "<group>"; };
 		A45D8168264EC65600954F1D /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
 		A45D816A264EC66C00954F1D /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		A45D816C264ED72B00954F1D /* StartableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartableCoordinator.swift; sourceTree = "<group>"; };
+		A45D816E264ED75500954F1D /* StartableCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartableCoordinatorSpy.swift; sourceTree = "<group>"; };
 		A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		A472970426411758009F0FD8 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticatorSpy.swift; sourceTree = "<group>"; };
@@ -360,6 +364,7 @@
 				A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */,
 				A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */,
 				A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */,
+				A45D816C264ED72B00954F1D /* StartableCoordinator.swift */,
 				A4DD8BDC2637E8A500FFC669 /* Assets.xcassets */,
 				A4DD8BE12637E8A500FFC669 /* LaunchScreen.storyboard */,
 				A4DD8BE42637E8A500FFC669 /* Info.plist */,
@@ -392,6 +397,7 @@
 				A454442E263B376E009580E6 /* AppCoordinatorTests.swift */,
 				A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */,
 				A401CC782649C5800070118A /* UserCreatorSpy.swift */,
+				A45D816E264ED75500954F1D /* StartableCoordinatorSpy.swift */,
 			);
 			path = MarvelUniverseForAllTests;
 			sourceTree = "<group>";
@@ -596,6 +602,7 @@
 				A45D814E264E86B700954F1D /* TabBarCoordinatorComposer.swift in Sources */,
 				A45D8143264E831F00954F1D /* TabBarItemFactory.swift in Sources */,
 				A45D816B264EC66C00954F1D /* EventsView.swift in Sources */,
+				A45D816D264ED72B00954F1D /* StartableCoordinator.swift in Sources */,
 				A4DD8C0F2637E91600FFC669 /* HomeView.swift in Sources */,
 				A4C61BF226440F12009FF463 /* FirebaseLoginAuthenticator.swift in Sources */,
 				A4C61BFA264433AF009FF463 /* UserCreator.swift in Sources */,
@@ -615,6 +622,7 @@
 				A45D815A264EB5E600954F1D /* HomeCoordinatorTests.swift in Sources */,
 				A45D8154264EA6C400954F1D /* TabBarControllerTests.swift in Sources */,
 				A45D815D264EC1E000954F1D /* FavoritesCoordinatorTests.swift in Sources */,
+				A45D816F264ED75500954F1D /* StartableCoordinatorSpy.swift in Sources */,
 				A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */,
 				A401CC81264B0D7E0070118A /* SignUpViewModelTests.swift in Sources */,
 				A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */,
