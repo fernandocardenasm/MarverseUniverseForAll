@@ -5,7 +5,6 @@
 //  Created by Fernando Cardenas on 27.04.21.
 //
 
-import Firebase
 import UIKit
 import SwiftUI
 
@@ -25,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         let loginAuthenticator = InMemoryLoginAuthenticator()
-        let userCreator = FirebaseUserCreator(authenticator: Auth.auth())
+        let userCreator = InMemoryUserCreator()
         
         appCoordinator = AppCoordinator(
             userManagementCoordinator: UserManagementCoordinatorComposer.composedWith(
