@@ -17,6 +17,15 @@ class FavoritesCoordinator {
     
     public func start(navController: UINavigationController) {
         self.navController = navController
+        
+        navController.pushViewController(UIHostingController(rootView: FavoritesView()), animated: true)
+    }
+}
+
+public struct FavoritesView: View {
+    
+    public var body: some View {
+        Text("Favorites View")
     }
 }
 
@@ -35,5 +44,15 @@ class FavoritesCoordinatorTests: XCTest {
         sut.start(navController: navController)
         
         XCTAssertEqual(sut.navController, navController)
+    }
+    
+    func test_start_showsFavoritesView() {
+        let sut = FavoritesCoordinator()
+        
+        let navController = UINavigationController()
+        sut.start(navController: navController)
+        
+        XCTAssertEqual(navController.viewControllers.count, 1)
+        XCTAssertTrue(navController.viewControllers[0] is UIHostingController<FavoritesView>)
     }
 }
