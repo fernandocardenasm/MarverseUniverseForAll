@@ -5,7 +5,6 @@
 //  Created by Fernando Cardenas on 27.04.21.
 //
 
-import FirebaseAuth
 import UIKit
 import SwiftUI
 
@@ -24,8 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         let window = UIWindow(windowScene: windowScene)
         
-        let loginAuthenticator = FirebaseLoginAuthenticator(authenticator: Auth.auth())
-        let userCreator = FirebaseUserCreator(authenticator: Auth.auth())
+        let loginAuthenticator = InMemoryLoginAuthenticator()
+        let userCreator = InMemoryUserCreator()
         
         appCoordinator = AppCoordinator(
             userManagementCoordinator: UserManagementCoordinatorComposer.composedWith(
@@ -74,3 +73,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
+
