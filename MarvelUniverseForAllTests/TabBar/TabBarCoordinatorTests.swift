@@ -24,6 +24,22 @@ class TabBarCoordinatorTests: XCTestCase {
                           args.settingsCoordinator.navController)
     }
     
+    func test_start_startsHomeCoordinator() {
+        let (sut, args) = makeSut()
+        
+        sut.start()
+        
+        XCTAssertEqual(sut.tabBarController.homeNavController, args.homeCoordinator.navController)
+    }
+    
+    func test_start_startsSettingsCoordinator() {
+        let (sut, args) = makeSut()
+        
+        sut.start()
+        
+        XCTAssertEqual(sut.tabBarController.settingsNavController, args.settingsCoordinator.navController)
+    }
+    
     private func makeSut() -> (sut: TabBarCoordinator,
                        (homeCoordinator: HomeCoordinator,
                        settingsCoordinator: SettingsCoordinator)) {
