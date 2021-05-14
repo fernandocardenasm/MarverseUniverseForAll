@@ -38,16 +38,6 @@
                ReferencedContainer = "container:MarvelUniverseForAll.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A401CC5F26498A350070118A"
-               BuildableName = "UserManagementEndtoEndTests.xctest"
-               BlueprintName = "UserManagementEndtoEndTests"
-               ReferencedContainer = "container:MarvelUniverseForAll.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

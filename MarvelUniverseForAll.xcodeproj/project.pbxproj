@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A401CC6B26498A7B0070118A /* FirebaseUserCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */; };
-		A401CC6C26498A810070118A /* FirebaseAuthenticationLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */; };
-		A401CC6D26498A860070118A /* FirebaseAuth+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */; };
 		A401CC752649BC290070118A /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401CC742649BC290070118A /* SignUpView.swift */; };
 		A401CC772649BCDF0070118A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401CC762649BCDF0070118A /* SignUpViewModel.swift */; };
 		A401CC792649C5800070118A /* UserCreatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401CC782649C5800070118A /* UserCreatorSpy.swift */; };
@@ -58,13 +55,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A401CC6526498A350070118A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4DD8BCB2637E8A400FFC669 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4DD8BD22637E8A400FFC669;
-			remoteInfo = MarvelUniverseForAll;
-		};
 		A4DD8BEA2637E8A500FFC669 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A4DD8BCB2637E8A400FFC669 /* Project object */;
@@ -75,8 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A401CC6026498A350070118A /* UserManagementEndtoEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserManagementEndtoEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A401CC6426498A350070118A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A401CC742649BC290070118A /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A401CC762649BCDF0070118A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A401CC782649C5800070118A /* UserCreatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreatorSpy.swift; sourceTree = "<group>"; };
@@ -109,8 +97,6 @@
 		A472970426411758009F0FD8 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticatorSpy.swift; sourceTree = "<group>"; };
 		A472970826412859009F0FD8 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
-		A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserCreatorTests.swift; sourceTree = "<group>"; };
-		A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAuth+Extensions.swift"; sourceTree = "<group>"; };
 		A4C61BF726443391009FF463 /* LoginAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticator.swift; sourceTree = "<group>"; };
 		A4C61BF9264433AF009FF463 /* UserCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreator.swift; sourceTree = "<group>"; };
 		A4C61BFE26444AA6009FF463 /* Marvel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marvel-Regular.ttf"; sourceTree = "<group>"; };
@@ -127,17 +113,9 @@
 		A4DD8C0E2637E91600FFC669 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A4EB7873264181DB005199BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationLoginTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A401CC5D26498A350070118A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A4DD8BD02637E8A400FFC669 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,15 +134,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A401CC6126498A350070118A /* UserManagementEndtoEndTests */ = {
-			isa = PBXGroup;
-			children = (
-				A4C61BEF26440DCB009FF463 /* Infrastructure */,
-				A401CC6426498A350070118A /* Info.plist */,
-			);
-			path = UserManagementEndtoEndTests;
-			sourceTree = "<group>";
-		};
 		A401CC7A264AFE3A0070118A /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,24 +265,6 @@
 			path = UserManagement;
 			sourceTree = "<group>";
 		};
-		A4C61BEC2643FAD1009FF463 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		A4C61BEF26440DCB009FF463 /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-				A4C61BEC2643FAD1009FF463 /* Helpers */,
-				A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */,
-				A4EB787526419E2E005199BF /* FirebaseAuthenticationLoginTests.swift */,
-			);
-			path = Infrastructure;
-			sourceTree = "<group>";
-		};
 		A4C61BF026440EFA009FF463 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,7 +287,6 @@
 			children = (
 				A4DD8BD52637E8A400FFC669 /* MarvelUniverseForAll */,
 				A4DD8BEC2637E8A500FFC669 /* MarvelUniverseForAllTests */,
-				A401CC6126498A350070118A /* UserManagementEndtoEndTests */,
 				A4DD8BD42637E8A400FFC669 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -346,7 +296,6 @@
 			children = (
 				A4DD8BD32637E8A400FFC669 /* MarvelUniverseForAll.app */,
 				A4DD8BE92637E8A500FFC669 /* MarvelUniverseForAllTests.xctest */,
-				A401CC6026498A350070118A /* UserManagementEndtoEndTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -418,24 +367,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A401CC5F26498A350070118A /* UserManagementEndtoEndTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A401CC6926498A350070118A /* Build configuration list for PBXNativeTarget "UserManagementEndtoEndTests" */;
-			buildPhases = (
-				A401CC5C26498A350070118A /* Sources */,
-				A401CC5D26498A350070118A /* Frameworks */,
-				A401CC5E26498A350070118A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A401CC6626498A350070118A /* PBXTargetDependency */,
-			);
-			name = UserManagementEndtoEndTests;
-			productName = UserManagementEndtoEndTests;
-			productReference = A401CC6026498A350070118A /* UserManagementEndtoEndTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		A4DD8BD22637E8A400FFC669 /* MarvelUniverseForAll */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4DD8BFD2637E8A500FFC669 /* Build configuration list for PBXNativeTarget "MarvelUniverseForAll" */;
@@ -484,10 +415,6 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					A401CC5F26498A350070118A = {
-						CreatedOnToolsVersion = 12.5;
-						TestTargetID = A4DD8BD22637E8A400FFC669;
-					};
 					A4DD8BD22637E8A400FFC669 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -515,19 +442,11 @@
 			targets = (
 				A4DD8BD22637E8A400FFC669 /* MarvelUniverseForAll */,
 				A4DD8BE82637E8A500FFC669 /* MarvelUniverseForAllTests */,
-				A401CC5F26498A350070118A /* UserManagementEndtoEndTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A401CC5E26498A350070118A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A4DD8BD12637E8A400FFC669 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -571,16 +490,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A401CC5C26498A350070118A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A401CC6C26498A810070118A /* FirebaseAuthenticationLoginTests.swift in Sources */,
-				A401CC6B26498A7B0070118A /* FirebaseUserCreatorTests.swift in Sources */,
-				A401CC6D26498A860070118A /* FirebaseAuth+Extensions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A4DD8BCF2637E8A400FFC669 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -637,11 +546,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A401CC6626498A350070118A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4DD8BD22637E8A400FFC669 /* MarvelUniverseForAll */;
-			targetProxy = A401CC6526498A350070118A /* PBXContainerItemProxy */;
-		};
 		A4DD8BEB2637E8A500FFC669 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A4DD8BD22637E8A400FFC669 /* MarvelUniverseForAll */;
@@ -661,48 +565,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A401CC6726498A350070118A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SAR2G9PZXH;
-				INFOPLIST_FILE = UserManagementEndtoEndTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = cardenas.fernando.UserManagementEndtoEndTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelUniverseForAll.app/MarvelUniverseForAll";
-			};
-			name = Debug;
-		};
-		A401CC6826498A350070118A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SAR2G9PZXH;
-				INFOPLIST_FILE = UserManagementEndtoEndTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = cardenas.fernando.UserManagementEndtoEndTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelUniverseForAll.app/MarvelUniverseForAll";
-			};
-			name = Release;
-		};
 		A401CC6F2649925C0070118A /* LocalhostTests */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -800,27 +662,6 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cardenas.fernando.MarvelUniverseForAllTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarvelUniverseForAll.app/MarvelUniverseForAll";
-			};
-			name = LocalhostTests;
-		};
-		A401CC722649925C0070118A /* LocalhostTests */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SAR2G9PZXH;
-				INFOPLIST_FILE = UserManagementEndtoEndTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = cardenas.fernando.UserManagementEndtoEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1033,16 +874,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A401CC6926498A350070118A /* Build configuration list for PBXNativeTarget "UserManagementEndtoEndTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A401CC6726498A350070118A /* Debug */,
-				A401CC722649925C0070118A /* LocalhostTests */,
-				A401CC6826498A350070118A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A4DD8BCE2637E8A400FFC669 /* Build configuration list for PBXProject "MarvelUniverseForAll" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
