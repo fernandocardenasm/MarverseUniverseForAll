@@ -39,7 +39,7 @@ class AppCoordinatorTests: XCTestCase {
         
         userMgtCoord.finishedSubject.send(completion: .finished)
         
-        completeAnimation()
+        forceCompleteAnimation()
         
         XCTAssertNotEqual(sut.rootViewController, sut.navController)
         XCTAssertTrue(sut.rootViewController is TabBarController)
@@ -63,8 +63,8 @@ extension AppCoordinatorTests {
                           settingsCoordinator: SettingsCoordinator())
     }
     
-    func completeAnimation() {
-        RunLoop.current.run(until: Date().addingTimeInterval(0.01))
+    func forceCompleteAnimation() {
+        RunLoop.current.run(until: Date().addingTimeInterval(0.1))
     }
 }
 
