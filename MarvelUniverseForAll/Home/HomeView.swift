@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct HomeView: View {
+public struct HomeView: View {
     
-    var body: some View {
+    public var body: some View {
         Text("Welcome to the Marvel Universe. Here you find all the available content")
     }
 }
