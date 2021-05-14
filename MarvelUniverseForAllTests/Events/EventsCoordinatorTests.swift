@@ -5,28 +5,9 @@
 //  Created by Fernando Cardenas on 14.05.21.
 //
 
+import MarvelUniverseForAll
 import SwiftUI
 import XCTest
-
-public class EventsCoordinator {
-    
-    weak var navController: UINavigationController?
-    
-    public init() {}
-    
-    public func start(navController: UINavigationController) {
-        self.navController = navController
-        
-        navController.pushViewController(UIHostingController(rootView: EventsView()), animated: true)
-    }
-}
-
-public struct EventsView: View {
-    
-    public var body: some View {
-        Text("Events Viwe")
-    }
-}
 
 class EventsCoordinatorTests: XCTestCase {
     
