@@ -36,11 +36,11 @@
 		A45D816B264EC66C00954F1D /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D816A264EC66C00954F1D /* EventsView.swift */; };
 		A45D816D264ED72B00954F1D /* StartableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D816C264ED72B00954F1D /* StartableCoordinator.swift */; };
 		A45D816F264ED75500954F1D /* StartableCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D816E264ED75500954F1D /* StartableCoordinatorSpy.swift */; };
+		A45D8171264EED5E00954F1D /* InMemoryLoginAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8170264EED5E00954F1D /* InMemoryLoginAuthenticator.swift */; };
 		A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */; };
 		A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970426411758009F0FD8 /* SignInViewModelTests.swift */; };
 		A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */; };
 		A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970826412859009F0FD8 /* SignInViewModel.swift */; };
-		A4C61BF226440F12009FF463 /* FirebaseLoginAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF126440F12009FF463 /* FirebaseLoginAuthenticator.swift */; };
 		A4C61BF426440F6A009FF463 /* FirebaseUserCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF326440F6A009FF463 /* FirebaseUserCreator.swift */; };
 		A4C61BF826443391009FF463 /* LoginAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF726443391009FF463 /* LoginAuthenticator.swift */; };
 		A4C61BFA264433AF009FF463 /* UserCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C61BF9264433AF009FF463 /* UserCreator.swift */; };
@@ -103,13 +103,13 @@
 		A45D816A264EC66C00954F1D /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		A45D816C264ED72B00954F1D /* StartableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartableCoordinator.swift; sourceTree = "<group>"; };
 		A45D816E264ED75500954F1D /* StartableCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartableCoordinatorSpy.swift; sourceTree = "<group>"; };
+		A45D8170264EED5E00954F1D /* InMemoryLoginAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryLoginAuthenticator.swift; sourceTree = "<group>"; };
 		A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		A472970426411758009F0FD8 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticatorSpy.swift; sourceTree = "<group>"; };
 		A472970826412859009F0FD8 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		A4C61BEA2643F9B4009FF463 /* FirebaseUserCreatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserCreatorTests.swift; sourceTree = "<group>"; };
 		A4C61BED2643FC7D009FF463 /* FirebaseAuth+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAuth+Extensions.swift"; sourceTree = "<group>"; };
-		A4C61BF126440F12009FF463 /* FirebaseLoginAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginAuthenticator.swift; sourceTree = "<group>"; };
 		A4C61BF326440F6A009FF463 /* FirebaseUserCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserCreator.swift; sourceTree = "<group>"; };
 		A4C61BF726443391009FF463 /* LoginAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticator.swift; sourceTree = "<group>"; };
 		A4C61BF9264433AF009FF463 /* UserCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreator.swift; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				A4C61BF326440F6A009FF463 /* FirebaseUserCreator.swift */,
-				A4C61BF126440F12009FF463 /* FirebaseLoginAuthenticator.swift */,
+				A45D8170264EED5E00954F1D /* InMemoryLoginAuthenticator.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -595,6 +595,7 @@
 				A4C61BF826443391009FF463 /* LoginAuthenticator.swift in Sources */,
 				A45D813F264E826600954F1D /* TabBarCoordinator.swift in Sources */,
 				A4DD8C142637EC6600FFC669 /* AppCoordinator.swift in Sources */,
+				A45D8171264EED5E00954F1D /* InMemoryLoginAuthenticator.swift in Sources */,
 				A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */,
 				A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */,
 				A45D8162264EC45200954F1D /* FavoritesView.swift in Sources */,
@@ -604,7 +605,6 @@
 				A45D816B264EC66C00954F1D /* EventsView.swift in Sources */,
 				A45D816D264ED72B00954F1D /* StartableCoordinator.swift in Sources */,
 				A4DD8C0F2637E91600FFC669 /* HomeView.swift in Sources */,
-				A4C61BF226440F12009FF463 /* FirebaseLoginAuthenticator.swift in Sources */,
 				A4C61BFA264433AF009FF463 /* UserCreator.swift in Sources */,
 				A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */,
 				A45D8160264EC42D00954F1D /* FavoritesCoordinator.swift in Sources */,
