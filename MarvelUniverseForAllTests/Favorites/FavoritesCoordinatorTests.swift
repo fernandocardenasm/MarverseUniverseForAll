@@ -9,26 +9,6 @@ import MarvelUniverseForAll
 import SwiftUI
 import XCTest
 
-class FavoritesCoordinator {
-    
-    public weak var navController: UINavigationController?
-    
-    public init() {}
-    
-    public func start(navController: UINavigationController) {
-        self.navController = navController
-        
-        navController.pushViewController(UIHostingController(rootView: FavoritesView()), animated: true)
-    }
-}
-
-public struct FavoritesView: View {
-    
-    public var body: some View {
-        Text("Favorites View")
-    }
-}
-
 class FavoritesCoordinatorTests: XCTest {
     
     func test_init_doesNotInitNavController() {
