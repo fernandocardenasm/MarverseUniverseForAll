@@ -14,6 +14,7 @@ class TabBarCoordinatorComposer {
     static func composed() -> TabBarCoordinator {
         let tabBarCoordinator = TabBarCoordinator(tabBarController: TabBarController(),
                                                   homeCoordinator: HomeCoordinator(),
+                                                  eventsCoordinator: EventsCoordinator(),
                                                   settingsCoordinator: SettingsCoordinator())
         return tabBarCoordinator
     }

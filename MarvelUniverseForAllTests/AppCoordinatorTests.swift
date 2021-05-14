@@ -60,6 +60,7 @@ extension AppCoordinatorTests {
     func makeTabBarCoordinator() -> TabBarCoordinator {
         TabBarCoordinator(tabBarController: TabBarController(),
                           homeCoordinator: HomeCoordinator(),
+                          eventsCoordinator: EventsCoordinator(),
                           settingsCoordinator: SettingsCoordinator())
     }
     
