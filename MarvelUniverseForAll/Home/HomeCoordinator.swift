@@ -11,6 +11,8 @@ public class HomeCoordinator {
     
     weak var navController: UINavigationController?
     
+    public init() {}
+    
     public func start(navController: UINavigationController) {
         self.navController = navController
         
