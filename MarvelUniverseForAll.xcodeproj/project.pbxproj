@@ -25,6 +25,7 @@
 		A45D814C264E852500954F1D /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D814B264E852500954F1D /* SettingsCoordinator.swift */; };
 		A45D814E264E86B700954F1D /* TabBarCoordinatorComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D814D264E86B700954F1D /* TabBarCoordinatorComposer.swift */; };
 		A45D8152264EA33F00954F1D /* TabBarCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8151264EA33F00954F1D /* TabBarCoordinatorTests.swift */; };
+		A45D8154264EA6C400954F1D /* TabBarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8153264EA6C400954F1D /* TabBarControllerTests.swift */; };
 		A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */; };
 		A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970426411758009F0FD8 /* SignInViewModelTests.swift */; };
 		A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */; };
@@ -81,6 +82,7 @@
 		A45D814B264E852500954F1D /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		A45D814D264E86B700954F1D /* TabBarCoordinatorComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinatorComposer.swift; sourceTree = "<group>"; };
 		A45D8151264EA33F00954F1D /* TabBarCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinatorTests.swift; sourceTree = "<group>"; };
+		A45D8153264EA6C400954F1D /* TabBarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerTests.swift; sourceTree = "<group>"; };
 		A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		A472970426411758009F0FD8 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticatorSpy.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				A45D8151264EA33F00954F1D /* TabBarCoordinatorTests.swift */,
+				A45D8153264EA6C400954F1D /* TabBarControllerTests.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */,
+				A45D8154264EA6C400954F1D /* TabBarControllerTests.swift in Sources */,
 				A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */,
 				A401CC81264B0D7E0070118A /* SignUpViewModelTests.swift in Sources */,
 				A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */,
