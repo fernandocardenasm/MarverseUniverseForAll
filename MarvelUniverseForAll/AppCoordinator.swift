@@ -43,17 +43,6 @@ public class AppCoordinator {
     }
 }
 
-public class HomeCoordinator {
-    
-    weak var navController: UINavigationController?
-    
-    public func start(navController: UINavigationController) {
-        self.navController = navController
-        
-        navController.pushViewController(UIHostingController(rootView: HomeView()), animated: true)
-    }
-}
-
 public class SettingsCoordinator {
     
     weak var navController: UINavigationController?

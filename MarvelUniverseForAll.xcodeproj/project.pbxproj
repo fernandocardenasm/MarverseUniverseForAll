@@ -21,6 +21,7 @@
 		A45D813F264E826600954F1D /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D813E264E826600954F1D /* TabBarCoordinator.swift */; };
 		A45D8141264E828900954F1D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8140264E828900954F1D /* TabBarController.swift */; };
 		A45D8143264E831F00954F1D /* TabBarItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8142264E831F00954F1D /* TabBarItemFactory.swift */; };
+		A45D8147264E847900954F1D /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8146264E847900954F1D /* HomeCoordinator.swift */; };
 		A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */; };
 		A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970426411758009F0FD8 /* SignInViewModelTests.swift */; };
 		A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */; };
@@ -74,6 +75,7 @@
 		A45D813E264E826600954F1D /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		A45D8140264E828900954F1D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A45D8142264E831F00954F1D /* TabBarItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemFactory.swift; sourceTree = "<group>"; };
+		A45D8146264E847900954F1D /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		A472970426411758009F0FD8 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticatorSpy.swift; sourceTree = "<group>"; };
@@ -181,6 +183,15 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		A45D8145264E846400954F1D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A4DD8C0E2637E91600FFC669 /* HomeView.swift */,
+				A45D8146264E847900954F1D /* HomeCoordinator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		A4729701264018F1009F0FD8 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +260,7 @@
 		A4DD8BD52637E8A400FFC669 /* MarvelUniverseForAll */ = {
 			isa = PBXGroup;
 			children = (
+				A45D8145264E846400954F1D /* Home */,
 				A45D813D264E825600954F1D /* TabBar */,
 				A4C61BFB26444A61009FF463 /* fonts */,
 				A4DD8CBF26388BCA00FFC669 /* UserManagement */,
@@ -261,7 +273,6 @@
 				A4DD8BDE2637E8A500FFC669 /* Preview Content */,
 				A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */,
 				A4544426263B36B4009580E6 /* TabBarView.swift */,
-				A4DD8C0E2637E91600FFC669 /* HomeView.swift */,
 				A40FA5A826413488000BE218 /* UserManagementCoordinatorComposer.swift */,
 				A4EB7873264181DB005199BF /* GoogleService-Info.plist */,
 			);
@@ -488,6 +499,7 @@
 				A4C61BF226440F12009FF463 /* FirebaseLoginAuthenticator.swift in Sources */,
 				A4C61BFA264433AF009FF463 /* UserCreator.swift in Sources */,
 				A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */,
+				A45D8147264E847900954F1D /* HomeCoordinator.swift in Sources */,
 				A4DD8BDB2637E8A400FFC669 /* ContentView.swift in Sources */,
 				A40FA5A926413488000BE218 /* UserManagementCoordinatorComposer.swift in Sources */,
 			);
