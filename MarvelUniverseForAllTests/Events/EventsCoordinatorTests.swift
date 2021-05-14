@@ -12,6 +12,10 @@ public class EventsCoordinator {
     weak var navController: UINavigationController?
     
     public init() {}
+    
+    public func start(navController: UINavigationController) {
+        self.navController = navController
+    }
 }
 
 class EventsCoordinatorTests: XCTestCase {
@@ -20,5 +24,14 @@ class EventsCoordinatorTests: XCTestCase {
         let sut = EventsCoordinator()
         
         XCTAssertNil(sut.navController)
+    }
+    
+    func test_start_setsNavController() {
+        let sut = EventsCoordinator()
+        
+        let navController = UINavigationController()
+        sut.start(navController: navController)
+        
+        XCTAssertEqual(sut.navController, navController)
     }
 }
