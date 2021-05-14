@@ -9,7 +9,7 @@ import SwiftUI
 
 public class HomeCoordinator {
     
-    weak var navController: UINavigationController?
+    public weak var navController: UINavigationController?
     
     public init() {}
     
