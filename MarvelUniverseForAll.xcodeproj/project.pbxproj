@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,7 +50,6 @@
 		A4DD8C0A2637E90600FFC669 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C092637E90600FFC669 /* SignInView.swift */; };
 		A4DD8C0F2637E91600FFC669 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C0E2637E91600FFC669 /* HomeView.swift */; };
 		A4DD8C142637EC6600FFC669 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */; };
-		A4EB787226417EBC005199BF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A4EB787126417EBC005199BF /* FirebaseAuth */; };
 		A4EB7874264181DB005199BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4EB7873264181DB005199BF /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -120,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4EB787226417EBC005199BF /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +380,6 @@
 			);
 			name = MarvelUniverseForAll;
 			packageProductDependencies = (
-				A4EB787126417EBC005199BF /* FirebaseAuth */,
 			);
 			productName = MarvelUniverseForAll;
 			productReference = A4DD8BD32637E8A400FFC669 /* MarvelUniverseForAll.app */;
@@ -434,7 +431,6 @@
 			);
 			mainGroup = A4DD8BCA2637E8A400FFC669;
 			packageReferences = (
-				A4EB787026417EBC005199BF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = A4DD8BD42637E8A400FFC669 /* Products */;
 			projectDirPath = "";
@@ -905,25 +901,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A4EB787026417EBC005199BF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.11.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A4EB787126417EBC005199BF /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A4EB787026417EBC005199BF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A4DD8BCB2637E8A400FFC669 /* Project object */;
 }
