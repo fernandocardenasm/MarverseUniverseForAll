@@ -20,6 +20,16 @@ class TabBarControllerTests: XCTestCase {
         expect(barItem: sut.homeNavController.tabBarItem, toBeEqualTo: homeBarItem)
     }
     
+    func test_viewDidLoad_setsSettingsTabBarItem() {
+        let sut = TabBarController()
+        sut.loadViewIfNeeded()
+        
+        let settingsBarItem = UITabBarItem(title: "Settings",
+                                       image: UIImage(systemName: "gearshape")!,
+                                       selectedImage: nil)
+        expect(barItem: sut.settingsNavController.tabBarItem, toBeEqualTo: settingsBarItem)
+    }
+    
     func expect(barItem: UITabBarItem, toBeEqualTo comparedBarItem: UITabBarItem) {
         XCTAssertEqual(barItem.title, comparedBarItem.title)
         XCTAssertEqual(barItem.image, comparedBarItem.image)
