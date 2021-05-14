@@ -5,7 +5,6 @@
 //  Created by Fernando Cardenas on 04.05.21.
 //
 
-import Firebase
 import SwiftUI
 
 public final class UserManagementCoordinatorComposer {
