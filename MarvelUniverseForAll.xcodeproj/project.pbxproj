@@ -271,11 +271,11 @@
 		A4DD8BD52637E8A400FFC669 /* MarvelUniverseForAll */ = {
 			isa = PBXGroup;
 			children = (
-				A4C61BFB26444A61009FF463 /* Fonts */,
 				A45D8145264E846400954F1D /* Home */,
 				A45D8148264E84F000954F1D /* Settings */,
 				A45D813D264E825600954F1D /* TabBar */,
 				A4DD8CBF26388BCA00FFC669 /* UserManagement */,
+				A4C61BFB26444A61009FF463 /* Fonts */,
 				A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */,
 				A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */,
 				A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */,
