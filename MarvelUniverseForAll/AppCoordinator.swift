@@ -16,26 +16,29 @@ public class AppCoordinator {
     var cancellables = Set<AnyCancellable>()
     
     private let userManagementCoordinator: UserManagementCoordinator
+    private let tabBarCoordinator: TabBarCoordinator
     
-    public init(userManagementCoordinator: UserManagementCoordinator) {
+    public init(userManagementCoordinator: UserManagementCoordinator,
+                tabBarCoordinator: TabBarCoordinator) {
         self.userManagementCoordinator = userManagementCoordinator
+        self.tabBarCoordinator = tabBarCoordinator
     }
     
     public func onAppStart() {
         userManagementCoordinator.finished().sink(receiveCompletion: { [weak self] receive in
-            print("Completion")
-            
-            guard let self = self else { return }
-            
-            self.navController.viewControllers.insert(UIHostingController(rootView: TabBarView()), at: 0)
-            self.navController.popToRootViewController(animated: true)
-            
+            self?.setTabBarControllerAsRootViewController()
+            self?.tabBarCoordinator.start()
         }, receiveValue: { _ in }).store(in: &cancellables)
         
         userManagementCoordinator.start(navController: navController)
     }
     
-    func tabBarViewController() -> UIHostingController<HomeView> {
-        UIHostingController(rootView: HomeView())
+    private func setTabBarControllerAsRootViewController() {
+        UIView.transition(from: rootViewController.view,
+                          to: tabBarCoordinator.tabBarController.view,
+                          duration: 0.2,
+                          options: [.transitionCrossDissolve]) { _ in
+            self.rootViewController = self.tabBarCoordinator.tabBarController
+        }
     }
 }

@@ -39,8 +39,10 @@ class AppCoordinatorTests: XCTestCase {
         
         userMgtCoord.finishedSubject.send(completion: .finished)
         
-        XCTAssertEqual(sut.navController.viewControllers.count, 1)
-        XCTAssertTrue(sut.navController.viewControllers.first is UIHostingController<TabBarView>)
+        forceCompleteAnimation()
+        
+        XCTAssertNotEqual(sut.rootViewController, sut.navController)
+        XCTAssertTrue(sut.rootViewController is TabBarController)
     }
 }
 
@@ -50,8 +52,19 @@ extension AppCoordinatorTests {
     
     func makeSut(file: StaticString = #file, line: UInt = #line) -> (AppCoordinator, UserManagementCoordinatorSpy) {
         let userManagementCoordinator = UserManagementCoordinatorSpy()
-        let sut = AppCoordinator(userManagementCoordinator: userManagementCoordinator)
+        let sut = AppCoordinator(userManagementCoordinator: userManagementCoordinator,
+                                 tabBarCoordinator: makeTabBarCoordinator())
         return (sut, userManagementCoordinator)
+    }
+    
+    func makeTabBarCoordinator() -> TabBarCoordinator {
+        TabBarCoordinator(tabBarController: TabBarController(),
+                          homeCoordinator: HomeCoordinator(),
+                          settingsCoordinator: SettingsCoordinator())
+    }
+    
+    func forceCompleteAnimation() {
+        RunLoop.current.run(until: Date().addingTimeInterval(0.1))
     }
 }
 
