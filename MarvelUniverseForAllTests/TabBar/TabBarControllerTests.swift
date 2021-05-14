@@ -47,7 +47,7 @@ class TabBarControllerTests: XCTestCase {
         XCTAssertEqual(sut.viewControllers?[1], sut.settingsNavController)
     }
     
-    func expect(barItem: UITabBarItem, toBeEqualTo comparedBarItem: UITabBarItem) {
+    private func expect(barItem: UITabBarItem, toBeEqualTo comparedBarItem: UITabBarItem) {
         XCTAssertEqual(barItem.title, comparedBarItem.title)
         XCTAssertEqual(barItem.image, comparedBarItem.image)
         XCTAssertEqual(barItem.selectedImage, comparedBarItem.selectedImage)
