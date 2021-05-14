@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct TabBarItemFactory {
+struct TabBarItemFactory {
     static func home() -> UITabBarItem {
         UITabBarItem(title: "Home",
                      image: UIImage(systemName: "house")!,
