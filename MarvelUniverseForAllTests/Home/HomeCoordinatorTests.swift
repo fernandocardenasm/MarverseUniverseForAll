@@ -15,4 +15,13 @@ class HomeCoordinatorTests: XCTestCase {
         
         XCTAssertNil(sut.navController)
     }
+    
+    func test_start_setsNavController() {
+        let sut = HomeCoordinator()
+        
+        let navController = UINavigationController()
+        sut.start(navController: navController)
+        
+        XCTAssertEqual(sut.navController, navController)
+    }
 }
