@@ -57,15 +57,15 @@ class TabBarCoordinatorTests: XCTestCase {
     }
     
     private func makeSut() -> (sut: TabBarCoordinator,
-                       (homeCoordinator: HomeCoordinator,
-                        favoritesCoordinator: FavoritesCoordinator,
-                        eventsCoordinator: EventsCoordinator,
-                       settingsCoordinator: SettingsCoordinator)) {
+                               args: (homeCoordinator: StartableCoordinator,
+                                      favoritesCoordinator: StartableCoordinator,
+                                      eventsCoordinator: StartableCoordinator,
+                                      settingsCoordinator: StartableCoordinator)) {
         let tabBarController = TabBarController()
-        let homeCoordinator = HomeCoordinator()
-        let favoritesCoordinator = FavoritesCoordinator()
-        let eventsCoordinator = EventsCoordinator()
-        let settingsCoordinator = SettingsCoordinator()
+        let homeCoordinator = StartableCoordinatorSpy()
+        let favoritesCoordinator = StartableCoordinatorSpy()
+        let eventsCoordinator = StartableCoordinatorSpy()
+        let settingsCoordinator = StartableCoordinatorSpy()
         let sut = TabBarCoordinator(tabBarController: tabBarController,
                                     homeCoordinator: homeCoordinator,
                                     favoritesCoordinator: favoritesCoordinator,
