@@ -10,14 +10,6 @@ import XCTest
 
 class TabBarControllerTests: XCTestCase {
     
-    func test_viewDidLoad_navControllersNotEqual() {
-        let sut = TabBarController()
-        
-        sut.loadViewIfNeeded()
-        
-        XCTAssertNotEqual(sut.homeNavController, sut.settingsNavController)
-    }
-    
     func test_viewDidLoad_setsHomeTabBarItem() {
         let sut = TabBarController()
         sut.loadViewIfNeeded()
