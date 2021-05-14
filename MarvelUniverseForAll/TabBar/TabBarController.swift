@@ -10,16 +10,19 @@ import UIKit
 public class TabBarController: UITabBarController {
     
     public private(set) lazy var homeNavController: UINavigationController = UINavigationController()
+    public private(set) lazy var favoritesNavController: UINavigationController = UINavigationController()
     public private(set) lazy var settingsNavController: UINavigationController = UINavigationController()
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         
         homeNavController.tabBarItem = TabBarItemFactory.home()
+        favoritesNavController.tabBarItem = TabBarItemFactory.favorites()
         settingsNavController.tabBarItem = TabBarItemFactory.settings()
         
         viewControllers = [
             homeNavController,
+            favoritesNavController,
             settingsNavController
         ]
     }

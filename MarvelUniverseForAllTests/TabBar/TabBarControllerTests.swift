@@ -28,6 +28,16 @@ class TabBarControllerTests: XCTestCase {
         expect(barItem: sut.homeNavController.tabBarItem, toBeEqualTo: homeBarItem)
     }
     
+    func test_viewDidLoad_setsFavoritesTabBarItem() {
+        let sut = TabBarController()
+        sut.loadViewIfNeeded()
+        
+        let settingsBarItem = UITabBarItem(title: "Favorites",
+                                       image: UIImage(systemName: "heart")!,
+                                       selectedImage: nil)
+        expect(barItem: sut.favoritesNavController.tabBarItem, toBeEqualTo: settingsBarItem)
+    }
+    
     func test_viewDidLoad_setsSettingsTabBarItem() {
         let sut = TabBarController()
         sut.loadViewIfNeeded()
@@ -42,9 +52,10 @@ class TabBarControllerTests: XCTestCase {
         let sut = TabBarController()
         sut.loadViewIfNeeded()
         
-        XCTAssertEqual(sut.viewControllers?.count, 2)
+        XCTAssertEqual(sut.viewControllers?.count, 3)
         XCTAssertEqual(sut.viewControllers?[0], sut.homeNavController)
-        XCTAssertEqual(sut.viewControllers?[1], sut.settingsNavController)
+        XCTAssertEqual(sut.viewControllers?[1], sut.favoritesNavController)
+        XCTAssertEqual(sut.viewControllers?[2], sut.settingsNavController)
     }
     
     private func expect(barItem: UITabBarItem, toBeEqualTo comparedBarItem: UITabBarItem) {
