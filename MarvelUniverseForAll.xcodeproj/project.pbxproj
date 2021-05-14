@@ -240,12 +240,12 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
-		A4C61BFB26444A61009FF463 /* fonts */ = {
+		A4C61BFB26444A61009FF463 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				A4C61BFE26444AA6009FF463 /* Marvel-Regular.ttf */,
 			);
-			path = fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		A4DD8BCA2637E8A400FFC669 = {
@@ -274,7 +274,7 @@
 				A45D8145264E846400954F1D /* Home */,
 				A45D8148264E84F000954F1D /* Settings */,
 				A45D813D264E825600954F1D /* TabBar */,
-				A4C61BFB26444A61009FF463 /* fonts */,
+				A4C61BFB26444A61009FF463 /* Fonts */,
 				A4DD8CBF26388BCA00FFC669 /* UserManagement */,
 				A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */,
 				A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */,
