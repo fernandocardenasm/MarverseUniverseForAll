@@ -42,14 +42,3 @@ public class AppCoordinator {
         }
     }
 }
-
-public class SettingsCoordinator {
-    
-    weak var navController: UINavigationController?
-    
-    public func start(navController: UINavigationController) {
-        self.navController = navController
-        
-        navController.pushViewController(UIHostingController(rootView: SettingsView()), animated: true)
-    }
-}
