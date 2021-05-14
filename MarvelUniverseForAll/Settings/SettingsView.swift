@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+public struct SettingsView: View {
     
-    var body: some View {
+    public var body: some View {
         Text("Settings")
     }
 }
