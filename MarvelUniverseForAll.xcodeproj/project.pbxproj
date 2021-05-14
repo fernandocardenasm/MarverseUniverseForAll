@@ -35,7 +35,6 @@
 		A4C61BFF26444AA6009FF463 /* Marvel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4C61BFE26444AA6009FF463 /* Marvel-Regular.ttf */; };
 		A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */; };
 		A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */; };
-		A4DD8BDB2637E8A400FFC669 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD8BDA2637E8A400FFC669 /* ContentView.swift */; };
 		A4DD8BDD2637E8A500FFC669 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DD8BDC2637E8A500FFC669 /* Assets.xcassets */; };
 		A4DD8BE02637E8A500FFC669 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DD8BDF2637E8A500FFC669 /* Preview Assets.xcassets */; };
 		A4DD8BE32637E8A500FFC669 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DD8BE12637E8A500FFC669 /* LaunchScreen.storyboard */; };
@@ -94,7 +93,6 @@
 		A4DD8BD32637E8A400FFC669 /* MarvelUniverseForAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelUniverseForAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A4DD8BDA2637E8A400FFC669 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A4DD8BDC2637E8A500FFC669 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4DD8BDF2637E8A500FFC669 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A4DD8BE22637E8A500FFC669 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -280,7 +278,6 @@
 				A4DD8CBF26388BCA00FFC669 /* UserManagement */,
 				A4DD8BD62637E8A400FFC669 /* AppDelegate.swift */,
 				A4DD8BD82637E8A400FFC669 /* SceneDelegate.swift */,
-				A4DD8BDA2637E8A400FFC669 /* ContentView.swift */,
 				A4DD8BDC2637E8A500FFC669 /* Assets.xcassets */,
 				A4DD8BE12637E8A500FFC669 /* LaunchScreen.storyboard */,
 				A4DD8BE42637E8A500FFC669 /* Info.plist */,
@@ -516,7 +513,6 @@
 				A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */,
 				A45D8147264E847900954F1D /* HomeCoordinator.swift in Sources */,
 				A45D814C264E852500954F1D /* SettingsCoordinator.swift in Sources */,
-				A4DD8BDB2637E8A400FFC669 /* ContentView.swift in Sources */,
 				A40FA5A926413488000BE218 /* UserManagementCoordinatorComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
