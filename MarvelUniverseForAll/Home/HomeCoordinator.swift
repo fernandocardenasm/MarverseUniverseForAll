@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public class HomeCoordinator {
+public class HomeCoordinator: StartableCoordinator {
     
     public weak var navController: UINavigationController?
     

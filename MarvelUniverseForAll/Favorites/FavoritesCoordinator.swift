@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public class FavoritesCoordinator {
+public class FavoritesCoordinator: StartableCoordinator {
     
     public weak var navController: UINavigationController?
     

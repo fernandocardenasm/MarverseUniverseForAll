@@ -10,16 +10,16 @@ import Foundation
 public class TabBarCoordinator {
         
     public let tabBarController: TabBarController
-    private let homeCoordinator: HomeCoordinator
-    private let favoritesCoordinator: FavoritesCoordinator
-    private let eventsCoordinator: EventsCoordinator
-    private let settingsCoordinator: SettingsCoordinator
+    private let homeCoordinator: StartableCoordinator
+    private let favoritesCoordinator: StartableCoordinator
+    private let eventsCoordinator: StartableCoordinator
+    private let settingsCoordinator: StartableCoordinator
     
     public init(tabBarController: TabBarController,
-                homeCoordinator: HomeCoordinator,
-                favoritesCoordinator: FavoritesCoordinator,
-                eventsCoordinator: EventsCoordinator,
-                settingsCoordinator: SettingsCoordinator) {
+                homeCoordinator: StartableCoordinator,
+                favoritesCoordinator: StartableCoordinator,
+                eventsCoordinator: StartableCoordinator,
+                settingsCoordinator: StartableCoordinator) {
         self.tabBarController = tabBarController
         self.homeCoordinator = homeCoordinator
         self.favoritesCoordinator = favoritesCoordinator

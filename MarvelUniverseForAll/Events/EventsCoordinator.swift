@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public class EventsCoordinator {
+public class EventsCoordinator: StartableCoordinator {
     
     public weak var navController: UINavigationController?
     
