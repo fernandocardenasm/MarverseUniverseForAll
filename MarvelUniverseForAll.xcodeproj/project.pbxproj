@@ -23,6 +23,7 @@
 		A45D8147264E847900954F1D /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8146264E847900954F1D /* HomeCoordinator.swift */; };
 		A45D814A264E850400954F1D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8149264E850400954F1D /* SettingsView.swift */; };
 		A45D814C264E852500954F1D /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D814B264E852500954F1D /* SettingsCoordinator.swift */; };
+		A45D814E264E86B700954F1D /* TabBarCoordinatorComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D814D264E86B700954F1D /* TabBarCoordinatorComposer.swift */; };
 		A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */; };
 		A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970426411758009F0FD8 /* SignInViewModelTests.swift */; };
 		A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */; };
@@ -78,6 +79,7 @@
 		A45D8146264E847900954F1D /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		A45D8149264E850400954F1D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A45D814B264E852500954F1D /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		A45D814D264E86B700954F1D /* TabBarCoordinatorComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinatorComposer.swift; sourceTree = "<group>"; };
 		A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		A472970426411758009F0FD8 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticatorSpy.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				A4DD8BDE2637E8A500FFC669 /* Preview Content */,
 				A4DD8C132637EC6600FFC669 /* AppCoordinator.swift */,
 				A40FA5A826413488000BE218 /* UserManagementCoordinatorComposer.swift */,
+				A45D814D264E86B700954F1D /* TabBarCoordinatorComposer.swift */,
 				A4EB7873264181DB005199BF /* GoogleService-Info.plist */,
 			);
 			path = MarvelUniverseForAll;
@@ -505,6 +508,7 @@
 				A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */,
 				A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */,
 				A4DD8C0A2637E90600FFC669 /* SignInView.swift in Sources */,
+				A45D814E264E86B700954F1D /* TabBarCoordinatorComposer.swift in Sources */,
 				A45D8143264E831F00954F1D /* TabBarItemFactory.swift in Sources */,
 				A4DD8C0F2637E91600FFC669 /* HomeView.swift in Sources */,
 				A4C61BF226440F12009FF463 /* FirebaseLoginAuthenticator.swift in Sources */,
