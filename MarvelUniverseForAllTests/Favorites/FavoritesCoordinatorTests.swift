@@ -9,16 +9,16 @@ import MarvelUniverseForAll
 import SwiftUI
 import XCTest
 
-class FavoritesCoordinatorTests: XCTest {
+class FavoritesCoordinatorTests: XCTestCase {
     
     func test_init_doesNotInitNavController() {
-        let sut = FavoritesCoordinator()
+        let sut = makeSut()
         
         XCTAssertNil(sut.navController)
     }
     
     func test_start_setsNavController() {
-        let sut = FavoritesCoordinator()
+        let sut = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -27,12 +27,19 @@ class FavoritesCoordinatorTests: XCTest {
     }
     
     func test_start_showsFavoritesView() {
-        let sut = FavoritesCoordinator()
+        let sut = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
         
         XCTAssertEqual(navController.viewControllers.count, 1)
         XCTAssertTrue(navController.viewControllers[0] is UIHostingController<FavoritesView>)
+    }
+    
+    private func makeSut(file: StaticString = #file, line: UInt = #line) -> StartableCoordinator {
+        let sut = FavoritesCoordinator()
+        trackForMemoryLeaks(sut)
+        
+        return sut
     }
 }
