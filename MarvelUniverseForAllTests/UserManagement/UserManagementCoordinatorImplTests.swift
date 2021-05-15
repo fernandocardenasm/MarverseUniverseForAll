@@ -76,7 +76,7 @@ class UserManagementCoordinatorImplTests: XCTestCase {
 // MARK: - Helpers
 
 private extension UserManagementCoordinatorImplTests {
-    func makeSut() -> (UserManagementCoordinator,
+    func makeSut(file: StaticString = #file, line: UInt = #line) -> (UserManagementCoordinator,
                        UIHostingController<SignInView>,
                        UIHostingController<SignUpView>) {
         let loginAuthenticator = LoginAuthenticatorSpy()
@@ -86,6 +86,10 @@ private extension UserManagementCoordinatorImplTests {
         let signUpViewController = makeSignUpViewController(userCreator: userCreator)
         let sut = UserManagementCoordinatorImpl(signInViewController: signInViewController,
                                                 signUpViewController: signUpViewController)
+        
+        trackForMemoryLeaks([sut, userCreator, loginAuthenticator],
+                            file: file,
+                            line: line)
         
         return (sut, signInViewController, signUpViewController)
     }
