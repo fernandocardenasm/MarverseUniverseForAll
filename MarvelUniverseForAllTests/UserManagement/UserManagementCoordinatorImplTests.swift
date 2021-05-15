@@ -87,7 +87,9 @@ private extension UserManagementCoordinatorImplTests {
         let sut = UserManagementCoordinatorImpl(signInViewController: signInViewController,
                                                 signUpViewController: signUpViewController)
         
-        trackForMemoryLeaks([sut, userCreator, loginAuthenticator],
+        trackForMemoryLeaks([sut,
+                             signInViewController,
+                             signUpViewController],
                             file: file,
                             line: line)
         

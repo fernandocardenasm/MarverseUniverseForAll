@@ -36,8 +36,7 @@ public class UserManagementCoordinatorImpl: UserManagementCoordinator {
     public func start(navController: UINavigationController) {
         self.navController = navController
         
-        navController.viewControllers.insert(signInViewController, at: 0)
-        navController.popToRootViewController(animated: true)
+        navController.pushViewController(signInViewController, animated: true)
         
         signInViewModel.signInFinishedSubject.sink { [weak self] _ in
             self?.finishedSubject.send(completion: .finished)
