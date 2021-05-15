@@ -12,13 +12,13 @@ import XCTest
 class HomeCoordinatorTests: XCTestCase {
     
     func test_init_doesNotInitNavController() {
-        let sut = HomeCoordinator()
+        let sut = makeSut()
         
         XCTAssertNil(sut.navController)
     }
     
     func test_start_setsNavController() {
-        let sut = HomeCoordinator()
+        let sut = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -27,12 +27,19 @@ class HomeCoordinatorTests: XCTestCase {
     }
     
     func test_start_showsHomeView() {
-        let sut = HomeCoordinator()
+        let sut = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
         
         XCTAssertEqual(navController.viewControllers.count, 1)
         XCTAssertTrue(navController.viewControllers[0] is UIHostingController<HomeView>)
+    }
+    
+    private func makeSut(file: StaticString = #file, line: UInt = #line) -> StartableCoordinator {
+        let sut = HomeCoordinator()
+        trackForMemoryLeaks(sut, file: file, line: line)
+        
+        return sut
     }
 }
