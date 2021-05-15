@@ -35,6 +35,11 @@
 		A45D816F264ED75500954F1D /* StartableCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D816E264ED75500954F1D /* StartableCoordinatorSpy.swift */; };
 		A45D8171264EED5E00954F1D /* InMemoryLoginAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8170264EED5E00954F1D /* InMemoryLoginAuthenticator.swift */; };
 		A45D8173264EEE1C00954F1D /* InMemoryUserCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8172264EEE1C00954F1D /* InMemoryUserCreator.swift */; };
+		A45D8177264FB67700954F1D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8176264FB67600954F1D /* HTTPClient.swift */; };
+		A45D817A264FB6D000954F1D /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8179264FB6D000954F1D /* URLSessionHTTPClient.swift */; };
+		A45D817D264FB73800954F1D /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D817C264FB73800954F1D /* URLSessionHTTPClientTests.swift */; };
+		A45D8180264FB78400954F1D /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D817F264FB78400954F1D /* SharedTestHelpers.swift */; };
+		A45D8182264FB7D000954F1D /* XCTestCase+MemoryLeaksTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8181264FB7D000954F1D /* XCTestCase+MemoryLeaksTracking.swift */; };
 		A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */; };
 		A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970426411758009F0FD8 /* SignInViewModelTests.swift */; };
 		A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */; };
@@ -92,6 +97,11 @@
 		A45D816E264ED75500954F1D /* StartableCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartableCoordinatorSpy.swift; sourceTree = "<group>"; };
 		A45D8170264EED5E00954F1D /* InMemoryLoginAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryLoginAuthenticator.swift; sourceTree = "<group>"; };
 		A45D8172264EEE1C00954F1D /* InMemoryUserCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryUserCreator.swift; sourceTree = "<group>"; };
+		A45D8176264FB67600954F1D /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		A45D8179264FB6D000954F1D /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		A45D817C264FB73800954F1D /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
+		A45D817F264FB78400954F1D /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
+		A45D8181264FB7D000954F1D /* XCTestCase+MemoryLeaksTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaksTracking.swift"; sourceTree = "<group>"; };
 		A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		A472970426411758009F0FD8 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticatorSpy.swift; sourceTree = "<group>"; };
@@ -253,6 +263,40 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
+		A45D8175264FB61D00954F1D /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				A45D8176264FB67600954F1D /* HTTPClient.swift */,
+				A45D8179264FB6D000954F1D /* URLSessionHTTPClient.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		A45D817B264FB6F200954F1D /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				A45D817E264FB76700954F1D /* Helpers */,
+				A45D817C264FB73800954F1D /* URLSessionHTTPClientTests.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		A45D817E264FB76700954F1D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A45D817F264FB78400954F1D /* SharedTestHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A45D8183264FB7E200954F1D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A45D8181264FB7D000954F1D /* XCTestCase+MemoryLeaksTracking.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A4729701264018F1009F0FD8 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +345,7 @@
 		A4DD8BD52637E8A400FFC669 /* MarvelUniverseForAll */ = {
 			isa = PBXGroup;
 			children = (
+				A45D8175264FB61D00954F1D /* APIClient */,
 				A45D8145264E846400954F1D /* Home */,
 				A45D815E264EC41700954F1D /* Favorites */,
 				A45D8167264EC63B00954F1D /* Events */,
@@ -334,6 +379,8 @@
 		A4DD8BEC2637E8A500FFC669 /* MarvelUniverseForAllTests */ = {
 			isa = PBXGroup;
 			children = (
+				A45D8183264FB7E200954F1D /* Helpers */,
+				A45D817B264FB6F200954F1D /* APIClient */,
 				A45D8158264EB5D900954F1D /* Home */,
 				A45D815B264EC1C600954F1D /* Favorites */,
 				A45D8164264EC4D200954F1D /* Events */,
@@ -495,7 +542,9 @@
 				A4544434263B3840009580E6 /* UserManagementCoordinator.swift in Sources */,
 				A401CC752649BC290070118A /* SignUpView.swift in Sources */,
 				A45D8169264EC65600954F1D /* EventsCoordinator.swift in Sources */,
+				A45D8177264FB67700954F1D /* HTTPClient.swift in Sources */,
 				A401CC772649BCDF0070118A /* SignUpViewModel.swift in Sources */,
+				A45D817A264FB6D000954F1D /* URLSessionHTTPClient.swift in Sources */,
 				A45D8141264E828900954F1D /* TabBarController.swift in Sources */,
 				A4C61BF826443391009FF463 /* LoginAuthenticator.swift in Sources */,
 				A45D813F264E826600954F1D /* TabBarCoordinator.swift in Sources */,
@@ -525,15 +574,18 @@
 			files = (
 				A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */,
 				A45D815A264EB5E600954F1D /* HomeCoordinatorTests.swift in Sources */,
+				A45D8180264FB78400954F1D /* SharedTestHelpers.swift in Sources */,
 				A45D8154264EA6C400954F1D /* TabBarControllerTests.swift in Sources */,
 				A45D815D264EC1E000954F1D /* FavoritesCoordinatorTests.swift in Sources */,
 				A45D816F264ED75500954F1D /* StartableCoordinatorSpy.swift in Sources */,
 				A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */,
 				A401CC81264B0D7E0070118A /* SignUpViewModelTests.swift in Sources */,
+				A45D817D264FB73800954F1D /* URLSessionHTTPClientTests.swift in Sources */,
 				A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */,
 				A45D8157264EAFB800954F1D /* SettingsCoordinatorTests.swift in Sources */,
 				A45D8152264EA33F00954F1D /* TabBarCoordinatorTests.swift in Sources */,
 				A454442F263B376E009580E6 /* AppCoordinatorTests.swift in Sources */,
+				A45D8182264FB7D000954F1D /* XCTestCase+MemoryLeaksTracking.swift in Sources */,
 				A401CC792649C5800070118A /* UserCreatorSpy.swift in Sources */,
 				A45D8166264EC4E500954F1D /* EventsCoordinatorTests.swift in Sources */,
 			);
