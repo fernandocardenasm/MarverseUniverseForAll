@@ -58,9 +58,11 @@ class SignUpViewModelTests: XCTestCase {
         wait(for: [exp], timeout: 0.1)
     }
     
-    func makeSut() -> (SignUpViewModel, UserCreatorSpy) {
+    private func makeSut(file: StaticString = #file, line: UInt = #line) -> (SignUpViewModel, UserCreatorSpy) {
         let userCreator = UserCreatorSpy()
         let sut = SignUpViewModel(userCreator: userCreator)
+        
+        trackForMemoryLeaks([sut, userCreator], file: file, line: line)
         
         return (sut, userCreator)
     }
