@@ -22,11 +22,28 @@ final public class URLSessionHTTPClient: HTTPClient {
                 if let error = error {
                     throw error
                 } else if let data = data, let response = response as? HTTPURLResponse {
-                    return (data, response)
+                    
+                    let readData = self.readLocalFile(forName: "characters")!
+                    
+                    return (readData, response)
                 } else {
                     throw UnexpectedValuesRepresentation()
                 }
             })
         }.resume()
+    }
+    
+    private func readLocalFile(forName name: String) -> Data? {
+        do {
+            if let bundlePath = Bundle.main.path(forResource: name,
+                                                 ofType: "json"),
+                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
+                return jsonData
+            }
+        } catch {
+            print(error)
+        }
+        
+        return nil
     }
 }

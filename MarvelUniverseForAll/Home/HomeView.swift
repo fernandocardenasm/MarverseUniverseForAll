@@ -27,18 +27,17 @@ public class HomeViewModel: ObservableObject {
     public func loadCharacters() {
         characterLoader.loadCharacters()
             .receive(on: RunLoop.main)
+            .replaceError(with: [])
             .assign(to: &$characters)
     }
     
     public func loadImage(name: String, forUrl url: URL) {
-        print("Start loading of image: \(name)")
         imageLoader.load(url: url)
             .receive(on: RunLoop.main)
             .map { UIImage(data: $0) }
             .replaceError(with: UIImage(systemName: "heart"))
             .replaceEmpty(with: UIImage(systemName: "book"))
             .sink { [weak self] image in
-                print("Received Image: \(image)")
                 self?.images[name] = image
             }.store(in: &cancellableSet)
     }
@@ -67,7 +66,7 @@ public struct HomeView: View {
                             .background(Color.red)
                             .onAppear {
                                 viewModel.loadImage(name: character.name,
-                                                    forUrl: character.thumbnailURL)
+                                                    forUrl: character.thumbnailURL!)
                             }
                     }
                 }
