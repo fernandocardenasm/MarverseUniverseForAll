@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,6 +40,10 @@
 		A45D817D264FB73800954F1D /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D817C264FB73800954F1D /* URLSessionHTTPClientTests.swift */; };
 		A45D8180264FB78400954F1D /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D817F264FB78400954F1D /* SharedTestHelpers.swift */; };
 		A45D8182264FB7D000954F1D /* XCTestCase+MemoryLeaksTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8181264FB7D000954F1D /* XCTestCase+MemoryLeaksTracking.swift */; };
+		A45D8185264FF0E800954F1D /* RemoteCharacterLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D8184264FF0E700954F1D /* RemoteCharacterLoader.swift */; };
+		A45D8187264FF92700954F1D /* characters_json.json in Sources */ = {isa = PBXBuildFile; fileRef = A45D8186264FF92700954F1D /* characters_json.json */; };
+		A45D81892650035400954F1D /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D81882650035400954F1D /* ImageLoader.swift */; };
+		A45D818C2650050B00954F1D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A45D818B2650050B00954F1D /* Kingfisher */; };
 		A472970326401914009F0FD8 /* UserManagementCoordinatorImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */; };
 		A472970526411758009F0FD8 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472970426411758009F0FD8 /* SignInViewModelTests.swift */; };
 		A4729707264122E1009F0FD8 /* LoginAuthenticatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */; };
@@ -102,6 +106,9 @@
 		A45D817C264FB73800954F1D /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		A45D817F264FB78400954F1D /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		A45D8181264FB7D000954F1D /* XCTestCase+MemoryLeaksTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaksTracking.swift"; sourceTree = "<group>"; };
+		A45D8184264FF0E700954F1D /* RemoteCharacterLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCharacterLoader.swift; sourceTree = "<group>"; };
+		A45D8186264FF92700954F1D /* characters_json.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters_json.json; sourceTree = "<group>"; };
+		A45D81882650035400954F1D /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		A472970226401914009F0FD8 /* UserManagementCoordinatorImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagementCoordinatorImplTests.swift; sourceTree = "<group>"; };
 		A472970426411758009F0FD8 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
 		A4729706264122E1009F0FD8 /* LoginAuthenticatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthenticatorSpy.swift; sourceTree = "<group>"; };
@@ -129,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A45D818C2650050B00954F1D /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +276,9 @@
 			children = (
 				A45D8176264FB67600954F1D /* HTTPClient.swift */,
 				A45D8179264FB6D000954F1D /* URLSessionHTTPClient.swift */,
+				A45D8184264FF0E700954F1D /* RemoteCharacterLoader.swift */,
+				A45D8186264FF92700954F1D /* characters_json.json */,
+				A45D81882650035400954F1D /* ImageLoader.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -419,7 +430,6 @@
 				A4DD8BCF2637E8A400FFC669 /* Sources */,
 				A4DD8BD02637E8A400FFC669 /* Frameworks */,
 				A4DD8BD12637E8A400FFC669 /* Resources */,
-				A401CC73264994570070118A /* Disable ATS for LocalHost Tests */,
 			);
 			buildRules = (
 			);
@@ -427,6 +437,7 @@
 			);
 			name = MarvelUniverseForAll;
 			packageProductDependencies = (
+				A45D818B2650050B00954F1D /* Kingfisher */,
 			);
 			productName = MarvelUniverseForAll;
 			productReference = A4DD8BD32637E8A400FFC669 /* MarvelUniverseForAll.app */;
@@ -478,6 +489,7 @@
 			);
 			mainGroup = A4DD8BCA2637E8A400FFC669;
 			packageReferences = (
+				A45D818A2650050B00954F1D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = A4DD8BD42637E8A400FFC669 /* Products */;
 			projectDirPath = "";
@@ -511,27 +523,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		A401CC73264994570070118A /* Disable ATS for LocalHost Tests */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Disable ATS for LocalHost Tests";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nINFO_PLIST=\"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\nPLISTBUDDY=\"/usr/libexec/PlistBuddy\"\n\nif [ \"${CONFIGURATION}\" == \"LocalhostTests\" ]; then\n    $PLISTBUDDY -c \"Add :NSAppTransportSecurity dict\" \"${INFO_PLIST}\" || true\n    $PLISTBUDDY -c \"Add :NSAppTransportSecurity:NSAllowsArbitraryLoads bool true\" \"${INFO_PLIST}\" || true\n    $PLISTBUDDY -c \"Set :NSAppTransportSecurity:NSAllowsArbitraryLoads true\" \"${INFO_PLIST}\"\nelse\n    $PLISTBUDDY -c \"Delete :NSAppTransportSecurity:NSAllowsArbitraryLoads\" \"${INFO_PLIST}\" || true\nfi\n\nALLOWS_ARBITRARY_LOADS_ENABLED=$($PLISTBUDDY -c \"Print :NSAppTransportSecurity:NSAllowsArbitraryLoads\" \"${INFO_PLIST}\")\nif [ \"${ALLOWS_ARBITRARY_LOADS_ENABLED}\" == \"true\" ]; then\n  echo \"warning: ATS is disbaled. :NSAppTransportSecurity:NSAllowsArbitraryLoads set to true. This is insecure and should not be used in release builds.\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		A4DD8BCF2637E8A400FFC669 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -552,7 +543,9 @@
 				A45D8171264EED5E00954F1D /* InMemoryLoginAuthenticator.swift in Sources */,
 				A4DD8BD72637E8A400FFC669 /* AppDelegate.swift in Sources */,
 				A4DD8BD92637E8A400FFC669 /* SceneDelegate.swift in Sources */,
+				A45D8187264FF92700954F1D /* characters_json.json in Sources */,
 				A45D8162264EC45200954F1D /* FavoritesView.swift in Sources */,
+				A45D8185264FF0E800954F1D /* RemoteCharacterLoader.swift in Sources */,
 				A4DD8C0A2637E90600FFC669 /* SignInView.swift in Sources */,
 				A45D814E264E86B700954F1D /* TabBarCoordinatorComposer.swift in Sources */,
 				A45D8143264E831F00954F1D /* TabBarItemFactory.swift in Sources */,
@@ -562,6 +555,7 @@
 				A4C61BFA264433AF009FF463 /* UserCreator.swift in Sources */,
 				A472970926412859009F0FD8 /* SignInViewModel.swift in Sources */,
 				A45D8160264EC42D00954F1D /* FavoritesCoordinator.swift in Sources */,
+				A45D81892650035400954F1D /* ImageLoader.swift in Sources */,
 				A45D8147264E847900954F1D /* HomeCoordinator.swift in Sources */,
 				A45D814C264E852500954F1D /* SettingsCoordinator.swift in Sources */,
 				A40FA5A926413488000BE218 /* UserManagementCoordinatorComposer.swift in Sources */,
@@ -953,6 +947,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A45D818A2650050B00954F1D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A45D818B2650050B00954F1D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A45D818A2650050B00954F1D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A4DD8BCB2637E8A400FFC669 /* Project object */;
 }
