@@ -12,13 +12,13 @@ import XCTest
 class EventsCoordinatorTests: XCTestCase {
     
     func test_init_doesNotInitNavController() {
-        let sut = EventsCoordinator()
+        let sut = makeSut()
         
         XCTAssertNil(sut.navController)
     }
     
     func test_start_setsNavController() {
-        let sut = EventsCoordinator()
+        let sut = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
@@ -27,12 +27,19 @@ class EventsCoordinatorTests: XCTestCase {
     }
     
     func test_start_showsEventsView() {
-        let sut = EventsCoordinator()
+        let sut = makeSut()
         
         let navController = UINavigationController()
         sut.start(navController: navController)
         
         XCTAssertEqual(navController.viewControllers.count, 1)
         XCTAssertTrue(navController.viewControllers[0] is UIHostingController<EventsView>)
+    }
+    
+    private func makeSut(file: StaticString = #file, line: UInt = #line) -> StartableCoordinator {
+        let sut = EventsCoordinator()
+        trackForMemoryLeaks(sut)
+        
+        return sut
     }
 }
