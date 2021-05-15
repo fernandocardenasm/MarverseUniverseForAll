@@ -56,7 +56,7 @@ class TabBarCoordinatorTests: XCTestCase {
         XCTAssertEqual(sut.tabBarController.settingsNavController, args.settingsCoordinator.navController)
     }
     
-    private func makeSut() -> (sut: TabBarCoordinator,
+    private func makeSut(file: StaticString = #file, line: UInt = #line) -> (sut: TabBarCoordinator,
                                args: (homeCoordinator: StartableCoordinator,
                                       favoritesCoordinator: StartableCoordinator,
                                       eventsCoordinator: StartableCoordinator,
@@ -71,9 +71,25 @@ class TabBarCoordinatorTests: XCTestCase {
                                     favoritesCoordinator: favoritesCoordinator,
                                     eventsCoordinator: eventsCoordinator,
                                     settingsCoordinator: settingsCoordinator)
+        
+        trackForMemoryLeaks(
+            [sut,
+             tabBarController,
+             homeCoordinator,
+             favoritesCoordinator,
+             eventsCoordinator,
+             settingsCoordinator],
+            file: file,
+            line: line
+        )
+        
         return (sut, (homeCoordinator,
                       favoritesCoordinator,
                       eventsCoordinator,
                       settingsCoordinator))
+    }
+    
+    func trackArrayForMemoryLeaks() {
+        
     }
 }

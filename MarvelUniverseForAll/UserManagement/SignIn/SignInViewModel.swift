@@ -60,8 +60,7 @@ public class SignInViewModel: ObservableObject {
             .map { fieldsValid, signingIn in
                 fieldsValid && !signingIn
             }
-            .assign(to: \.signInButtonEnabled, on: self)
-            .store(in: &cancellables)
+            .assign(to: &$signInButtonEnabled)
     }
     
     private func isEmailValidPublisher() -> AnyPublisher<Bool, Never> {

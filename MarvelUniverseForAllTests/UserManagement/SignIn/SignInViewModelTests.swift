@@ -72,9 +72,11 @@ class SignInViewModelTests: XCTestCase {
         wait(for: [exp], timeout: 0.1)
     }
     
-    func makeSut() -> (SignInViewModel, LoginAuthenticatorSpy) {
+    private func makeSut(file: StaticString = #file, line: UInt = #line) -> (SignInViewModel, LoginAuthenticatorSpy) {
         let loginAuth = LoginAuthenticatorSpy()
         let sut = SignInViewModel(loginAuthenticator: loginAuth)
+        
+        trackForMemoryLeaks([sut, loginAuth], file: file, line: line)
         
         return (sut, loginAuth)
     }

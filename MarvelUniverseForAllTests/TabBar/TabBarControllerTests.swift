@@ -11,7 +11,7 @@ import XCTest
 class TabBarControllerTests: XCTestCase {
     
     func test_viewDidLoad_setsHomeTabBarItem() {
-        let sut = TabBarController()
+        let sut = makeSut()
         sut.loadViewIfNeeded()
         
         let homeBarItem = UITabBarItem(title: "Home",
@@ -21,7 +21,7 @@ class TabBarControllerTests: XCTestCase {
     }
     
     func test_viewDidLoad_setsFavoritesTabBarItem() {
-        let sut = TabBarController()
+        let sut = makeSut()
         sut.loadViewIfNeeded()
         
         let settingsBarItem = UITabBarItem(title: "Favorites",
@@ -31,7 +31,7 @@ class TabBarControllerTests: XCTestCase {
     }
     
     func test_viewDidLoad_setsEventsTabBarItem() {
-        let sut = TabBarController()
+        let sut = makeSut()
         sut.loadViewIfNeeded()
         
         let settingsBarItem = UITabBarItem(title: "Events",
@@ -41,7 +41,7 @@ class TabBarControllerTests: XCTestCase {
     }
     
     func test_viewDidLoad_setsSettingsTabBarItem() {
-        let sut = TabBarController()
+        let sut = makeSut()
         sut.loadViewIfNeeded()
         
         let settingsBarItem = UITabBarItem(title: "Settings",
@@ -51,7 +51,7 @@ class TabBarControllerTests: XCTestCase {
     }
     
     func test_viewDidLoad_setsViewControllers() {
-        let sut = TabBarController()
+        let sut = makeSut()
         sut.loadViewIfNeeded()
         
         XCTAssertEqual(sut.viewControllers?.count, 4)
@@ -59,6 +59,13 @@ class TabBarControllerTests: XCTestCase {
         XCTAssertEqual(sut.viewControllers?[1], sut.favoritesNavController)
         XCTAssertEqual(sut.viewControllers?[2], sut.eventsNavController)
         XCTAssertEqual(sut.viewControllers?[3], sut.settingsNavController)
+    }
+    
+    private func makeSut(file: StaticString = #file, line: UInt = #line) -> TabBarController {
+        let sut = TabBarController()
+        trackForMemoryLeaks(sut)
+        
+        return sut
     }
     
     private func expect(barItem: UITabBarItem, toBeEqualTo comparedBarItem: UITabBarItem, file: StaticString = #file, line: UInt = #line) {

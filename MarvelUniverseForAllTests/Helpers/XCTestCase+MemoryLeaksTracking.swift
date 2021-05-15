@@ -15,4 +15,10 @@ extension XCTestCase {
             XCTAssertNil(instance, "Instance should have been deallocated. Potential Memory leak.", file: file, line: line)
         }
     }
+    
+    func trackForMemoryLeaks(_ instances: [AnyObject], file: StaticString = #file, line: UInt = #line) {
+        instances.forEach { instance in
+            trackForMemoryLeaks(instance, file: file, line: line)
+        }
+    }
 }

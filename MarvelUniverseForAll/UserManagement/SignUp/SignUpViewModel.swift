@@ -59,8 +59,7 @@ public class SignUpViewModel: ObservableObject {
             .map { fieldsValid, pressed in
                 fieldsValid && !pressed
             }
-            .assign(to: \.signingUpButtonEnabled, on: self)
-            .store(in: &cancellableSet)
+            .assign(to: &$signingUpButtonEnabled)
     }
     
     private func isEmailValidPublisher() -> AnyPublisher<Bool, Never> {

@@ -50,14 +50,21 @@ class AppCoordinatorTests: XCTestCase {
 
 extension AppCoordinatorTests {
     
-    func makeSut(file: StaticString = #file, line: UInt = #line) -> (AppCoordinator, UserManagementCoordinatorSpy) {
+    private func makeSut(file: StaticString = #file, line: UInt = #line) -> (AppCoordinator, UserManagementCoordinatorSpy) {
         let userManagementCoordinator = UserManagementCoordinatorSpy()
+        let tabCoordinator = makeTabBarCoordinator()
         let sut = AppCoordinator(userManagementCoordinator: userManagementCoordinator,
-                                 tabBarCoordinator: makeTabBarCoordinator())
+                                 tabBarCoordinator: tabCoordinator)
+        
+        trackForMemoryLeaks([sut,
+                             userManagementCoordinator,
+                             tabCoordinator],
+                            file: file,
+                            line: line)
         return (sut, userManagementCoordinator)
     }
     
-    func makeTabBarCoordinator() -> TabBarCoordinator {
+    private func makeTabBarCoordinator() -> TabBarCoordinator {
         TabBarCoordinator(tabBarController: TabBarController(),
                           homeCoordinator: StartableCoordinatorSpy(),
                           favoritesCoordinator: StartableCoordinatorSpy(),
@@ -65,7 +72,7 @@ extension AppCoordinatorTests {
                           settingsCoordinator: StartableCoordinatorSpy())
     }
     
-    func forceCompleteAnimation() {
+    private func forceCompleteAnimation() {
         RunLoop.current.run(until: Date().addingTimeInterval(0.1))
     }
 }
